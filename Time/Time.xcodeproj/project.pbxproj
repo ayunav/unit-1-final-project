@@ -418,6 +418,7 @@
 				8D05377D1B86687C00588318 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8D05377E1B86687C00588318 /* Build configuration list for PBXNativeTarget "TimeTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +427,7 @@
 				8D0537801B86687C00588318 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
