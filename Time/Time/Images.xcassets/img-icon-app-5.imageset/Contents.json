@@ -2,8 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "img-icon-app-5.jpg"
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
@@ -11,7 +10,8 @@
     },
     {
       "idiom" : "universal",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "img-icon-app-5.jpg"
     }
   ],
   "info" : {
