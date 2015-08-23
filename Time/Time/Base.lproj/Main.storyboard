@@ -81,6 +81,9 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5KI-O1-st7" id="W52-ct-jhP">
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Kge-7b-Fq7" kind="show" id="H2x-Bw-mMy"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
