@@ -10,13 +10,20 @@
 
 @interface TimerViewController ()
 
+@property (weak, nonatomic) IBOutlet UIDatePicker *timerPickerView;
+
 @end
 
 @implementation TimerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+   
+    NSInteger seconds = 60;
+    
+    //[self.timerPickerView setDatePickerMode:UIDatePickerModeCountDownTimer];
+    [self.timerPickerView setCountDownDuration:seconds];
+    
 }
 
 - (void)didReceiveMemoryWarning {

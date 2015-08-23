@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Mud-4m-yGr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Mud-4m-yGr">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -9,7 +9,7 @@
         <!--Timer-->
         <scene sceneID="cHf-cA-2Rf">
             <objects>
-                <viewController id="HcB-Dy-nPx" userLabel="Timer" sceneMemberID="viewController">
+                <viewController id="HcB-Dy-nPx" userLabel="Timer" customClass="TimerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="M0e-Xr-5FA"/>
                         <viewControllerLayoutGuide type="bottom" id="MhY-9s-ftj"/>
@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="s7N-SZ-Oxh">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="s7N-SZ-Oxh">
                                 <rect key="frame" x="0.0" y="68" width="600" height="162"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="162" id="umQ-Bs-EYR"/>
@@ -88,6 +88,12 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AuF-tf-7r4">
+                                <rect key="frame" x="0.0" y="68" width="600" height="162"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -108,6 +114,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Timer" image="timer-1" id="IIn-Ri-Xdz"/>
+                    <connections>
+                        <outlet property="timerPickerView" destination="s7N-SZ-Oxh" id="5hH-bR-1Kq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GiD-NA-0wc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
