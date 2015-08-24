@@ -352,7 +352,7 @@
         <scene sceneID="d1C-uT-spz">
             <objects>
                 <navigationController id="1uj-hN-qUE" userLabel="Countdown" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Countdown" image="countdown" id="6NL-1U-ETe"/>
+                    <tabBarItem key="tabBarItem" title="Countdown" image="hourglass" id="6NL-1U-ETe"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gRt-Lu-Kbb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -707,7 +707,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="countdown" width="11" height="11"/>
+        <image name="hourglass" width="34" height="45"/>
         <image name="stopwatch -1" width="11" height="11"/>
         <image name="timer-1" width="11" height="11"/>
     </resources>
