@@ -11,7 +11,8 @@
 @interface TimerViewController ()
 
 @property (weak, nonatomic) IBOutlet UIDatePicker *timerPickerView;
-@property (nonatomic) NSMutableArray *presetTimers;
+@property (nonatomic) NSMutableArray *existingPresetTimers;
+@property (nonatomic) NSMutableArray *customPresetTimers;
 
 @end
 
@@ -20,18 +21,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    
-    NSInteger seconds = 60;
+    self.existingPresetTimers = [[NSMutableArray alloc] init];
+    [self.existingPresetTimers addObject:@"Coffee timer"];
+    [self.existingPresetTimers addObject:@"CPopcorn timer"];
     
+    NSInteger seconds = 60;
     //[self.timerPickerView setDatePickerMode:UIDatePickerModeCountDownTimer];
     [self.timerPickerView setCountDownDuration:seconds];
-    
-    [self.presetTimers addObject:@"Coffee timer"];
-    [self.presetTimers addObject:@"Popcorn timer"];
-    
-    //    [self.customTimers addObject:@"+ Add a Custom Timer"];
-//    [self.presetTimers addObject:@"23"];
-
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,22 +36,17 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//    if(section == 0){
-//        return self.presetTimers.count;
-//    }
-//    else{
-        return self.presetTimers.count;
-//    }
+      return self.existingPresetTimers.count;
 }
 
 - (UITableViewCell *)tableview:(UITableView *)tableview cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [tableview dequeueReusableCellWithIdentifier:@"TimerCellIdentifier" forIndexPath:indexPath];
-    cell.textLabel.text = [self.presetTimers objectAtIndex:indexPath.row];
+    cell.textLabel.text = [self.existingPresetTimers objectAtIndex:indexPath.row];
     return cell; 
 }
 /*

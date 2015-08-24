@@ -378,15 +378,11 @@
             </objects>
             <point key="canvasLocation" x="-116" y="1691"/>
         </scene>
-        <!--AddCD View Controller-->
-        <scene sceneID="p9x-rR-eU9">
+        <!--Countdown Table View Controller-->
+        <scene sceneID="u0N-k4-1mB">
             <objects>
-                <viewController id="s5i-WW-c7r" customClass="AddCDViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="zV0-64-R6O"/>
-                        <viewControllerLayoutGuide type="bottom" id="haZ-aL-kar"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="dn6-Ll-dQ5">
+                <tableViewController id="68h-pt-hBo" userLabel="Countdown Table View Controller" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="5eC-GO-PAN">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
