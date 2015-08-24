@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface SWViewController : UIViewController
+{
+    bool running;
+    NSTimeInterval startTime;
+}
 
 @end
