@@ -176,6 +176,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="pauseButtonTapped" destination="LLH-o9-d3Z" id="omA-Bg-zn5"/>
+                        <outlet property="startButtonTapped" destination="hdu-lJ-dIR" id="iJF-U7-MTu"/>
+                        <outlet property="timerLabel" destination="AuF-tf-7r4" id="PtO-EY-mhW"/>
                         <outlet property="timerPickerView" destination="s7N-SZ-Oxh" id="5hH-bR-1Kq"/>
                     </connections>
                 </viewController>
