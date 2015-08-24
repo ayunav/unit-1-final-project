@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		29FCC7BD1B8B76F90005B464 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29FCC7BC1B8B76F90005B464 /* Images.xcassets */; };
+		29FCC7C01B8BD2860005B464 /* CQNewTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FCC7BF1B8BD2860005B464 /* CQNewTimerViewController.m */; };
+		29FCC7C31B8BD2AE0005B464 /* CQPresetTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FCC7C21B8BD2AE0005B464 /* CQPresetTimerViewController.m */; };
 		8D05375E1B86687C00588318 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D05375D1B86687C00588318 /* main.m */; };
 		8D0537611B86687C00588318 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0537601B86687C00588318 /* AppDelegate.m */; };
 		8D0537671B86687C00588318 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D0537651B86687C00588318 /* Main.storyboard */; };
@@ -32,6 +34,10 @@
 
 /* Begin PBXFileReference section */
 		29FCC7BC1B8B76F90005B464 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		29FCC7BE1B8BD2860005B464 /* CQNewTimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQNewTimerViewController.h; sourceTree = "<group>"; };
+		29FCC7BF1B8BD2860005B464 /* CQNewTimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQNewTimerViewController.m; sourceTree = "<group>"; };
+		29FCC7C11B8BD2AE0005B464 /* CQPresetTimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQPresetTimerViewController.h; sourceTree = "<group>"; };
+		29FCC7C21B8BD2AE0005B464 /* CQPresetTimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQPresetTimerViewController.m; sourceTree = "<group>"; };
 		8D0537581B86687B00588318 /* Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Time.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D05375C1B86687B00588318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D05375D1B86687C00588318 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -105,6 +111,12 @@
 				F77AC9491B94EDFE007EECAC /* CDViewController.m */,
 				F7571E771B964028008D60C2 /* ShowCDViewController.h */,
 				F7571E781B964028008D60C2 /* ShowCDViewController.m */,
+				29FCC7BE1B8BD2860005B464 /* CQNewTimerViewController.h */,
+				29FCC7BF1B8BD2860005B464 /* CQNewTimerViewController.m */,
+				29FCC7C11B8BD2AE0005B464 /* CQPresetTimerViewController.h */,
+				29FCC7C21B8BD2AE0005B464 /* CQPresetTimerViewController.m */,
+				F70BE1EB1B8A0B2A0079ABE5 /* CDTableViewController.h */,
+				F70BE1EC1B8A0B2A0079ABE5 /* CDTableViewController.m */,
 				8D0537651B86687C00588318 /* Main.storyboard */,
 				29FCC7BC1B8B76F90005B464 /* Images.xcassets */,
 				8D05376A1B86687C00588318 /* LaunchScreen.xib */,
@@ -243,6 +255,9 @@
 				F70BE1EA1B8A0AFA0079ABE5 /* TimerViewController.m in Sources */,
 				F7571E791B964028008D60C2 /* ShowCDViewController.m in Sources */,
 				F70BE1E71B8A0ADE0079ABE5 /* SWViewController.m in Sources */,
+				F70BE1ED1B8A0B2A0079ABE5 /* CDTableViewController.m in Sources */,
+				29FCC7C31B8BD2AE0005B464 /* CQPresetTimerViewController.m in Sources */,
+				29FCC7C01B8BD2860005B464 /* CQNewTimerViewController.m in Sources */,
 				8D0537611B86687C00588318 /* AppDelegate.m in Sources */,
 				8D05375E1B86687C00588318 /* main.m in Sources */,
 				F7571E761B964010008D60C2 /* AddCDViewController.m in Sources */,

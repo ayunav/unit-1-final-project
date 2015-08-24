@@ -10,9 +10,13 @@
 
 @interface TimerViewController ()
 
-@property (weak, nonatomic) IBOutlet UIDatePicker *timerPickerView;
 @property (nonatomic) NSMutableArray *existingPresetTimers;
 @property (nonatomic) NSMutableArray *customPresetTimers;
+
+@property (weak, nonatomic) IBOutlet UIDatePicker *timerPickerView;
+@property (weak, nonatomic) IBOutlet UILabel *timerLabel;
+@property (weak, nonatomic) IBOutlet UIButton *startButtonTapped;
+@property (weak, nonatomic) IBOutlet UIButton *pauseButtonTapped;
 
 @end
 
@@ -23,7 +27,7 @@
    
     self.existingPresetTimers = [[NSMutableArray alloc] init];
     [self.existingPresetTimers addObject:@"Coffee timer"];
-    [self.existingPresetTimers addObject:@"CPopcorn timer"];
+    [self.existingPresetTimers addObject:@"Popcorn timer"];
     
     NSInteger seconds = 60;
     //[self.timerPickerView setDatePickerMode:UIDatePickerModeCountDownTimer];
@@ -34,6 +38,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - Table View methods 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
