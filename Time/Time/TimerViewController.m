@@ -10,17 +10,15 @@
 
 @interface TimerViewController ()
 
-@property (nonatomic) NSMutableArray *existingPresetTimers;
-//@property (nonatomic) NSMutableArray *customPresetTimers;
-
+@property (nonatomic) NSMutableArray *presetTimers;
 @property (weak, nonatomic) IBOutlet UITableView *timersTableView;
 @property (weak, nonatomic) IBOutlet UIDatePicker *timerPickerView;
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property (weak, nonatomic) IBOutlet UIButton *startButtonTapped;
 @property (weak, nonatomic) IBOutlet UIButton *pauseButtonTapped;
 
-@property (nonatomic) NSTimeInterval *timerDuration;
 @property (nonatomic) NSTimer *timer;
+@property (nonatomic) NSTimeInterval *timerDuration;
 
 @end
 
@@ -28,7 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //this code below breaks the program
+    //control dragging from tableview in the storyboard to the timer itself and setting it to its datasource and delegates implements the code below
 //    self.timersTableView.dataSource = self;
 //    self.timersTableView.delegate = self;
     
@@ -37,9 +35,9 @@
     
     [self.timerLabel setHidden:YES];
 
-    self.existingPresetTimers = [[NSMutableArray alloc] init];
-    [self.existingPresetTimers addObject:@"Coffee timer"];
-    [self.existingPresetTimers addObject:@"Popcorn timer"];
+    self.presetTimers = [[NSMutableArray alloc] init];
+    [self.presetTimers addObject:@"Coffee timer"];
+    [self.presetTimers addObject:@"Popcorn timer"];
     
     NSInteger seconds = 60;
     //[self.timerPickerView setDatePickerMode:UIDatePickerModeCountDownTimer];
@@ -53,15 +51,12 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.existingPresetTimers.count;
+    return self.presetTimers.count;
 }
 
-- (UITableViewCell *)tableview:(UITableView *)tableview cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    //NSIndexPath *ip = [self.timersTableView indexPathForSelectedRow];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [self.timersTableView dequeueReusableCellWithIdentifier:@"TimerCellIdentifier" forIndexPath:indexPath];
-    cell.textLabel.text = [self.existingPresetTimers objectAtIndex:indexPath.row];
-    NSLog(@"Log");
+    cell.textLabel.text = [self.presetTimers objectAtIndex:indexPath.row];
     return cell;
 }
 
@@ -94,7 +89,7 @@
 //    self.timerLabel.text = outputTimer;
     
     
-    //code from the exercise in clas
+    //code from the exercise in class
 //    NSInteger currentNumber = [self.timerLabel.text integerValue];
 //    NSInteger nextNumber = currentNumber + 1;
 //    

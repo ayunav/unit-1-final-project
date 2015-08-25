@@ -30,7 +30,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AuF-tf-7r4">
                                 <rect key="frame" x="0.0" y="225" width="600" height="150"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uvw-Ls-Pe0" userLabel="ButtonsView">
@@ -139,6 +139,10 @@
                                         <exclude reference="qqR-9A-ON8"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="HcB-Dy-nPx" id="hvG-6X-2AX"/>
+                                    <outlet property="delegate" destination="HcB-Dy-nPx" id="WkK-dD-4OC"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -178,7 +182,7 @@
                         <outlet property="startButtonTapped" destination="hdu-lJ-dIR" id="iJF-U7-MTu"/>
                         <outlet property="timerLabel" destination="AuF-tf-7r4" id="PtO-EY-mhW"/>
                         <outlet property="timerPickerView" destination="s7N-SZ-Oxh" id="5hH-bR-1Kq"/>
-                        <outlet property="timersTableView" destination="NZZ-O3-Tea" id="vv9-55-HUf"/>
+                        <outlet property="timersTableView" destination="NZZ-O3-Tea" id="RRi-2C-AeI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GiD-NA-0wc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -941,7 +945,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="hourglass" width="34" height="45"/>
+        <image name="hourglass" width="31" height="41"/>
         <image name="stopwatch -1" width="11" height="11"/>
         <image name="timer-1" width="11" height="11"/>
     </resources>
