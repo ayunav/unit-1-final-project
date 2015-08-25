@@ -11,14 +11,14 @@
 @interface TimerViewController ()
 
 @property (nonatomic) NSMutableArray *existingPresetTimers;
-@property (nonatomic) NSMutableArray *customPresetTimers;
+//@property (nonatomic) NSMutableArray *customPresetTimers;
 
+@property (weak, nonatomic) IBOutlet UITableView *timersTableView;
 @property (weak, nonatomic) IBOutlet UIDatePicker *timerPickerView;
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property (weak, nonatomic) IBOutlet UIButton *startButtonTapped;
 @property (weak, nonatomic) IBOutlet UIButton *pauseButtonTapped;
 
-// ? I need a property of NSTimer and NSTimeInterval
 @property (nonatomic) NSTimeInterval *timerDuration;
 @property (nonatomic) NSTimer *timer;
 
@@ -28,7 +28,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
+    //this code below breaks the program
+//    self.timersTableView.dataSource = self;
+//    self.timersTableView.delegate = self;
+    
+//do I need the line of code below?
+    //    [self.timersTableView reloadData];
+    
     [self.timerLabel setHidden:YES];
 
     self.existingPresetTimers = [[NSMutableArray alloc] init];
@@ -38,6 +44,25 @@
     NSInteger seconds = 60;
     //[self.timerPickerView setDatePickerMode:UIDatePickerModeCountDownTimer];
     [self.timerPickerView setCountDownDuration:seconds];
+}
+
+#pragma mark - Table View methods
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.existingPresetTimers.count;
+}
+
+- (UITableViewCell *)tableview:(UITableView *)tableview cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    //NSIndexPath *ip = [self.timersTableView indexPathForSelectedRow];
+    UITableViewCell *cell = [self.timersTableView dequeueReusableCellWithIdentifier:@"TimerCellIdentifier" forIndexPath:indexPath];
+    cell.textLabel.text = [self.existingPresetTimers objectAtIndex:indexPath.row];
+    NSLog(@"Log");
+    return cell;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,15 +79,22 @@
         [sender setTitle:@"Stop" forState: UIControlStateNormal];
         NSTimer *timer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
         [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
-        
-//
-//        self.countDownDuration = self.pickerView.countDownDuration;
-//        
-//        NSLog(@"%f",self.pickerView.countDownDuration);
+        //self.timerDuration = self.timerPickerView.countDownDuration;
     }
 }
 
 - (void)timerFired: (NSTimer *)timer {
+    //artur's code
+//    self.timerDuration = self.timerDuration - 1;
+//    NSInteger secondsCount = self.timerDuration;
+//    NSInteger minutes = secondsCount / 60;
+//    NSInteger seconds = secondsCount - (minutes * 60);
+//    
+//    NSString *outputTimer = [NSString stringWithFormat:@"%02u:%02u", minutes, seconds];
+//    self.timerLabel.text = outputTimer;
+    
+    
+    //code from the exercise in clas
 //    NSInteger currentNumber = [self.timerLabel.text integerValue];
 //    NSInteger nextNumber = currentNumber + 1;
 //    
@@ -74,22 +106,7 @@
 //    NSLog(@"Timer fired");
 }
 
-#pragma mark - Table View methods 
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-      return self.existingPresetTimers.count;
-}
-
-- (UITableViewCell *)tableview:(UITableView *)tableview cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    UITableViewCell *cell = [tableview dequeueReusableCellWithIdentifier:@"TimerCellIdentifier" forIndexPath:indexPath];
-    cell.textLabel.text = [self.existingPresetTimers objectAtIndex:indexPath.row];
-    return cell; 
-}
 /*
 #pragma mark - Navigation
 
