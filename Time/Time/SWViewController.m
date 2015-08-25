@@ -10,18 +10,15 @@
 
 @interface SWViewController ()
 
-@property (weak, nonatomic) IBOutlet UILabel *SWlabel;
-
-@property (strong, nonatomic) NSTimer *stopWatchTimer; // Store the timer that fires after a certain time
-@property (strong, nonatomic) NSDate *startDate; // Stores the date of the click on the start button
-
 @end
 
 @implementation SWViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-     self.SWlabel.text = @"00:00:00";
+    
+    self.swLabel.text = @"0:00.0";
     running = false;
 }
 
@@ -30,80 +27,45 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)updateTimer
-{
-    // Create date from the elapsed time
-    NSDate *currentDate = [NSDate date];
-    NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:self.startDate];
-    NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
+
+-(void)updateTime {
     
-    // Create a date formatter
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"HH:mm:ss.SSS"];
-    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
+    if (running == false) return;
+    //calculate elapsed time
+    NSTimeInterval currentTime = [NSDate timeIntervalSinceReferenceDate];
+    NSTimeInterval elapsed = currentTime - startTime;
     
-    // Format the elapsed time and set it to the label
-    NSString *timeString = [dateFormatter stringFromDate:timerDate];
-    self.SWlabel.text = timeString;
+    //extract out the minutes, seconds, and fractions of seconds from elapsed time:
+    int mins = (int) (elapsed / 60.0);
+    elapsed -= mins * 60;
+    int secs = (int) (elapsed);
+    elapsed -= secs;
+    int fraction = elapsed * 10.0;
+    
+    //update our label using a format of 0:00.0
+    self.swLabel.text = [NSString stringWithFormat:@"%u:%02u.%u", mins, secs, fraction];
+    //call updateTime again after 0.1 second
+    [self performSelector:@selector(updateTime) withObject:self afterDelay:0.1];
 }
 
-- (IBAction)startTimer:(id)sender {
-    
-        if (running == false) {
-            //start timer
-            running = true;
-            startTime = [NSDate timeIntervalSinceReferenceDate];
-            [sender setTitle:@"STOP" forState: UIControlStateNormal];
-            [self updateTimer];
-
-        }
-        else
-        {
-            //stop timer
-            [sender setTitle:@"START" forState:UIControlStateNormal];
-            running = false;
-        }
-    
-    
-    
-    self.startDate = [NSDate date];
-    
-    // Create the stop watch timer that fires every 100 ms
-    self.stopWatchTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0
-            target:self
-          selector:@selector(updateTimer)
-          userInfo:nil
-           repeats:YES];
-}
-
-- (IBAction)pauseTimer:(id)sender {
-    
-    [self.stopWatchTimer invalidate];
-    self.stopWatchTimer = nil;
-    [self updateTimer];
-    
-}
-
-- (void)timerFired:(NSTimer *)timer {
-    
+- (IBAction)startButton:(UIButton *)sender {
+    if (running == false)
+    {
+        //start timer
+        running = true;
+        startTime = [NSDate timeIntervalSinceReferenceDate];
+        [sender setTitle:@"STOP" forState:UIControlStateNormal];
+        [self updateTime];
+    }
+    else
+    {
+        // stop timer
+        [sender setTitle:@"START" forState:UIControlStateNormal];
+        running = false;
+    }
 }
 
 
 
-
-
-
-
-
-
-/*
-#pragma mark - Navigation   `
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
