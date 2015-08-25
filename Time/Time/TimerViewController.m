@@ -18,6 +18,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *startButtonTapped;
 @property (weak, nonatomic) IBOutlet UIButton *pauseButtonTapped;
 
+// ? I need a property of NSTimer and NSTimeInterval
+@property (nonatomic) NSTimeInterval *timerDuration;
+@property (nonatomic) NSTimer *timer;
+
 @end
 
 @implementation TimerViewController
@@ -25,6 +29,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    
+    [self.timerLabel setHidden:YES];
+
     self.existingPresetTimers = [[NSMutableArray alloc] init];
     [self.existingPresetTimers addObject:@"Coffee timer"];
     [self.existingPresetTimers addObject:@"Popcorn timer"];
@@ -37,6 +43,35 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Button methods 
+
+- (IBAction)startButtonTapped:(id)sender {
+    if(sender == self.startButtonTapped){
+        [self.timerLabel setHidden:NO];
+        [self.timerPickerView setHidden:YES];
+        [sender setTitle:@"Stop" forState: UIControlStateNormal];
+        NSTimer *timer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
+        [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+        
+//
+//        self.countDownDuration = self.pickerView.countDownDuration;
+//        
+//        NSLog(@"%f",self.pickerView.countDownDuration);
+    }
+}
+
+- (void)timerFired: (NSTimer *)timer {
+//    NSInteger currentNumber = [self.timerLabel.text integerValue];
+//    NSInteger nextNumber = currentNumber + 1;
+//    
+//    self.timerLabel.text = [NSString stringWithFormat:@"%lu", nextNumber];
+//    
+//    if (nextNumber == 10) {
+//        [timer invalidate];
+//    }
+//    NSLog(@"Timer fired");
 }
 
 #pragma mark - Table View methods 
