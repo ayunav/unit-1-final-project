@@ -10,6 +10,15 @@
 
 @interface SWViewController ()
 
+@property (nonatomic) NSTimer *timer;
+
+@property (nonatomic) NSDate *startTime;
+
+@property (nonatomic) NSTimeInterval totalSessionTime;
+
+@property (nonatomic) NSTimeInterval totalTime;
+
+
 @end
 
 @implementation SWViewController
@@ -18,8 +27,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.swLabel.text = @"0:00.0";
-    running = false;
+    self.swLabel.text = @"00:00:00";
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,42 +37,35 @@
 }
 
 
--(void)updateTime {
+
+- (IBAction)stopwatchButton:(id)sender {
     
-    if (running == false) return;
-    //calculate elapsed time
-    NSTimeInterval currentTime = [NSDate timeIntervalSinceReferenceDate];
-    NSTimeInterval elapsed = currentTime - startTime;
     
-    //extract out the minutes, seconds, and fractions of seconds from elapsed time:
-    int mins = (int) (elapsed / 60.0);
-    elapsed -= mins * 60;
-    int secs = (int) (elapsed);
-    elapsed -= secs;
-    int fraction = elapsed * 10.0;
+    // set self.startTime to now. Always initializes to current date and time
+    self.startTime = [[NSDate alloc] init];
+    // setup timer
+    self.timer = [NSTimer timerWithTimeInterval:1/60.0 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
+    // add timer to the run loop
+    [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+    [sender setTitle:@"STOP" forState:UIControlStateNormal];
+        
     
-    //update our label using a format of 0:00.0
-    self.swLabel.text = [NSString stringWithFormat:@"%u:%02u.%u", mins, secs, fraction];
-    //call updateTime again after 0.1 second
-    [self performSelector:@selector(updateTime) withObject:self afterDelay:0.1];
+    
 }
 
-- (IBAction)startButton:(UIButton *)sender {
-    if (running == false)
-    {
-        //start timer
-        running = true;
-        startTime = [NSDate timeIntervalSinceReferenceDate];
-        [sender setTitle:@"STOP" forState:UIControlStateNormal];
-        [self updateTime];
-    }
-    else
-    {
-        // stop timer
-        [sender setTitle:@"START" forState:UIControlStateNormal];
-        running = false;
-    }
+- (void)timerFired:(NSTimer *)timer {
+    
+    // get the current time
+    NSDate *now = [[NSDate alloc] init];
+    
+    self.totalSessionTime = [now timeIntervalSinceDate:self.startTime];
+    NSTimeInterval distance =  self.totalTime + self.totalSessionTime;
+    
+    self.swLabel.text = [NSString stringWithFormat:@"%0.2f", distance];
+   
 }
+
+
 
 
 

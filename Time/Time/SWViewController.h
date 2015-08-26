@@ -8,13 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SWViewController : UIViewController
-{
-    bool running;
-    NSTimeInterval startTime;
-}
+@interface SWViewController : UIViewController 
+
 @property (weak, nonatomic) IBOutlet UILabel *swLabel;
 
-- (IBAction)startButton:(UIButton *)sender;1
 
 @end

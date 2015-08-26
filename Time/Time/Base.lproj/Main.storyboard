@@ -161,7 +161,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="startButton:" destination="2B4-K1-uof" eventType="touchUpInside" id="DdK-yg-TdR"/>
+                                            <action selector="stopwatchButton:" destination="2B4-K1-uof" eventType="touchUpInside" id="551-dw-teo"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vxd-x7-Iq1">
