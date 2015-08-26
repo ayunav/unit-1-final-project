@@ -59,6 +59,9 @@
                                                 <exclude reference="NAo-KC-cXh"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="startButtonTapped:" destination="HcB-Dy-nPx" eventType="touchUpInside" id="xOV-q1-82h"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LLH-o9-d3Z">
                                         <rect key="frame" x="500" y="40" width="50" height="50"/>

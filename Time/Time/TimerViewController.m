@@ -18,7 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *pauseButtonTapped;
 
 @property (nonatomic) NSTimer *timer;
-@property (nonatomic) NSTimeInterval *timerDuration;
+@property (nonatomic) NSTimeInterval timerDuration;
 
 @end
 
@@ -35,13 +35,17 @@
     
     [self.timerLabel setHidden:YES];
 
-    self.presetTimers = [[NSMutableArray alloc] init];
+    if (!self.presetTimers) {
+        self.presetTimers = [[NSMutableArray alloc] init];
+    }
     [self.presetTimers addObject:@"Coffee timer"];
     [self.presetTimers addObject:@"Popcorn timer"];
     
     NSInteger seconds = 60;
     //[self.timerPickerView setDatePickerMode:UIDatePickerModeCountDownTimer];
     [self.timerPickerView setCountDownDuration:seconds];
+    
+    
 }
 
 #pragma mark - Table View methods
@@ -72,21 +76,27 @@
         [self.timerLabel setHidden:NO];
         [self.timerPickerView setHidden:YES];
         [sender setTitle:@"Stop" forState: UIControlStateNormal];
+        
         NSTimer *timer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
         [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
-        //self.timerDuration = self.timerPickerView.countDownDuration;
+        self.timerDuration = self.timerPickerView.countDownDuration;
     }
 }
 
 - (void)timerFired: (NSTimer *)timer {
-    //artur's code
-//    self.timerDuration = self.timerDuration - 1;
-//    NSInteger secondsCount = self.timerDuration;
-//    NSInteger minutes = secondsCount / 60;
-//    NSInteger seconds = secondsCount - (minutes * 60);
-//    
-//    NSString *outputTimer = [NSString stringWithFormat:@"%02u:%02u", minutes, seconds];
-//    self.timerLabel.text = outputTimer;
+    self.timerDuration = self.timerDuration - 1;
+    NSInteger secondsCount = self.timerDuration;
+    NSInteger minutes = secondsCount / 60;
+    NSInteger seconds = secondsCount - (minutes * 60);
+    NSString *outputTimer = [NSString stringWithFormat:@"%02lu:%02lu", minutes, seconds];
+    
+    self.timerLabel.text = outputTimer;
+    
+//    if (nextNumber == 10) {
+        //        [timer invalidate];
+        //    }
+
+    
     
     
     //code from the exercise in class
