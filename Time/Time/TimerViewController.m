@@ -68,7 +68,7 @@
     self.hours = self.secondsCount/3600;
     self.minutes = (self.secondsCount % 3600)/60;
     self.seconds = self.secondsCount - (self.hours * 3600) - (self.minutes * 60);
-    NSLog(@"%d, %d, %d", self.hours, self.minutes, self.seconds);
+    //NSLog(@"%d, %d, %d", self.hours, self.minutes, self.seconds);
     
     self.timerLabel.text = [NSString stringWithFormat:@"%02i:%02i:%02i", self.hours, self.minutes, self.seconds];
     self.timerLabel.hidden = NO;
@@ -86,8 +86,9 @@
 }
 
 #pragma mark - Button methods
-//start & stop Button Tapped 
+//start & cancel Button Tapped
 - (IBAction)startButtonTapped:(id)sender {
+    
     NSTimeInterval duration = self.timerPickerView.countDownDuration;
     
     self.seconds = 0;
@@ -103,14 +104,17 @@
         [self.startButtonTapped setTitle:@"Start" forState:UIControlStateNormal];
         [self.pauseButtonTapped setTitle:@"Pause" forState:UIControlStateNormal];
         self.pauseButtonTapped.enabled = NO;
+        self.timerLabel.hidden = YES;
+        self.timerPickerView.hidden = NO;
         
         [self.timer invalidate];
         self.timer = nil;
         
     } else {
         
-        [self.startButtonTapped setTitle:@"Stop" forState:UIControlStateNormal];
+        [self.startButtonTapped setTitle:@"Cancel" forState:UIControlStateNormal];
         self.pauseButtonTapped.enabled = YES;
+        
         
         if (self.timer == nil) {
             self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
