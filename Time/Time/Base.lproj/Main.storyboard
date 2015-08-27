@@ -37,20 +37,20 @@
                                 <rect key="frame" x="0.0" y="229" width="600" height="125"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdu-lJ-dIR">
-                                        <rect key="frame" x="50" y="40" width="50" height="50"/>
+                                        <rect key="frame" x="50" y="22" width="80" height="80"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="33" id="A80-TD-EI1"/>
                                             <constraint firstAttribute="height" constant="30" id="NAo-KC-cXh"/>
-                                            <constraint firstAttribute="width" constant="50" id="Rbm-1j-bo1"/>
-                                            <constraint firstAttribute="height" constant="50" id="c9t-Gj-LWw"/>
+                                            <constraint firstAttribute="width" constant="80" id="Rbm-1j-bo1"/>
+                                            <constraint firstAttribute="height" constant="80" id="c9t-Gj-LWw"/>
                                         </constraints>
                                         <state key="normal" title="Start">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="25"/>
+                                                <integer key="value" value="40"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <variation key="default">
@@ -64,14 +64,14 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LLH-o9-d3Z">
-                                        <rect key="frame" x="500" y="40" width="50" height="50"/>
+                                        <rect key="frame" x="470" y="22" width="80" height="80"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="33" id="79X-6K-JZ3"/>
                                             <constraint firstAttribute="width" constant="50" id="8PS-tb-Wbv"/>
                                             <constraint firstAttribute="height" constant="30" id="DJb-9g-c64"/>
-                                            <constraint firstAttribute="width" constant="50" id="Mzt-Aq-FOq"/>
-                                            <constraint firstAttribute="height" constant="50" id="UDp-Uu-etb"/>
+                                            <constraint firstAttribute="width" constant="80" id="Mzt-Aq-FOq"/>
+                                            <constraint firstAttribute="height" constant="80" id="UDp-Uu-etb"/>
                                             <constraint firstAttribute="height" constant="50" id="mWk-RE-VpW"/>
                                         </constraints>
                                         <state key="normal" title="Pause">
@@ -79,7 +79,7 @@
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="25"/>
+                                                <integer key="value" value="40"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <variation key="default">
@@ -105,9 +105,9 @@
                                     <constraint firstItem="hdu-lJ-dIR" firstAttribute="leading" secondItem="Uvw-Ls-Pe0" secondAttribute="leading" constant="50" id="cnH-Uk-9Eq"/>
                                     <constraint firstItem="hdu-lJ-dIR" firstAttribute="leading" secondItem="Uvw-Ls-Pe0" secondAttribute="leading" constant="100" id="jhn-Y2-l2F"/>
                                     <constraint firstAttribute="trailing" secondItem="LLH-o9-d3Z" secondAttribute="trailing" constant="50" id="lLg-t0-Usa"/>
-                                    <constraint firstItem="hdu-lJ-dIR" firstAttribute="top" secondItem="Uvw-Ls-Pe0" secondAttribute="top" constant="40" id="nrM-7E-hJg"/>
+                                    <constraint firstItem="hdu-lJ-dIR" firstAttribute="top" secondItem="Uvw-Ls-Pe0" secondAttribute="top" constant="22" id="nrM-7E-hJg"/>
                                     <constraint firstItem="LLH-o9-d3Z" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Uvw-Ls-Pe0" secondAttribute="top" constant="40" id="pWb-ZS-cfH"/>
-                                    <constraint firstItem="LLH-o9-d3Z" firstAttribute="top" secondItem="Uvw-Ls-Pe0" secondAttribute="top" constant="40" id="wdq-3W-rTA"/>
+                                    <constraint firstItem="LLH-o9-d3Z" firstAttribute="top" secondItem="Uvw-Ls-Pe0" secondAttribute="top" constant="22" id="wdq-3W-rTA"/>
                                     <constraint firstAttribute="bottom" secondItem="hdu-lJ-dIR" secondAttribute="bottom" constant="48" id="yyH-WP-UMi"/>
                                 </constraints>
                                 <variation key="default">
