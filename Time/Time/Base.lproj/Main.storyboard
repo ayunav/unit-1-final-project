@@ -27,8 +27,8 @@
                                     <!--2015-08-22 21:26:48 +0000-->
                                 </date>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00 : 00 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AuF-tf-7r4">
-                                <rect key="frame" x="0.0" y="225" width="600" height="150"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AuF-tf-7r4">
+                                <rect key="frame" x="0.0" y="64" width="600" height="150"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -90,6 +90,9 @@
                                                 <exclude reference="mWk-RE-VpW"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="pauseButtonTapped:" destination="HcB-Dy-nPx" eventType="touchUpInside" id="cnq-tG-dhH"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.80000001192092896" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
@@ -163,11 +166,13 @@
                             <constraint firstItem="AuF-tf-7r4" firstAttribute="height" secondItem="s7N-SZ-Oxh" secondAttribute="height" id="fG2-A9-91N"/>
                             <constraint firstAttribute="centerY" secondItem="AuF-tf-7r4" secondAttribute="centerY" id="ffT-At-gJI"/>
                             <constraint firstItem="s7N-SZ-Oxh" firstAttribute="top" secondItem="M0e-Xr-5FA" secondAttribute="bottom" constant="15" id="gXy-aA-Kgv"/>
+                            <constraint firstItem="AuF-tf-7r4" firstAttribute="top" secondItem="M0e-Xr-5FA" secondAttribute="bottom" id="j25-d6-DFI"/>
                             <constraint firstItem="NZZ-O3-Tea" firstAttribute="top" secondItem="Uvw-Ls-Pe0" secondAttribute="bottom" id="oVg-Ab-5ST"/>
                             <constraint firstItem="NZZ-O3-Tea" firstAttribute="leading" secondItem="owJ-oR-lwS" secondAttribute="leadingMargin" constant="-16" id="rqh-rK-CJ3"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="ffT-At-gJI"/>
                                 <exclude reference="oVg-Ab-5ST"/>
                             </mask>
                         </variation>
