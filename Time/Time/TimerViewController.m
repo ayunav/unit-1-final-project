@@ -11,7 +11,7 @@
 @interface TimerViewController ()
 
 @property (nonatomic) NSTimer *timer;
-//@property (nonatomic) NSTimeInterval timerDuration;
+@property (nonatomic) NSTimeInterval timerDuration;
 @property (weak, nonatomic) IBOutlet UIDatePicker *timerPickerView;
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property (weak, nonatomic) IBOutlet UIButton *startButtonTapped;
@@ -89,11 +89,11 @@
 //start & cancel Button Tapped
 - (IBAction)startButtonTapped:(id)sender {
     
-    NSTimeInterval duration = self.timerPickerView.countDownDuration;
+    self.timerDuration = self.timerPickerView.countDownDuration;
     
     self.seconds = 0;
-    self.hours = (int)(duration/3600.0f);
-    self.minutes = ((int)duration - (self.hours * 3600))/60;
+    self.hours = (int)(self.timerDuration/3600.0f);
+    self.minutes = ((int)self.timerDuration - (self.hours * 3600))/60;
     
     self.secondsCount = ((self.hours * 3600) + (self.minutes * 60));
     
