@@ -68,7 +68,6 @@
     self.hours = self.secondsCount/3600;
     self.minutes = (self.secondsCount % 3600)/60;
     self.seconds = self.secondsCount - (self.hours * 3600) - (self.minutes * 60);
-    //NSLog(@"%d, %d, %d", self.hours, self.minutes, self.seconds);
     
     self.timerLabel.text = [NSString stringWithFormat:@"%02i:%02i:%02i", self.hours, self.minutes, self.seconds];
     self.timerLabel.hidden = NO;
