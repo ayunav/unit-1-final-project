@@ -10,6 +10,9 @@
 
 @interface CQPresetTimerViewController ()
 
+@property (nonatomic) NSString *timerName;
+
+
 @end
 
 @implementation CQPresetTimerViewController
@@ -17,6 +20,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
+    //if coffee timer
+    NSInteger seconds = 180;
+   // [self.timerPickerView setDatePickerMode:UIDatePickerModeCountDownTimer];
+    //[self.timerPickerView setCountDownDuration:seconds];
+
+    
 }
 
 - (void)didReceiveMemoryWarning {

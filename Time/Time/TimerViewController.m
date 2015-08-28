@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *startButtonTapped;
 @property (weak, nonatomic) IBOutlet UIButton *pauseButtonTapped;
 @property (weak, nonatomic) IBOutlet UITableView *timersTableView;
+
 @property (nonatomic) NSMutableArray *presetTimers;
 
 @property (nonatomic) BOOL isTimerRunning;
