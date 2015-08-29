@@ -15,7 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *swLabel;
 
 
-- (IBAction)startButton:(UIButton *)sender;
+
 
 
 @end

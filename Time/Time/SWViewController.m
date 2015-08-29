@@ -12,20 +12,19 @@
 
 @interface SWViewController () <UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, strong) Stopwatch *stopwatch;
-
-@property (strong, nonatomic) NSTimer *stopWatchTimer;
-
 @property (strong, nonatomic) NSDate *startDate;
 
 @property (nonatomic) NSTimeInterval totalSessionTime;
-
 @property (nonatomic) NSTimeInterval totalTime;
-
 @property (nonatomic, assign, readwrite) NSTimeInterval currentLapTime;
-@property (nonatomic, copy, readwrite) NSMutableArray *laps;
+
 @property (nonatomic, strong) NSDate *currentLapStartTime;
+
 @property (weak, nonatomic) IBOutlet UITableView *lapsTableView;
+
+@property (strong, nonatomic) NSTimer *stopWatchTimer;
+
+@property (nonatomic, strong) Stopwatch *stopwatch;
 
 @end
 
@@ -83,17 +82,11 @@
 
 #pragma mark - Lap Settup
 
-- (void)addLap
-{
-    [self.laps addObject:@(self.totalTime)];
-    self.currentLapStartTime = [NSDate date];
-}
-
 
 
 - (IBAction)lapButton:(id)sender {
     
-    [self addLap];
+    [self.stopwatch addLap];
     
     [self.lapsTableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]]
                               withRowAnimation:UITableViewRowAnimationNone];

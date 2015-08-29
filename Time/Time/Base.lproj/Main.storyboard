@@ -239,8 +239,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="2B4-K1-uof" id="g4m-36-rCN"/>
-                                    <outlet property="delegate" destination="2B4-K1-uof" id="PqW-sV-iNg"/>
+                                    <outlet property="dataSource" destination="2B4-K1-uof" id="BeQ-65-bXD"/>
+                                    <outlet property="delegate" destination="2B4-K1-uof" id="llg-Y7-6Is"/>
                                 </connections>
                             </tableView>
                         </subviews>
