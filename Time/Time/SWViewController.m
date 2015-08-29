@@ -7,8 +7,12 @@
 //
 
 #import "SWViewController.h"
+#import "Stopwatch.h"
+#import "Format.h"
 
 @interface SWViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, strong) Stopwatch *stopwatch;
 
 @property (strong, nonatomic) NSTimer *stopWatchTimer;
 
@@ -26,9 +30,6 @@
 @end
 
 @implementation SWViewController
-
-
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -102,7 +103,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.laps count];
+    return [self.stopwatch.laps count];
 }
 
 #pragma mark - UITableViewDelegate
@@ -111,18 +112,14 @@
 {
     UITableViewCell *cell = [self.lapsTableView dequeueReusableCellWithIdentifier:@"lapViewCell"];
     
-    unsigned long lapNumber = [[self laps] count];
-    NSNumber *lapTime = [[self laps] objectAtIndex:lapNumber - 1];
+    unsigned long lapNumber = [[self.stopwatch laps] count];
+    NSNumber *lapTime = [[self.stopwatch laps] objectAtIndex:lapNumber - 1];
     
     cell.textLabel.text = [NSString stringWithFormat:@"Lap %lu", lapNumber];
-    NSTimeInterval distance = self.totalTime + self.totalSessionTime;
-    
-
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%0.2f",distance ];
+    cell.detailTextLabel.text = [NSString tcd_formatTime:[lapTime doubleValue]];
     
     return cell;
 }
-
 
 
 @end
