@@ -12,10 +12,8 @@
 
 @property (nonatomic) CQTimer *timerObject;
 @property (nonatomic) NSMutableArray *presetTimers;
-//@property (nonatomic) NSMutableArray *timerObjects; // same as above
 @property (nonatomic) NSString *timerTitle;
 @property (nonatomic) NSTimeInterval timerDuration;
-
 
 @property (nonatomic) NSTimer *timer;
 @property (nonatomic) BOOL isTimerRunning;

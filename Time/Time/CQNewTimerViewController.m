@@ -19,14 +19,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.navigationItem.title = @"New Timer";
+
     NSInteger seconds = 60;
     [self.timerPickerView setDatePickerMode:UIDatePickerModeCountDownTimer];
     [self.timerPickerView setCountDownDuration:seconds];
     self.timerLabel.hidden = YES;
 
-    self.timerObject = [[CQTimer alloc]init];
-    NSMutableArray *presetTimers = [[NSMutableArray alloc]init];
-    self.presetTimers = presetTimers;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -111,30 +110,45 @@
     self.isTimerPaused = !self.isTimerPaused;
 }
 
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+- (IBAction)saveButtonTapped:(id)sender {
     
     // Get the element you want to pass to the next VC.
     
     CQTimer *newTimer = [[CQTimer alloc] init];
-    newTimer.timerTitle = self.timerTitle;
-    newTimer.timerDuration = self.timerDuration;
+    newTimer.timerTitle = self.timerTitleTextField.text;
+    newTimer.timerDuration = self.timerPickerView.countDownDuration;
     
-    [self.presetTimers addObject:newTimer];
-
+    [self.delegate addToTheArrayNewTimer:newTimer]; 
+    
+    
+   // [self.presetTimers addObject:newTimer];
+    
     // Get the new view controller using [segue destinationViewController].
     
-    TimerViewController *timerViewController = segue.destinationViewController;
+    //timerViewController.delegate = self;
     
     // Pass the selected object to the new view controller.
     
-    timerViewController.timerObject = newTimer;
+//    TimerViewController.timerObject = newTimer;
+//    
+//    [self.presetTimers addObject:_timerObject];
+//    self.timerObject.
+//    self.timerObject.timerTitle = timerViewController.timerObject.timerTitle;
+//    self.timerObject.timerDuration = timerViewController.timerObject.timerDuration;
+
     
-    [self.presetTimers addObject:_timerObject];
-    self.timerObject.timerTitle = timerViewController.timerObject.timerTitle;
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
+
+#pragma mark - soundPickerView methods
+
+// Number of columns in the soundPickerView (one).
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+// Number of rows (choices) in the soundPickerView (as many as there are sound alarm choices).
+//- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+//    //return [self.pickerData[component] count];
+//}
 
 @end

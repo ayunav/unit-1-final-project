@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		29E64B811B90EEFD0054E049 /* CQTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E64B801B90EEFD0054E049 /* CQTimer.m */; };
+		29E64B831B9240940054E049 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29E64B821B9240940054E049 /* Main.storyboard */; };
 		29FCC7BD1B8B76F90005B464 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29FCC7BC1B8B76F90005B464 /* Images.xcassets */; };
 		29FCC7C01B8BD2860005B464 /* CQNewTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FCC7BF1B8BD2860005B464 /* CQNewTimerViewController.m */; };
 		29FCC7C31B8BD2AE0005B464 /* CQPresetTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FCC7C21B8BD2AE0005B464 /* CQPresetTimerViewController.m */; };
 		8D05375E1B86687C00588318 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D05375D1B86687C00588318 /* main.m */; };
 		8D0537611B86687C00588318 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0537601B86687C00588318 /* AppDelegate.m */; };
-		8D0537671B86687C00588318 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D0537651B86687C00588318 /* Main.storyboard */; };
 		8D05376C1B86687C00588318 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D05376A1B86687C00588318 /* LaunchScreen.xib */; };
 		8D0537781B86687C00588318 /* TimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0537771B86687C00588318 /* TimeTests.m */; };
 		F70BE1E71B8A0ADE0079ABE5 /* SWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F70BE1E61B8A0ADE0079ABE5 /* SWViewController.m */; };
@@ -36,6 +36,7 @@
 /* Begin PBXFileReference section */
 		29E64B7F1B90EEFD0054E049 /* CQTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQTimer.h; sourceTree = "<group>"; };
 		29E64B801B90EEFD0054E049 /* CQTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQTimer.m; sourceTree = "<group>"; };
+		29E64B821B9240940054E049 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		29FCC7BC1B8B76F90005B464 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		29FCC7BE1B8BD2860005B464 /* CQNewTimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQNewTimerViewController.h; sourceTree = "<group>"; };
 		29FCC7BF1B8BD2860005B464 /* CQNewTimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQNewTimerViewController.m; sourceTree = "<group>"; };
@@ -46,7 +47,6 @@
 		8D05375D1B86687C00588318 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D05375F1B86687C00588318 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8D0537601B86687C00588318 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8D0537661B86687C00588318 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8D05376B1B86687C00588318 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		8D0537711B86687C00588318 /* TimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D0537761B86687C00588318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -116,7 +116,7 @@
 				29FCC7C21B8BD2AE0005B464 /* CQPresetTimerViewController.m */,
 				F70BE1EB1B8A0B2A0079ABE5 /* CDTableViewController.h */,
 				F70BE1EC1B8A0B2A0079ABE5 /* CDTableViewController.m */,
-				8D0537651B86687C00588318 /* Main.storyboard */,
+				29E64B821B9240940054E049 /* Main.storyboard */,
 				29FCC7BC1B8B76F90005B464 /* Images.xcassets */,
 				8D05376A1B86687C00588318 /* LaunchScreen.xib */,
 				8D05375B1B86687B00588318 /* Supporting Files */,
@@ -230,8 +230,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29E64B831B9240940054E049 /* Main.storyboard in Resources */,
 				29FCC7BD1B8B76F90005B464 /* Images.xcassets in Resources */,
-				8D0537671B86687C00588318 /* Main.storyboard in Resources */,
 				8D05376C1B86687C00588318 /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,14 +283,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8D0537651B86687C00588318 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8D0537661B86687C00588318 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8D05376A1B86687C00588318 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
