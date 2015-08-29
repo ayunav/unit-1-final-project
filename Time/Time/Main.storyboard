@@ -471,6 +471,9 @@
                                                 <exclude reference="PzS-Xu-rPu"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="startCancelButtonTapped:" destination="elD-XJ-DfP" eventType="touchUpInside" id="1eT-er-icw"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Och-1O-GS1">
                                         <rect key="frame" x="470" y="35" width="80" height="80"/>
@@ -499,6 +502,9 @@
                                                 <exclude reference="zIR-6W-kBd"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="pauseResumeButtonTapped:" destination="elD-XJ-DfP" eventType="touchUpInside" id="2Vp-XZ-J6R"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -595,6 +601,8 @@
                     <tabBarItem key="tabBarItem" title="Timer" image="timer-1" id="d6G-d6-boA"/>
                     <navigationItem key="navigationItem" id="ViI-r1-W8A" userLabel="Timer Nav Item"/>
                     <connections>
+                        <outlet property="pauseResumeButtonTapped" destination="Och-1O-GS1" id="2dC-u5-8GH"/>
+                        <outlet property="startCancelButtonTapped" destination="GUy-PT-1wI" id="Osh-P5-Twv"/>
                         <outlet property="timerLabel" destination="hUC-7J-P0j" id="4BL-VX-9co"/>
                         <outlet property="timerPickerView" destination="D32-u1-dqA" id="0E5-YI-l2z"/>
                         <outlet property="timerTitleLabel" destination="rmO-q6-rU1" id="iMD-wX-nSw"/>
