@@ -25,7 +25,6 @@
     [self.timerPickerView setDatePickerMode:UIDatePickerModeCountDownTimer];
     [self.timerPickerView setCountDownDuration:seconds];
     self.timerLabel.hidden = YES;
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -110,9 +109,9 @@
     self.isTimerPaused = !self.isTimerPaused;
 }
 
+#pragma mark - Save new Timer ButtonTapped method
+// This method below (a delegate method) is used to push new VC and pass data to it programmatically via delegate methods. When we push new VC via the segue action in the storyboard, we implement the method below via prepareForSegue method. We don't need prepareForSegue method if we do it programmatically as below.
 - (IBAction)saveButtonTapped:(id)sender {
-    
-    // Get the element you want to pass to the next VC.
     
     CQTimer *newTimer = [[CQTimer alloc] init];
     newTimer.timerTitle = self.timerTitleTextField.text;
@@ -120,32 +119,15 @@
     
     [self.delegate addToTheArrayNewTimer:newTimer]; 
     
-    
-   // [self.presetTimers addObject:newTimer];
-    
-    // Get the new view controller using [segue destinationViewController].
-    
-    //timerViewController.delegate = self;
-    
-    // Pass the selected object to the new view controller.
-    
-//    TimerViewController.timerObject = newTimer;
-//    
-//    [self.presetTimers addObject:_timerObject];
-//    self.timerObject.
-//    self.timerObject.timerTitle = timerViewController.timerObject.timerTitle;
-//    self.timerObject.timerDuration = timerViewController.timerObject.timerDuration;
-
-    
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 #pragma mark - soundPickerView methods
 
-// Number of columns in the soundPickerView (one).
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    return 1;
-}
+//// Number of columns in the soundPickerView (one).
+//- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+//    return 1;
+//}
 // Number of rows (choices) in the soundPickerView (as many as there are sound alarm choices).
 //- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
 //    //return [self.pickerData[component] count];

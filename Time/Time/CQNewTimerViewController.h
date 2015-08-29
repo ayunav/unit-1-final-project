@@ -15,7 +15,7 @@
 
 @end
 
-@interface CQNewTimerViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
+@interface CQNewTimerViewController : UIViewController //<UIPickerViewDataSource, UIPickerViewDelegate>
 
 // Delegate property adheres to this protocol NewTimerDelegate. The delegate (it could be any object because its type is id) must implement the methods inside the protocol.
 @property (nonatomic, weak) id <NewTimerDelegate> delegate;
