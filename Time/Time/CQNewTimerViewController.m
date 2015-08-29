@@ -19,43 +19,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.timerObject = [[CQTimer alloc]init];
-    NSMutableArray *presetTimers = [[NSMutableArray alloc]init];
-    self.presetTimers = presetTimers;
-    self.timerLabel.hidden = YES;
-    
     NSInteger seconds = 60;
     [self.timerPickerView setDatePickerMode:UIDatePickerModeCountDownTimer];
     [self.timerPickerView setCountDownDuration:seconds];
+    self.timerLabel.hidden = YES;
+
+    self.timerObject = [[CQTimer alloc]init];
+    NSMutableArray *presetTimers = [[NSMutableArray alloc]init];
+    self.presetTimers = presetTimers;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    NSLog(@"check");
-    
-    CQTimer *newTimer = [[CQTimer alloc] init];
-    newTimer.timerTitle = self.timerTitle;
-    newTimer.timerDuration = self.timerDuration;
-    
-    [self.presetTimers addObject:newTimer];
-    
-    TimerViewController *timerViewController = segue.destinationViewController;
-    timerViewController.timerObject = newTimer;
-    
-    [self.presetTimers addObject:_timerObject];
-    self.timerObject.timerTitle = timerViewController.timerObject.timerTitle;
-}
-
 #pragma mark - Button methods 
-
-
-- (IBAction)doneButtonTapped:(id)sender {
-    
-    
-}
 
 - (void)timerFired: (NSTimer *)timer {
     self.secondsCount--;
@@ -75,7 +53,6 @@
         
         [self.startCancelButtonTapped setTitle:@"Start" forState:UIControlStateNormal];
         self.pauseResumeButtonTapped.enabled = NO;
-        
     }
 }
 
@@ -134,15 +111,30 @@
     self.isTimerPaused = !self.isTimerPaused;
 }
 
-
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    // Get the element you want to pass to the next VC.
+    
+    CQTimer *newTimer = [[CQTimer alloc] init];
+    newTimer.timerTitle = self.timerTitle;
+    newTimer.timerDuration = self.timerDuration;
+    
+    [self.presetTimers addObject:newTimer];
+
     // Get the new view controller using [segue destinationViewController].
+    
+    TimerViewController *timerViewController = segue.destinationViewController;
+    
     // Pass the selected object to the new view controller.
+    
+    timerViewController.timerObject = newTimer;
+    
+    [self.presetTimers addObject:_timerObject];
+    self.timerObject.timerTitle = timerViewController.timerObject.timerTitle;
 }
-*/
 
 @end

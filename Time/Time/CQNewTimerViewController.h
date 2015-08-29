@@ -32,7 +32,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *pauseResumeButtonTapped;
 @property (weak, nonatomic) IBOutlet UITextField *timerTitleTextField;
 @property (weak, nonatomic) IBOutlet UIPickerView *soundPickerView;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *doneButtonTapped;
 
 
 @end
