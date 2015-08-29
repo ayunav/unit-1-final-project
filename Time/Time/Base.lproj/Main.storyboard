@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Mud-4m-yGr">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -20,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="s7N-SZ-Oxh">
+                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="s7N-SZ-Oxh">
                                 <rect key="frame" x="0.0" y="73" width="600" height="162"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="umQ-Bs-EYR"/>
@@ -29,13 +28,13 @@
                                     <!--2015-08-22 21:26:48 +0000-->
                                 </date>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AuF-tf-7r4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AuF-tf-7r4">
                                 <rect key="frame" x="0.0" y="64" width="600" height="150"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uvw-Ls-Pe0" userLabel="ButtonsView">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uvw-Ls-Pe0" userLabel="ButtonsView">
                                 <rect key="frame" x="0.0" y="229" width="600" height="125"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdu-lJ-dIR">
@@ -124,7 +123,7 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="NZZ-O3-Tea">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="NZZ-O3-Tea">
                                 <rect key="frame" x="0.0" y="354" width="600" height="197"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -807,7 +806,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BeZ-lv-cYp">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BeZ-lv-cYp">
                                 <rect key="frame" x="0.0" y="424" width="600" height="127"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RbX-tM-uSp">
@@ -861,10 +860,10 @@
                                     <!--2015-08-22 21:26:48 +0000-->
                                 </date>
                             </datePicker>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Fs-TL-jxG">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Fs-TL-jxG">
                                 <rect key="frame" x="0.0" y="192" width="600" height="232"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XU0-lM-bKE" userLabel="Title Text Field">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XU0-lM-bKE" userLabel="Title Text Field">
                                         <rect key="frame" x="252" y="101" width="97" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="97" id="2xk-Zm-Aht"/>
@@ -1005,9 +1004,6 @@
                                                 <exclude reference="PzS-Xu-rPu"/>
                                             </mask>
                                         </variation>
-                                        <connections>
-                                            <action selector="startButtonTapped:" destination="elD-XJ-DfP" eventType="touchUpInside" id="F8U-eM-Tcd"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Och-1O-GS1">
                                         <rect key="frame" x="470" y="22" width="80" height="92"/>
@@ -1036,9 +1032,6 @@
                                                 <exclude reference="zIR-6W-kBd"/>
                                             </mask>
                                         </variation>
-                                        <connections>
-                                            <action selector="pauseButtonTapped:" destination="elD-XJ-DfP" eventType="touchUpInside" id="1Qi-59-dAd"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1166,8 +1159,6 @@
                         <barButtonItem key="rightBarButtonItem" title="New Timer" id="idw-0h-H0s" userLabel="New Timer"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="pauseButtonTapped" destination="Och-1O-GS1" id="z0Y-wN-0PG"/>
-                        <outlet property="startButtonTapped" destination="GUy-PT-1wI" id="lGU-h0-pXx"/>
                         <outlet property="timerLabel" destination="hUC-7J-P0j" id="ddw-4r-EdC"/>
                         <outlet property="timerPickerView" destination="D32-u1-dqA" id="Qb0-cn-GM1"/>
                     </connections>
@@ -1262,10 +1253,10 @@
                                         </userDefinedRuntimeAttributes>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="twS-QZ-lus"/>
-                                                <exclude reference="Jct-Do-jV2"/>
                                                 <exclude reference="4NY-fC-aaU"/>
+                                                <exclude reference="Jct-Do-jV2"/>
                                                 <exclude reference="jNS-Gx-xzR"/>
+                                                <exclude reference="twS-QZ-lus"/>
                                             </mask>
                                         </variation>
                                         <connections>
@@ -1294,17 +1285,17 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="pBI-NN-flx"/>
-                                        <exclude reference="kZ7-0E-7hv"/>
                                         <exclude reference="cpr-N1-pJ1"/>
                                         <exclude reference="eZx-2x-cby"/>
-                                        <exclude reference="bRl-Bu-IYf"/>
-                                        <exclude reference="pqE-Ot-edh"/>
+                                        <exclude reference="kZ7-0E-7hv"/>
+                                        <exclude reference="pBI-NN-flx"/>
                                         <exclude reference="6BP-pa-vuf"/>
-                                        <exclude reference="nAg-RE-ebL"/>
-                                        <exclude reference="iPm-WT-AbS"/>
-                                        <exclude reference="e6F-ZW-O5k"/>
                                         <exclude reference="7fa-zz-1Mr"/>
+                                        <exclude reference="bRl-Bu-IYf"/>
+                                        <exclude reference="e6F-ZW-O5k"/>
+                                        <exclude reference="iPm-WT-AbS"/>
+                                        <exclude reference="nAg-RE-ebL"/>
+                                        <exclude reference="pqE-Ot-edh"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -1396,11 +1387,11 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="zh8-ee-2E5"/>
                                 <exclude reference="8gg-Fa-VrF"/>
-                                <exclude reference="sED-mm-hXg"/>
+                                <exclude reference="zh8-ee-2E5"/>
                                 <exclude reference="ARA-tH-f8o"/>
                                 <exclude reference="XXl-wL-ChJ"/>
+                                <exclude reference="sED-mm-hXg"/>
                                 <exclude reference="cer-w2-8k5"/>
                                 <exclude reference="BKh-5A-Qys"/>
                                 <exclude reference="dPx-Bq-3Ts"/>
@@ -1412,13 +1403,11 @@
                     <navigationItem key="navigationItem" id="m6X-Tb-0LR" userLabel="Timer Nav Item">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="tV7-aB-iF0">
                             <connections>
-                                <action selector="doneButtonTapped:" destination="lEq-RJ-9he" id="qhz-JQ-YOG"/>
                                 <segue destination="HcB-Dy-nPx" kind="show" id="yjd-tj-cCC"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="doneButtonTapped" destination="tV7-aB-iF0" id="xFh-Qa-KHY"/>
                         <outlet property="pauseResumeButtonTapped" destination="mgx-oJ-zIJ" id="ZYy-I8-Z3D"/>
                         <outlet property="soundPickerView" destination="gjM-UT-3j7" id="BAo-dH-8td"/>
                         <outlet property="startCancelButtonTapped" destination="7K8-Mk-i6J" id="5wT-F5-I36"/>
