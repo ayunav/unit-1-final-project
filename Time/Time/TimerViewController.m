@@ -9,6 +9,7 @@
 #import "TimerViewController.h"
 #import "CQTimer.h"
 #import "CQNewTimerViewController.h"
+#import "CQPresetTimerViewController.h"
 
 @interface TimerViewController () <NewTimerDelegate>
 
@@ -187,4 +188,50 @@
     [self.presetTimers addObject:newTimer];
     [self.timersTableView reloadData]; 
 }
+
+#pragma mark - prepareForSegue to PresetTimerVC method
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    CQPresetTimerViewController *presetTimerVC = [self.storyboard instantiateViewControllerWithIdentifier:@"PresetTimerViewController"];
+    
+    CQTimer *objectToPush = self.presetTimers[indexPath.row];
+    
+    presetTimerVC.timerObject = objectToPush;
+    
+    [self.navigationController pushViewController:presetTimerVC animated:YES];
+    
+
+}
+
+//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+//
+//    
+//    if ([segue.destinationViewController isKindOfClass:[CQPresetTimerViewController class]]) {
+//        //
+//    }
+
+    
+    
+
+    
+    
+    //    WendPlanCharacter *newCharacter = [[WendPlanCharacter alloc] init];
+//    newCharacter.planString = self.plans;
+//    newCharacter.celebString = self.celeb;
+//    newCharacter.foodString = self.food;
+//    newCharacter.alcoholString = self.alcohol;
+//    newCharacter.plansImage = self.planImage;
+//    newCharacter.titleString = self.titleToDisplayInMainTableVC;
+//    
+//    [self.titles addObject:newCharacter];
+//    
+//    ResultsPageViewController *resultsPageViewController = segue.destinationViewController;
+//    resultsPageViewController.character = newCharacter;
+//    
+//    [self.wendPlansObjects addObject:_planCharacter];
+//    self.planCharacter.planString = resultsPageViewController.planOne;
+//    
+//}
+
 @end
