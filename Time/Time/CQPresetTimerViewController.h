@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CQTimer.h"
 
 @interface CQPresetTimerViewController : UIViewController
+
+@property (nonatomic) CQTimer *timerObject;
+@property (weak, nonatomic) IBOutlet UIDatePicker *timerPickerView;
+@property (weak, nonatomic) IBOutlet UILabel *timerLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timerTitleLabel;
 
 @end

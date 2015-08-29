@@ -7,13 +7,10 @@
 //
 
 #import "CQPresetTimerViewController.h"
-#import "CQTimer.h"
+#import "TimerViewController.h"
 
-@interface CQPresetTimerViewController ()
+@interface CQPresetTimerViewController () <PresetTimerDelegate>
 
-@property (nonatomic) CQTimer *timerObject;
-@property (weak, nonatomic) IBOutlet UIDatePicker *timerPickerView;
-@property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 
 @end
 
@@ -23,8 +20,8 @@
     [super viewDidLoad];
 
     self.timerPickerView.hidden = YES;
-    self.timerLabel.text = self.timerObject.timerTitle;
-    
+//    self.timerLabel.text = self.timerObject.timerDuration;
+    self.timerTitleLabel.text = self.timerObject.timerTitle;
 }
 
 - (void)didReceiveMemoryWarning {
