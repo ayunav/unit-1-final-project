@@ -8,65 +8,120 @@
 
 #import "SWViewController.h"
 
-@interface SWViewController ()
+@interface SWViewController () <UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic) NSTimer *timer;
+@property (strong, nonatomic) NSTimer *stopWatchTimer;
 
-@property (nonatomic) NSDate *startTime;
+@property (strong, nonatomic) NSDate *startDate;
 
 @property (nonatomic) NSTimeInterval totalSessionTime;
 
 @property (nonatomic) NSTimeInterval totalTime;
 
+@property (nonatomic, assign, readwrite) NSTimeInterval currentLapTime;
+@property (nonatomic, copy, readwrite) NSMutableArray *laps;
+@property (nonatomic, strong) NSDate *currentLapStartTime;
+@property (weak, nonatomic) IBOutlet UITableView *lapsTableView;
 
 @end
 
 @implementation SWViewController
 
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.swLabel.text = @"00:00:00";
+    self.swLabel.text = @"00:00:00.000";
     
+    
+   // self.lapView.dataSource = self;
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 
 - (IBAction)stopwatchButton:(id)sender {
+  
+    self.startDate = [[NSDate alloc]init];
     
-    
-    // set self.startTime to now. Always initializes to current date and time
-    self.startTime = [[NSDate alloc] init];
-    // setup timer
-    self.timer = [NSTimer timerWithTimeInterval:1/60.0 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
-    // add timer to the run loop
-    [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
-    [sender setTitle:@"STOP" forState:UIControlStateNormal];
-        
-    
-    
+    //create the stop watch timer that fires every 100 ms
+    self.stopWatchTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
+ 
 }
 
-- (void)timerFired:(NSTimer *)timer {
+- (IBAction)stopwatchPause:(id)sender {
     
-    // get the current time
-    NSDate *now = [[NSDate alloc] init];
+    self.totalTime = self.totalTime + self.totalSessionTime;
     
-    self.totalSessionTime = [now timeIntervalSinceDate:self.startTime];
-    NSTimeInterval distance =  self.totalTime + self.totalSessionTime;
+    [self.stopWatchTimer invalidate];
+
+}
+
+-(void)updateTimer {
+    
+    //create date from the elapsed time
+    NSDate *currentDate = [[NSDate alloc] init];
+    NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:self.startDate];
+    NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
+    
+    //create a date formatter
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat:@"HH:mm:ss.SSS"];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
+    
+    //formtat the elapsed time and set it to the label
+    NSString *timeString = [dateFormatter stringFromDate:timerDate];
+    self.swLabel.text= timeString;
+    
+    self.totalSessionTime = [currentDate timeIntervalSinceDate:self.startDate];
+    NSTimeInterval distance = self.totalTime + self.totalSessionTime;
     
     self.swLabel.text = [NSString stringWithFormat:@"%0.2f", distance];
-   
+    
+}
+
+#pragma mark - Lap Settup
+
+- (void)addLap
+{
+    [self.laps addObject:@(self.totalTime)];
+    self.currentLapStartTime = [NSDate date];
 }
 
 
 
+- (IBAction)lapButton:(id)sender {
+    
+    [self addLap];
+    
+    [self.lapsTableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]]
+                              withRowAnimation:UITableViewRowAnimationNone];
+}
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.laps count];
+}
+
+#pragma mark - UITableViewDelegate
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [self.lapsTableView dequeueReusableCellWithIdentifier:@"lapViewCell"];
+    
+    unsigned long lapNumber = [[self laps] count];
+    NSNumber *lapTime = [[self laps] objectAtIndex:lapNumber - 1];
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"Lap %lu", lapNumber];
+    NSTimeInterval distance = self.totalTime + self.totalSessionTime;
+    
+
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%0.2f",distance ];
+    
+    return cell;
+}
 
 
 
