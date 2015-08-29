@@ -1176,7 +1176,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Save" id="tV7-aB-iF0">
                             <connections>
                                 <action selector="doneButtonTapped:" destination="lEq-RJ-9he" id="qhz-JQ-YOG"/>
-                                <segue destination="HcB-Dy-nPx" kind="show" id="Te0-Ln-ccO"/>
+                                <segue destination="HcB-Dy-nPx" kind="show" id="yjd-tj-cCC"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1193,7 +1193,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kcC-RJ-kpC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1335" y="272"/>
+            <point key="canvasLocation" x="1313" y="78"/>
         </scene>
     </scenes>
     <resources>
@@ -1202,6 +1202,6 @@
         <image name="timer-1" width="11" height="11"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Te0-Ln-ccO"/>
+        <segue reference="yjd-tj-cCC"/>
     </inferredMetricsTieBreakers>
 </document>
