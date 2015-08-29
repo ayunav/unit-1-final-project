@@ -56,9 +56,6 @@
     //control dragging from tableview in the storyboard to the timer itself and setting it to its datasource and delegates implements the code below
     //    self.timersTableView.dataSource = self;
     //    self.timersTableView.delegate = self;
-    
-    //do I need the line of code below?
-    //    [self.timersTableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -174,15 +171,17 @@
     return cell;
 }
 
+#pragma mark - New Timer button tapped method
+
 - (IBAction)newTimerButtonTapped:(UIBarButtonItem *)sender {
     if([sender.title isEqualToString:@"New Timer"]){
         CQNewTimerViewController *newTimerVC = [self.storyboard instantiateViewControllerWithIdentifier:@"NewTimerViewController"];
         newTimerVC.delegate = self;
-        NSLog(@"working");
         [self.navigationController pushViewController:newTimerVC animated:YES];
-        
     }
 }
+
+#pragma mark - Delegate methods 
 
 - (void) addToTheArrayNewTimer:(CQTimer *)newTimer {
     [self.presetTimers addObject:newTimer];

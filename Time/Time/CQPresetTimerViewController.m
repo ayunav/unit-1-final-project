@@ -7,11 +7,13 @@
 //
 
 #import "CQPresetTimerViewController.h"
+#import "CQTimer.h"
 
 @interface CQPresetTimerViewController ()
 
-@property (nonatomic) NSString *timerName;
-
+@property (nonatomic) CQTimer *timerObject;
+@property (weak, nonatomic) IBOutlet UIDatePicker *timerPickerView;
+@property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 
 @end
 
@@ -19,20 +21,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    
-    //if coffee timer
-    NSInteger seconds = 180;
-   // [self.timerPickerView setDatePickerMode:UIDatePickerModeCountDownTimer];
-    //[self.timerPickerView setCountDownDuration:seconds];
 
+    self.timerPickerView.hidden = YES;
+    self.timerLabel.text = self.timerObject.timerTitle;
     
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 /*
