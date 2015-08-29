@@ -170,18 +170,6 @@
     timerTemp = [self.presetTimers objectAtIndex:indexPath.row];
     
     cell.textLabel.text = timerTemp.timerTitle;
-    
-    //NOTE Delete and reconfigure to use CQTimer --> below is a stop gag method
-//
-//    if (indexPath.row >=2) {
-//        timerTemp = [self.presetTimers objectAtIndex:indexPath.row];
-//        cell.textLabel.text = timerTemp.timerTitle;
-//    }
-//    
-//    else{
-//    cell.textLabel.text = [self.presetTimers objectAtIndex:indexPath.row];
-//    }
-    
 
     return cell;
 }

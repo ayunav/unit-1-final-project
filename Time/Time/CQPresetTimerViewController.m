@@ -9,8 +9,22 @@
 #import "CQPresetTimerViewController.h"
 #import "TimerViewController.h"
 
-@interface CQPresetTimerViewController () //<PresetTimerDelegate>
+@interface CQPresetTimerViewController () 
 
+@property (nonatomic) NSTimer *timer;
+
+@property (nonatomic) int secondsCount;
+@property (nonatomic) int hours;
+@property (nonatomic) int minutes;
+@property (nonatomic) int seconds;
+
+@property (nonatomic) BOOL isTimerRunning;
+@property (nonatomic) BOOL isTimerPaused;
+
+@property (nonatomic) NSTimeInterval timerDuration;
+
+@property (weak, nonatomic) IBOutlet UIButton *startCancelButtonTapped;
+@property (weak, nonatomic) IBOutlet UIButton *pauseResumeButtonTapped;
 
 @end
 
@@ -20,7 +34,15 @@
     [super viewDidLoad];
 
     self.timerPickerView.hidden = YES;
-//    self.timerLabel.text = self.timerObject.timerDuration;
+//    self.timerObject.timerDuration = self.timerPickerView.countDownDuration;
+    self.timerPickerView.countDownDuration = self.timerObject.secondsCount;
+    self.hours = self.secondsCount/3600;
+    self.minutes = (self.secondsCount % 3600)/60;
+    self.seconds = self.secondsCount - (self.hours * 3600) - (self.minutes * 60);
+    
+    self.timerLabel.text = [NSString stringWithFormat:@"%02i:%02i:%02i", self.hours, self.minutes, self.seconds];
+    
+    // self.timerLabel.text = self.timerObject.timerDuration;
     self.timerTitleLabel.text = self.timerObject.timerTitle;
 }
 
@@ -28,14 +50,81 @@
     [super didReceiveMemoryWarning];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)timerFired: (NSTimer *)timer {
+    self.secondsCount--;
+    
+    self.hours = self.secondsCount/3600;
+    self.minutes = (self.secondsCount % 3600)/60;
+    self.seconds = self.secondsCount - (self.hours * 3600) - (self.minutes * 60);
+    
+    self.timerLabel.text = [NSString stringWithFormat:@"%02i:%02i:%02i", self.hours, self.minutes, self.seconds];
+    self.timerLabel.hidden = NO;
+    self.timerPickerView.hidden = YES;
+    
+    if (self.secondsCount <= 0) {
+        
+        [self.timer invalidate];
+        self.timer = nil;
+        
+        [self.startCancelButtonTapped setTitle:@"Start" forState:UIControlStateNormal];
+        self.pauseResumeButtonTapped.enabled = NO;
+    }
 }
-*/
+
+- (IBAction)startCancelButtonTapped:(id)sender {
+    self.timerDuration = self.timerPickerView.countDownDuration;
+    
+    self.seconds = 0;
+    self.hours = (int)(self.timerDuration/3600.0f);
+    self.minutes = ((int)self.timerDuration - (self.hours * 3600))/60;
+    
+    self.secondsCount = ((self.hours * 3600) + (self.minutes * 60));
+    
+    self.timerLabel.text = [NSString stringWithFormat:@"%02i:%02i:%02i", self.hours, self.minutes, self.seconds];
+    
+    if (self.isTimerRunning == YES) {
+        
+        [self.startCancelButtonTapped setTitle:@"Start" forState:UIControlStateNormal];
+        [self.pauseResumeButtonTapped setTitle:@"Pause" forState:UIControlStateNormal];
+        self.pauseResumeButtonTapped.enabled = NO;
+        self.timerLabel.hidden = YES;
+        self.timerPickerView.hidden = NO;
+        
+        [self.timer invalidate];
+        self.timer = nil;
+        
+    } else {
+        
+        [self.startCancelButtonTapped setTitle:@"Cancel" forState:UIControlStateNormal];
+        self.pauseResumeButtonTapped.enabled = YES;
+        
+        
+        if (self.timer == nil) {
+            self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
+        }
+    }
+    
+    self.isTimerRunning = !self.isTimerRunning;
+}
+
+- (IBAction)pauseResumeButtonTapped:(id)sender {
+    if (self.isTimerPaused == NO) {
+        [self.timer invalidate];
+        self.timer = nil;
+        
+        [self.pauseResumeButtonTapped setTitle:@"Resume" forState:UIControlStateNormal];
+        
+    } else {
+        if (self.timer) {
+            [self.timer invalidate];
+            self.timer = nil;
+        }
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
+        [self.pauseResumeButtonTapped setTitle:@"Pause" forState:UIControlStateNormal];
+    }
+    
+    self.isTimerPaused = !self.isTimerPaused;
+}
+
 
 @end
