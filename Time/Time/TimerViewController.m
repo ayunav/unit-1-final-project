@@ -51,10 +51,18 @@
     if (!self.presetTimers) {
         self.presetTimers = [[NSMutableArray alloc] init];
     }
-    [self.presetTimers addObject:@"Coffee timer"];
-    [self.presetTimers addObject:@"Popcorn timer"];
-
-    //control dragging from tableview in the storyboard to the timer itself and setting it to its datasource and delegates implements the code below
+    
+    CQTimer *coffeeTimer = [[CQTimer alloc] init];
+    coffeeTimer.timerTitle = @"Coffee timer";
+//    coffeeTimer.timerDuration = ;
+    [self.presetTimers addObject:coffeeTimer];
+    
+    CQTimer *popcornTimer = [[CQTimer alloc] init];
+    popcornTimer.timerTitle = @"Popcorn timer";
+//    popcornTimer.timerDuration =
+    [self.presetTimers addObject:popcornTimer];
+    
+    // Control dragging from tableview in the storyboard to the timer itself and setting it to its datasource and delegates implements the code below
     //    self.timersTableView.dataSource = self;
     //    self.timersTableView.delegate = self;
 }
@@ -155,18 +163,24 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     UITableViewCell *cell = [self.timersTableView dequeueReusableCellWithIdentifier:@"TimerCellIdentifier" forIndexPath:indexPath];
-    //NOTE Delete and reconfigure to use CQTimer --> below is a stop gag method
+    
     CQTimer *timerTemp;
+    timerTemp = [self.presetTimers objectAtIndex:indexPath.row];
     
-    if (indexPath.row >=2) {
-        timerTemp = [self.presetTimers objectAtIndex:indexPath.row];
-        cell.textLabel.text = timerTemp.timerTitle;
-    }
+    cell.textLabel.text = timerTemp.timerTitle;
     
-    else{
-    cell.textLabel.text = [self.presetTimers objectAtIndex:indexPath.row];
-    }
+    //NOTE Delete and reconfigure to use CQTimer --> below is a stop gag method
+//
+//    if (indexPath.row >=2) {
+//        timerTemp = [self.presetTimers objectAtIndex:indexPath.row];
+//        cell.textLabel.text = timerTemp.timerTitle;
+//    }
+//    
+//    else{
+//    cell.textLabel.text = [self.presetTimers objectAtIndex:indexPath.row];
+//    }
     
 
     return cell;
@@ -175,7 +189,9 @@
 #pragma mark - New Timer button tapped method
 
 - (IBAction)newTimerButtonTapped:(UIBarButtonItem *)sender {
+    
     if([sender.title isEqualToString:@"New Timer"]){
+    
         CQNewTimerViewController *newTimerVC = [self.storyboard instantiateViewControllerWithIdentifier:@"NewTimerViewController"];
         newTimerVC.delegate = self;
         [self.navigationController pushViewController:newTimerVC animated:YES];
@@ -189,49 +205,18 @@
     [self.timersTableView reloadData]; 
 }
 
-#pragma mark - prepareForSegue to PresetTimerVC method
+#pragma mark - didSelectRowAtIndexPath
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     CQPresetTimerViewController *presetTimerVC = [self.storyboard instantiateViewControllerWithIdentifier:@"PresetTimerViewController"];
     
-    CQTimer *objectToPush = self.presetTimers[indexPath.row];
+    CQTimer *timerObject = self.presetTimers[indexPath.row];
     
-    presetTimerVC.timerObject = objectToPush;
+    presetTimerVC.timerObject = timerObject;
     
     [self.navigationController pushViewController:presetTimerVC animated:YES];
     
-
 }
-
-//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-//
-//    
-//    if ([segue.destinationViewController isKindOfClass:[CQPresetTimerViewController class]]) {
-//        //
-//    }
-
-    
-    
-
-    
-    
-    //    WendPlanCharacter *newCharacter = [[WendPlanCharacter alloc] init];
-//    newCharacter.planString = self.plans;
-//    newCharacter.celebString = self.celeb;
-//    newCharacter.foodString = self.food;
-//    newCharacter.alcoholString = self.alcohol;
-//    newCharacter.plansImage = self.planImage;
-//    newCharacter.titleString = self.titleToDisplayInMainTableVC;
-//    
-//    [self.titles addObject:newCharacter];
-//    
-//    ResultsPageViewController *resultsPageViewController = segue.destinationViewController;
-//    resultsPageViewController.character = newCharacter;
-//    
-//    [self.wendPlansObjects addObject:_planCharacter];
-//    self.planCharacter.planString = resultsPageViewController.planOne;
-//    
-//}
 
 @end

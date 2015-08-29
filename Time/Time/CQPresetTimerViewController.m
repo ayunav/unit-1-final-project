@@ -9,7 +9,7 @@
 #import "CQPresetTimerViewController.h"
 #import "TimerViewController.h"
 
-@interface CQPresetTimerViewController () <PresetTimerDelegate>
+@interface CQPresetTimerViewController () //<PresetTimerDelegate>
 
 
 @end
