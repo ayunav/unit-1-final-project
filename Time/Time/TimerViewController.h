@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CQTimer.h"
 
 @interface TimerViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic) CQTimer *timerObject;
 
 @end
