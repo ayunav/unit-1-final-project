@@ -10,7 +10,7 @@
 #import "CQTimer.h"
 #import "CQNewTimerViewController.h"
 
-@interface TimerViewController ()
+@interface TimerViewController () <NewTimerDelegate>
 
 @property (nonatomic) NSTimer *timer;
 @property (nonatomic) NSTimeInterval timerDuration;
@@ -158,18 +158,34 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [self.timersTableView dequeueReusableCellWithIdentifier:@"TimerCellIdentifier" forIndexPath:indexPath];
+    //NOTE Delete and reconfigure to use CQTimer --> below is a stop gag method
+    CQTimer *timerTemp;
+    
+    if (indexPath.row >=2) {
+        timerTemp = [self.presetTimers objectAtIndex:indexPath.row];
+        cell.textLabel.text = timerTemp.timerTitle;
+    }
+    
+    else{
     cell.textLabel.text = [self.presetTimers objectAtIndex:indexPath.row];
+    }
+    
+
     return cell;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)newTimerButtonTapped:(UIBarButtonItem *)sender {
+    if([sender.title isEqualToString:@"New Timer"]){
+        CQNewTimerViewController *newTimerVC = [self.storyboard instantiateViewControllerWithIdentifier:@"NewTimerViewController"];
+        newTimerVC.delegate = self;
+        NSLog(@"working");
+        [self.navigationController pushViewController:newTimerVC animated:YES];
+        
+    }
 }
-*/
 
+- (void) addToTheArrayNewTimer:(CQTimer *)newTimer {
+    [self.presetTimers addObject:newTimer];
+    [self.timersTableView reloadData]; 
+}
 @end
