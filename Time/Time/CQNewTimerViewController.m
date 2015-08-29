@@ -24,6 +24,7 @@
     NSInteger seconds = 60;
     [self.timerPickerView setDatePickerMode:UIDatePickerModeCountDownTimer];
     [self.timerPickerView setCountDownDuration:seconds];
+    
     self.timerLabel.hidden = YES;
 }
 
@@ -110,7 +111,7 @@
 }
 
 #pragma mark - Save new Timer ButtonTapped method
-// This method below (a delegate method) is used to push new VC and pass data to it programmatically via delegate methods. When we push new VC via the segue action in the storyboard, we implement the method below via prepareForSegue method. We don't need prepareForSegue method if we do it programmatically as below.
+// The delegate method below is used to push new VC and pass data to it programmatically. When new VC is pushed in the storyboard through segue action, the method below should be implemented via prepareForSegue method. We don't need prepareForSegue method if we do it programmatically as below.
 - (IBAction)saveButtonTapped:(id)sender {
     
     CQTimer *newTimer = [[CQTimer alloc] init];

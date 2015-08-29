@@ -23,13 +23,5 @@
 @property (nonatomic) int hours;
 @property (nonatomic) int minutes;
 @property (nonatomic) int seconds;
-//@property (weak, nonatomic) IBOutlet UIDatePicker *timerPickerView;
-//@property (weak, nonatomic) IBOutlet UILabel *timerLabel;
-//@property (weak, nonatomic) IBOutlet UIButton *startButtonTapped;
-//@property (weak, nonatomic) IBOutlet UIButton *pauseButtonTapped;
-//@property (weak, nonatomic) IBOutlet UITableView *timersTableView;
-//@property (nonatomic) UIImage *timerBackgroundImage;
-//@property (nonatomic) UIPickerView *alarmSound;//? not sure if typerd properly
-
 
 @end
