@@ -947,7 +947,7 @@
         <!--Preset Timer-->
         <scene sceneID="z7Z-tk-QPC">
             <objects>
-                <viewController id="elD-XJ-DfP" userLabel="Preset Timer" customClass="TimerViewController" sceneMemberID="viewController">
+                <viewController id="elD-XJ-DfP" userLabel="Preset Timer" customClass="CQPresetTimerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="a5i-dS-xWd"/>
                         <viewControllerLayoutGuide type="bottom" id="BOD-ou-JAL"/>
@@ -1179,7 +1179,7 @@
         <!--New Timer-->
         <scene sceneID="oB9-xT-DBr">
             <objects>
-                <viewController id="lEq-RJ-9he" userLabel="New Timer" customClass="TimerViewController" sceneMemberID="viewController">
+                <viewController id="lEq-RJ-9he" userLabel="New Timer" customClass="CQNewTimerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EPC-g1-DWw"/>
                         <viewControllerLayoutGuide type="bottom" id="lgo-hE-dDk"/>
@@ -1238,7 +1238,7 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <action selector="startButtonTapped:" destination="lEq-RJ-9he" eventType="touchUpInside" id="xdJ-d3-iGv"/>
+                                            <action selector="startCancelButtonTapped:" destination="lEq-RJ-9he" eventType="touchUpInside" id="45N-DK-Wly"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgx-oJ-zIJ">
@@ -1269,7 +1269,7 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <action selector="pauseButtonTapped:" destination="lEq-RJ-9he" eventType="touchUpInside" id="EZR-m8-Vkp"/>
+                                            <action selector="pauseResumeButtonTapped:" destination="lEq-RJ-9he" eventType="touchUpInside" id="9De-bG-eZv"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1410,18 +1410,27 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Timer" image="timer-1" id="xO8-Xu-ZR5"/>
                     <navigationItem key="navigationItem" id="m6X-Tb-0LR" userLabel="Timer Nav Item">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="tV7-aB-iF0" userLabel="New Timer"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="tV7-aB-iF0">
+                            <connections>
+                                <action selector="doneButtonTapped:" destination="lEq-RJ-9he" id="qhz-JQ-YOG"/>
+                                <segue destination="HcB-Dy-nPx" kind="show" id="Te0-Ln-ccO"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="pauseButtonTapped" destination="mgx-oJ-zIJ" id="8Du-NA-dsF"/>
-                        <outlet property="startButtonTapped" destination="7K8-Mk-i6J" id="x31-2t-nZ2"/>
-                        <outlet property="timerLabel" destination="bTS-EA-emK" id="MDt-Er-Cvi"/>
-                        <outlet property="timerPickerView" destination="ZSO-h6-TcX" id="ssH-BU-s4G"/>
+                        <outlet property="doneButtonTapped" destination="tV7-aB-iF0" id="xFh-Qa-KHY"/>
+                        <outlet property="pauseResumeButtonTapped" destination="mgx-oJ-zIJ" id="ZYy-I8-Z3D"/>
+                        <outlet property="soundPickerView" destination="gjM-UT-3j7" id="BAo-dH-8td"/>
+                        <outlet property="startCancelButtonTapped" destination="7K8-Mk-i6J" id="5wT-F5-I36"/>
+                        <outlet property="timerLabel" destination="bTS-EA-emK" id="b09-2Z-Mnm"/>
+                        <outlet property="timerPickerView" destination="ZSO-h6-TcX" id="ltb-tg-cI2"/>
+                        <outlet property="timerTitle" destination="IF7-nr-nez" id="QHs-4J-sCt"/>
+                        <outlet property="timerTitleTextField" destination="IF7-nr-nez" id="oEc-lV-1DS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kcC-RJ-kpC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1371" y="338"/>
+            <point key="canvasLocation" x="1335" y="272"/>
         </scene>
     </scenes>
     <resources>
@@ -1429,4 +1438,7 @@
         <image name="stopwatch -1" width="11" height="11"/>
         <image name="timer-1" width="11" height="11"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Te0-Ln-ccO"/>
+    </inferredMetricsTieBreakers>
 </document>

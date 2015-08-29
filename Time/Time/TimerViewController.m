@@ -7,6 +7,8 @@
 //
 
 #import "TimerViewController.h"
+#import "CQTimer.h"
+#import "CQNewTimerViewController.h"
 
 @interface TimerViewController ()
 

@@ -10,7 +10,7 @@
 
 @interface CQTimer : NSObject
 
-@property (nonatomic) CQTimer *model;//?
+@property (nonatomic) CQTimer *timerObject;
 @property (nonatomic) NSMutableArray *presetTimers;
 //@property (nonatomic) NSMutableArray *timerObjects; // same as above
 @property (nonatomic) NSString *timerTitle;
@@ -18,6 +18,13 @@
 
 
 @property (nonatomic) NSTimer *timer;
+@property (nonatomic) BOOL isTimerRunning;
+@property (nonatomic) BOOL isTimerPaused;
+
+@property (nonatomic) int secondsCount;
+@property (nonatomic) int hours;
+@property (nonatomic) int minutes;
+@property (nonatomic) int seconds;
 //@property (weak, nonatomic) IBOutlet UIDatePicker *timerPickerView;
 //@property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 //@property (weak, nonatomic) IBOutlet UIButton *startButtonTapped;
@@ -26,12 +33,5 @@
 //@property (nonatomic) UIImage *timerBackgroundImage;
 //@property (nonatomic) UIPickerView *alarmSound;//? not sure if typerd properly
 
-@property (nonatomic) BOOL isTimerRunning;
-@property (nonatomic) BOOL isTimerPaused;
-
-@property (nonatomic) int secondsCount;
-@property (nonatomic) int hours;
-@property (nonatomic) int minutes;
-@property (nonatomic) int seconds;
 
 @end
