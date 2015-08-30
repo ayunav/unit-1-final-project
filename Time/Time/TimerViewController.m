@@ -202,6 +202,9 @@
     CQTimer *timerObject = self.presetTimers[indexPath.row];
     
     presetTimerVC.timerObject = timerObject;
+    presetTimerVC.timerObject.timerTitle = timerObject.timerTitle;
+    presetTimerVC.timerObject.timerDuration = timerObject.secondsCount;
+
     
     [self.navigationController pushViewController:presetTimerVC animated:YES];
     

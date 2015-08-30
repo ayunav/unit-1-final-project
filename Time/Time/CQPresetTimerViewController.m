@@ -34,16 +34,15 @@
     [super viewDidLoad];
 
     self.timerPickerView.hidden = YES;
-//    self.timerObject.timerDuration = self.timerPickerView.countDownDuration;
-    self.timerPickerView.countDownDuration = self.timerObject.secondsCount;
+  
+    self.timerTitleLabel.text = self.timerObject.timerTitle;
+    self.timerObject.timerDuration = self.timerObject.secondsCount;
+
     self.hours = self.secondsCount/3600;
     self.minutes = (self.secondsCount % 3600)/60;
     self.seconds = self.secondsCount - (self.hours * 3600) - (self.minutes * 60);
     
     self.timerLabel.text = [NSString stringWithFormat:@"%02i:%02i:%02i", self.hours, self.minutes, self.seconds];
-    
-    // self.timerLabel.text = self.timerObject.timerDuration;
-    self.timerTitleLabel.text = self.timerObject.timerTitle;
 }
 
 - (void)didReceiveMemoryWarning {
