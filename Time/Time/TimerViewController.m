@@ -54,12 +54,12 @@
     
     CQTimer *coffeeTimer = [[CQTimer alloc] init];
     coffeeTimer.timerTitle = @"Coffee timer";
-//    coffeeTimer.timerDuration = ;
+    coffeeTimer.timerDuration = 180;
     [self.presetTimers addObject:coffeeTimer];
     
     CQTimer *popcornTimer = [[CQTimer alloc] init];
     popcornTimer.timerTitle = @"Popcorn timer";
-//    popcornTimer.timerDuration =
+    popcornTimer.timerDuration = 165; 
     [self.presetTimers addObject:popcornTimer];
     
     // Control dragging from tableview in the storyboard to the timer itself and setting it to its datasource and delegates implements the code below
@@ -201,13 +201,10 @@
     
     CQTimer *timerObject = self.presetTimers[indexPath.row];
     
+    //pass the CQTimer timerObject to the next VC
     presetTimerVC.timerObject = timerObject;
-    presetTimerVC.timerObject.timerTitle = timerObject.timerTitle;
-    presetTimerVC.timerObject.timerDuration = timerObject.secondsCount;
-
     
     [self.navigationController pushViewController:presetTimerVC animated:YES];
-    
 }
 
 @end

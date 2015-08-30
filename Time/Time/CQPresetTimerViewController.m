@@ -32,15 +32,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
+    self.pauseResumeButtonTapped.enabled = NO;
     self.timerPickerView.hidden = YES;
   
     self.timerTitleLabel.text = self.timerObject.timerTitle;
-    self.timerObject.timerDuration = self.timerObject.secondsCount;
 
-    self.hours = self.secondsCount/3600;
-    self.minutes = (self.secondsCount % 3600)/60;
-    self.seconds = self.secondsCount - (self.hours * 3600) - (self.minutes * 60);
+    self.hours = self.timerObject.timerDuration/3600;
+    self.minutes = fmod(self.timerObject.timerDuration, 3600) / 60;
+    self.seconds = self.timerObject.timerDuration - (self.hours * 3600) - (self.minutes * 60);
     
     self.timerLabel.text = [NSString stringWithFormat:@"%02i:%02i:%02i", self.hours, self.minutes, self.seconds];
 }
@@ -50,6 +50,7 @@
 }
 
 - (void)timerFired: (NSTimer *)timer {
+    
     self.secondsCount--;
     
     self.hours = self.secondsCount/3600;
@@ -71,32 +72,30 @@
 }
 
 - (IBAction)startCancelButtonTapped:(id)sender {
-    self.timerDuration = self.timerPickerView.countDownDuration;
+    self.timerDuration = self.timerObject.timerDuration;
     
-    self.seconds = 0;
     self.hours = (int)(self.timerDuration/3600.0f);
     self.minutes = ((int)self.timerDuration - (self.hours * 3600))/60;
+    self.seconds = self.timerDuration - (self.hours * 3600) - (self.minutes * 60);
     
-    self.secondsCount = ((self.hours * 3600) + (self.minutes * 60));
+    self.secondsCount = self.timerDuration;
     
-    self.timerLabel.text = [NSString stringWithFormat:@"%02i:%02i:%02i", self.hours, self.minutes, self.seconds];
+    self.timerLabel.text = [NSString stringWithFormat:@"%02d:%02d:%02d", self.hours, self.minutes, self.seconds];
     
     if (self.isTimerRunning == YES) {
         
         [self.startCancelButtonTapped setTitle:@"Start" forState:UIControlStateNormal];
         [self.pauseResumeButtonTapped setTitle:@"Pause" forState:UIControlStateNormal];
         self.pauseResumeButtonTapped.enabled = NO;
-        self.timerLabel.hidden = YES;
-        self.timerPickerView.hidden = NO;
         
         [self.timer invalidate];
         self.timer = nil;
+        self.secondsCount = -1;
         
     } else {
         
         [self.startCancelButtonTapped setTitle:@"Cancel" forState:UIControlStateNormal];
         self.pauseResumeButtonTapped.enabled = YES;
-        
         
         if (self.timer == nil) {
             self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];

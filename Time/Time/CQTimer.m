@@ -10,4 +10,9 @@
 
 @implementation CQTimer
 
+- (void)setTimerDuration:(NSTimeInterval)timerDuration {
+    
+    _timerDuration = timerDuration;
+}
+
 @end
