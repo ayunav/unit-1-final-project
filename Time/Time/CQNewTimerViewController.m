@@ -134,7 +134,6 @@
     CQTimer *newTimer = [[CQTimer alloc] init];
     newTimer.timerTitle = self.timerTitleTextField.text;
     newTimer.timerDuration = self.timerPickerView.countDownDuration;
-    NSLog(@"%f", newTimer.timerDuration);
     [self.delegate addToTheArrayNewTimer:newTimer]; 
     
     [self.navigationController popToRootViewControllerAnimated:YES];
