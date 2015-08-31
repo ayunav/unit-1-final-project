@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		29E64B811B90EEFD0054E049 /* CQTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E64B801B90EEFD0054E049 /* CQTimer.m */; };
 		29E64B8A1B9260640054E049 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29E64B891B9260640054E049 /* Main.storyboard */; };
+		29E64B951B950FF50054E049 /* Magical-explosion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 29E64B941B950FF50054E049 /* Magical-explosion.mp3 */; };
+		29E64B971B9515100054E049 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29E64B961B9515100054E049 /* AVFoundation.framework */; };
 		29FCC7BD1B8B76F90005B464 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29FCC7BC1B8B76F90005B464 /* Images.xcassets */; };
 		29FCC7C01B8BD2860005B464 /* CQNewTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FCC7BF1B8BD2860005B464 /* CQNewTimerViewController.m */; };
 		29FCC7C31B8BD2AE0005B464 /* CQPresetTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FCC7C21B8BD2AE0005B464 /* CQPresetTimerViewController.m */; };
@@ -37,6 +39,8 @@
 		29E64B7F1B90EEFD0054E049 /* CQTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQTimer.h; sourceTree = "<group>"; };
 		29E64B801B90EEFD0054E049 /* CQTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQTimer.m; sourceTree = "<group>"; };
 		29E64B891B9260640054E049 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		29E64B941B950FF50054E049 /* Magical-explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Magical-explosion.mp3"; sourceTree = "<group>"; };
+		29E64B961B9515100054E049 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVFoundation.framework; sourceTree = "<group>"; };
 		29FCC7BC1B8B76F90005B464 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		29FCC7BE1B8BD2860005B464 /* CQNewTimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQNewTimerViewController.h; sourceTree = "<group>"; };
 		29FCC7BF1B8BD2860005B464 /* CQNewTimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQNewTimerViewController.m; sourceTree = "<group>"; };
@@ -68,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29E64B971B9515100054E049 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,9 +99,18 @@
 			name = "SW & CD Files";
 			sourceTree = "<group>";
 		};
+		29E64B981B9517950054E049 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				29E64B941B950FF50054E049 /* Magical-explosion.mp3 */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
 		8D05374F1B86687B00588318 = {
 			isa = PBXGroup;
 			children = (
+				29E64B961B9515100054E049 /* AVFoundation.framework */,
 				8D05375A1B86687B00588318 /* Time */,
 				8D0537741B86687C00588318 /* TimeTests */,
 				8D0537591B86687B00588318 /* Products */,
@@ -126,6 +140,7 @@
 				29E64B891B9260640054E049 /* Main.storyboard */,
 				29FCC7BC1B8B76F90005B464 /* Images.xcassets */,
 				8D05376A1B86687C00588318 /* LaunchScreen.xib */,
+				29E64B981B9517950054E049 /* Sounds */,
 				29E64B841B924BFA0054E049 /* SW & CD Files */,
 				8D05375B1B86687B00588318 /* Supporting Files */,
 			);
@@ -241,6 +256,7 @@
 				29FCC7BD1B8B76F90005B464 /* Images.xcassets in Resources */,
 				8D05376C1B86687C00588318 /* LaunchScreen.xib in Resources */,
 				29E64B8A1B9260640054E049 /* Main.storyboard in Resources */,
+				29E64B951B950FF50054E049 /* Magical-explosion.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +404,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Time/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -399,6 +419,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Time/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
