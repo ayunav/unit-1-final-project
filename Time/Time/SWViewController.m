@@ -23,6 +23,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *lapsTableView;
 
 @property (strong, nonatomic) NSTimer *stopWatchTimer;
+@property (weak, nonatomic) IBOutlet UIButton *startStopButton;
+@property (weak, nonatomic) IBOutlet UIButton *lapResetButton;
 
 @end
 
@@ -99,8 +101,9 @@
         //create timer object that fires off every 0.01th of a second
        self.stopWatchTimer = [self createTimer];
         
+        [self.startStopButton setTitle:@"Stop" forState:UIControlStateNormal];
         
-        
+        //ADD LAP--RESET HERE
         
         
         
@@ -108,22 +111,49 @@
         
         [self.stopWatchTimer invalidate];
         
-        UIImage *startImageGreen = [UIImage imageNamed:@"fe_runningStart.png"];
-        [_startStopButton setImage:startImageGreen  forState:UIControlStateNormal];
+        [self.startStopButton setTitle:@"Start" forState:UIControlStateNormal];
         
-        UIImage *stopImageRed  = [UIImage imageNamed:@"fe_runningStop.png"];
-        [_startStopButton setImage:stopImageRed forState:UIControlStateNormal];
+        [self.startStopButton setTitle:@"Stop" forState:UIControlStateNormal];
+        
+        [self.startStopButton setTitle:@"Start" forState:UIControlStateNormal];
+        
+        [self.lapResetButton setTitle:@"Reset" forState:UIControlStateNormal];
+        
+}
+    
+    
+}
+
+
+- (IBAction)lapResetButtonAction:(id)sender {
+    
+    if(self.stopWatchTimer){
+        
+        UIImage *lapReStartImage2 = [UIImage imageNamed:@"fe_runningLap.png"];
+        [_lapResetButton setImage:lapReStartImage2 forState:UIControlStateNormal];
         
         
-        UIImage *restartImageGreen = [UIImage imageNamed:@"fe_runningStart.png"];
-        [_startStopButton  setImage:restartImageGreen forState:UIControlStateNormal];
+        [self.laps addObject:_displayTime];
+        [self.lapTableView reloadData];
         
+        return   NSLog(@"%@",_displayTime);
         
-        UIImage *resetImageBlue = [UIImage imageNamed:@"fe_runningReset.png"];
-        [_lapResetButton setImage:resetImageBlue forState:UIControlStateNormal];
     }
     
     
+    if(!self.stopWatchTimer){
+        
+        [self.stopWatchTimer invalidate];
+        self.laps = [[NSMutableArray alloc] init];
+        [self.lapTableView reloadData];
+        countUpNumber2 = 0;
+        countUpNumber1 = 0;
+        countUpNumber0 = 0;
+        
+        _timerDisplay0.text = [NSString stringWithFormat :@"00"];
+        _timerDisplay1.text = [NSString stringWithFormat :@"00"];
+        _timerDisplay2.text = [NSString stringWithFormat :@"00"];
+    }
 }
 
 
