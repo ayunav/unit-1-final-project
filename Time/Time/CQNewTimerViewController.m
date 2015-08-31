@@ -9,9 +9,12 @@
 #import "CQNewTimerViewController.h"
 #import "CQTimer.h"
 #import "TimerViewController.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface CQNewTimerViewController ()
-
+{
+AVAudioPlayer *_audioPlayer;
+}
 @property (nonatomic) NSTimer *timer;
 
 @property (nonatomic) int secondsCount;
@@ -43,6 +46,14 @@
     [self.timerPickerView setCountDownDuration:seconds];
     
     self.timerLabel.hidden = YES;
+    
+    // Code below is added to work with audio files
+    // Construct URL to sound file
+    NSString *path = [NSString stringWithFormat:@"%@/drum01.mp3", [[NSBundle mainBundle] resourcePath]];
+    NSURL *soundUrl = [NSURL fileURLWithPath:path];
+    
+    // Create audio player object and initialize with URL to sound
+    _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
 }
 
 - (void)didReceiveMemoryWarning {
