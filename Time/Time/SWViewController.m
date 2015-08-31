@@ -7,9 +7,6 @@
 //
 
 #import "SWViewController.h"
-#import "Format.h"
-
-
 
 
 @interface SWViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -43,19 +40,25 @@
     
     //create date from the elapsed time
     NSDate *currentDate = [[NSDate alloc] init];
+    
     NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:self.startDate];
+    
     NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
     
     //create a date formatter
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    
     [dateFormatter setDateFormat:@"HH:mm:ss.SSS"];
+    
     [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
     
     //format the elapsed time and set it to the label
     NSString *timeString = [dateFormatter stringFromDate:timerDate];
+   
     self.swLabel.text= timeString;
     
     self.totalSessionTime = [currentDate timeIntervalSinceDate:self.startDate];
+    
     NSTimeInterval distance = self.totalTime + self.totalSessionTime;
     
     self.swLabel.text = [NSString stringWithFormat:@"%0.2f", distance];
@@ -75,8 +78,6 @@
     self.laps = [[NSMutableArray alloc] init];
     
 }
-
-
 
 #pragma mark - Table view data source
 
@@ -110,7 +111,7 @@
         [self.lapResetButton setTitle:@"Lap" forState:UIControlStateNormal];
 
         
-    } else {
+    }  else {
         
         [self.stopWatchTimer invalidate];
         
@@ -127,17 +128,16 @@
     
 }
 
-
 - (IBAction)lapResetButtonAction:(id)sender {
     
-    if(self.stopWatchTimer){
-        
-    [self.lapResetButton setTitle:@"Lap" forState:UIControlStateNormal];
-        
-        
+        if(self.stopWatchTimer){
+            
+        [self.lapResetButton setTitle:@"Lap" forState:UIControlStateNormal];
+            
         [self.laps addObject: self.displayTime];
+            
         [self.lapsTableView reloadData];
-        
+            
         return   NSLog(@"%@",self.displayTime);
         
     }
@@ -146,22 +146,13 @@
     if(!self.stopWatchTimer){
         
         [self.stopWatchTimer invalidate];
+        
         self.laps = [[NSMutableArray alloc] init];
+        
         [self.lapsTableView reloadData];
         
-              
         self.swLabel.text=[NSString stringWithFormat :@"00"];
-       
     }
 }
-
-
-
-
-
-
-
-
-
 
 @end
