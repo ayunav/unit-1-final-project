@@ -9,6 +9,11 @@
 #import "SWViewController.h"
 #import "Format.h"
 
+
+int countUpNumber0;
+int countUpNumber1;
+int countUpNumber2;
+
 @interface SWViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) NSDate *startDate;
@@ -26,6 +31,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *startStopButton;
 @property (weak, nonatomic) IBOutlet UIButton *lapResetButton;
 
+@property NSString *displayTime;
 @end
 
 @implementation SWViewController
@@ -103,7 +109,8 @@
         
         [self.startStopButton setTitle:@"Stop" forState:UIControlStateNormal];
         
-        //ADD LAP--RESET HERE
+        [self.lapResetButton setTitle:@"Lap" forState:UIControlStateNormal];
+
         
         
         
@@ -129,12 +136,11 @@
     
     if(self.stopWatchTimer){
         
-        UIImage *lapReStartImage2 = [UIImage imageNamed:@"fe_runningLap.png"];
-        [_lapResetButton setImage:lapReStartImage2 forState:UIControlStateNormal];
+    [self.lapResetButton setTitle:@"Lap" forState:UIControlStateNormal];
         
         
-        [self.laps addObject:_displayTime];
-        [self.lapTableView reloadData];
+        [self.laps addObject: self.displayTime];
+        [self.lapsTableView reloadData];
         
         return   NSLog(@"%@",_displayTime);
         
@@ -146,6 +152,7 @@
         [self.stopWatchTimer invalidate];
         self.laps = [[NSMutableArray alloc] init];
         [self.lapTableView reloadData];
+        
         countUpNumber2 = 0;
         countUpNumber1 = 0;
         countUpNumber0 = 0;
