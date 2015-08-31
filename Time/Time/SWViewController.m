@@ -10,9 +10,7 @@
 #import "Format.h"
 
 
-int countUpNumber0;
-int countUpNumber1;
-int countUpNumber2;
+
 
 @interface SWViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -57,7 +55,7 @@ int countUpNumber2;
     [dateFormatter setDateFormat:@"HH:mm:ss.SSS"];
     [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
     
-    //formtat the elapsed time and set it to the label
+    //format the elapsed time and set it to the label
     NSString *timeString = [dateFormatter stringFromDate:timerDate];
     self.swLabel.text= timeString;
     
@@ -71,7 +69,7 @@ int countUpNumber2;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.swLabel.text = @"00:00:00.000";
+    self.swLabel.text = @"00:00.00";
     
     self.laps = [[NSMutableArray alloc] init];
     [self.startStopButton setTitle:@"Start" forState:UIControlStateNormal];
@@ -105,17 +103,14 @@ int countUpNumber2;
 - (IBAction)startStopButtonAction:(id)sender {
     
     
-    if (! self.stopWatchTimer){
+    if (!self.stopWatchTimer){
         
-        //create timer object that fires off every 0.01th of a second
        self.stopWatchTimer = [self createTimer];
         
         [self.startStopButton setTitle:@"Stop" forState:UIControlStateNormal];
         
         [self.lapResetButton setTitle:@"Lap" forState:UIControlStateNormal];
 
-        
-        
         
     } else {
         
@@ -145,7 +140,7 @@ int countUpNumber2;
         [self.laps addObject: self.displayTime];
         [self.lapsTableView reloadData];
         
-        return   NSLog(@"%@",_displayTime);
+        return   NSLog(@"%@",self.displayTime);
         
     }
     
@@ -156,10 +151,7 @@ int countUpNumber2;
         self.laps = [[NSMutableArray alloc] init];
         [self.lapsTableView reloadData];
         
-        countUpNumber2 = 0;
-        countUpNumber1 = 0;
-        countUpNumber0 = 0;
-        
+              
         self.swLabel.text=[NSString stringWithFormat :@"00"];
        
     }
