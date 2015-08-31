@@ -74,6 +74,9 @@ int countUpNumber2;
     self.swLabel.text = @"00:00:00.000";
     
     self.laps = [[NSMutableArray alloc] init];
+    [self.startStopButton setTitle:@"Start" forState:UIControlStateNormal];
+    
+    [self.lapResetButton setTitle:@"Lap" forState:UIControlStateNormal];
     
 }
 
@@ -151,15 +154,14 @@ int countUpNumber2;
         
         [self.stopWatchTimer invalidate];
         self.laps = [[NSMutableArray alloc] init];
-        [self.lapTableView reloadData];
+        [self.lapsTableView reloadData];
         
         countUpNumber2 = 0;
         countUpNumber1 = 0;
         countUpNumber0 = 0;
         
-        _timerDisplay0.text = [NSString stringWithFormat :@"00"];
-        _timerDisplay1.text = [NSString stringWithFormat :@"00"];
-        _timerDisplay2.text = [NSString stringWithFormat :@"00"];
+        self.swLabel.text=[NSString stringWithFormat :@"00"];
+       
     }
 }
 
