@@ -19,17 +19,14 @@
 @property (nonatomic) NSTimeInterval totalSessionTime;
 @property (nonatomic) NSTimeInterval totalTime;
 @property (nonatomic, assign, readwrite) NSTimeInterval currentLapTime;
-
-@property (strong,nonatomic)NSMutableArray *laps;
-
-
-@property (weak, nonatomic) IBOutlet UITableView *lapsTableView;
-
 @property (strong, nonatomic) NSTimer *stopWatchTimer;
+
 @property (weak, nonatomic) IBOutlet UIButton *startStopButton;
 @property (weak, nonatomic) IBOutlet UIButton *lapResetButton;
-
+@property (weak, nonatomic) IBOutlet UITableView *lapsTableView;
+@property (strong,nonatomic)NSMutableArray *laps;
 @property NSString *displayTime;
+
 @end
 
 @implementation SWViewController
@@ -39,7 +36,6 @@
     
     self.startDate = [[NSDate alloc]init];
     
-    //create the stop watch timer that fires every 100 ms
   return  self.stopWatchTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
 }
 
@@ -71,14 +67,16 @@
     
     self.swLabel.text = @"00:00.00";
     
-    self.laps = [[NSMutableArray alloc] init];
     [self.startStopButton setTitle:@"Start" forState:UIControlStateNormal];
     
     [self.lapResetButton setTitle:@"Lap" forState:UIControlStateNormal];
+
+    
+    self.laps = [[NSMutableArray alloc] init];
     
 }
 
-//set number of rows
+
 
 #pragma mark - Table view data source
 
