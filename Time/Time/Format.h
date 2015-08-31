@@ -10,6 +10,5 @@
 
 @interface NSString (Format)
 
-+ (NSString *)tcd_formatTime:(NSTimeInterval)time;
 
 @end

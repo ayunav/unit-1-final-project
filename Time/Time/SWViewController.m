@@ -7,7 +7,6 @@
 //
 
 #import "SWViewController.h"
-#import "Stopwatch.h"
 #import "Format.h"
 
 @interface SWViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -23,8 +22,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *lapsTableView;
 
 @property (strong, nonatomic) NSTimer *stopWatchTimer;
-
-@property (nonatomic, strong) Stopwatch *stopwatch;
 
 @end
 
@@ -86,33 +83,20 @@
 
 - (IBAction)lapButton:(id)sender {
     
-    [self.stopwatch addLap];
-    
-    [self.lapsTableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]]
-                              withRowAnimation:UITableViewRowAnimationNone];
 }
 
 #pragma mark - UITableViewDataSource
-
+/*
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.stopwatch.laps count];
 }
 
 #pragma mark - UITableViewDelegate
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [self.lapsTableView dequeueReusableCellWithIdentifier:@"lapViewCell"];
-    
-    unsigned long lapNumber = [[self.stopwatch laps] count];
-    NSNumber *lapTime = [[self.stopwatch laps] objectAtIndex:lapNumber - 1];
-    
-    cell.textLabel.text = [NSString stringWithFormat:@"Lap %lu", lapNumber];
-    cell.detailTextLabel.text = [NSString tcd_formatTime:[lapTime doubleValue]];
-    
-    return cell;
 }
+ */
 
 
 @end

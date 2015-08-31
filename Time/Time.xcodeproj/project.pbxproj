@@ -15,7 +15,6 @@
 		8D0537781B86687C00588318 /* TimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0537771B86687C00588318 /* TimeTests.m */; };
 		F70BE1E71B8A0ADE0079ABE5 /* SWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F70BE1E61B8A0ADE0079ABE5 /* SWViewController.m */; };
 		F70BE1EA1B8A0AFA0079ABE5 /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F70BE1E91B8A0AFA0079ABE5 /* TimerViewController.m */; };
-		F7699C4C1B92359B00BD763F /* Stopwatch.m in Sources */ = {isa = PBXBuildFile; fileRef = F7699C4B1B92359B00BD763F /* Stopwatch.m */; };
 		F7699C4F1B92377400BD763F /* Format.m in Sources */ = {isa = PBXBuildFile; fileRef = F7699C4E1B92377400BD763F /* Format.m */; };
 /* End PBXBuildFile section */
 
@@ -45,8 +44,6 @@
 		F70BE1E61B8A0ADE0079ABE5 /* SWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWViewController.m; sourceTree = "<group>"; };
 		F70BE1E81B8A0AFA0079ABE5 /* TimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerViewController.h; sourceTree = "<group>"; };
 		F70BE1E91B8A0AFA0079ABE5 /* TimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerViewController.m; sourceTree = "<group>"; };
-		F7699C4A1B92359B00BD763F /* Stopwatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stopwatch.h; sourceTree = "<group>"; };
-		F7699C4B1B92359B00BD763F /* Stopwatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stopwatch.m; sourceTree = "<group>"; };
 		F7699C4D1B92377400BD763F /* Format.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Format.h; sourceTree = "<group>"; };
 		F7699C4E1B92377400BD763F /* Format.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Format.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,8 +89,6 @@
 			children = (
 				8D05375F1B86687C00588318 /* AppDelegate.h */,
 				8D0537601B86687C00588318 /* AppDelegate.m */,
-				F7699C4A1B92359B00BD763F /* Stopwatch.h */,
-				F7699C4B1B92359B00BD763F /* Stopwatch.m */,
 				F70BE1E51B8A0ADE0079ABE5 /* SWViewController.h */,
 				F70BE1E61B8A0ADE0079ABE5 /* SWViewController.m */,
 				F70BE1E81B8A0AFA0079ABE5 /* TimerViewController.h */,
@@ -236,7 +231,6 @@
 			files = (
 				F70BE1EA1B8A0AFA0079ABE5 /* TimerViewController.m in Sources */,
 				F70BE1E71B8A0ADE0079ABE5 /* SWViewController.m in Sources */,
-				F7699C4C1B92359B00BD763F /* Stopwatch.m in Sources */,
 				F7699C4F1B92377400BD763F /* Format.m in Sources */,
 				8D0537611B86687C00588318 /* AppDelegate.m in Sources */,
 				8D05375E1B86687C00588318 /* main.m in Sources */,
