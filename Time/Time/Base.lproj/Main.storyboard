@@ -194,7 +194,7 @@
                                 <rect key="frame" x="16" y="286" width="568" height="265"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="lapViewCell" textLabel="Mvi-l5-eqC" detailTextLabel="WHZ-MJ-dku" style="IBUITableViewCellStyleValue1" id="cfe-eu-n71">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LapCellIdentifier" textLabel="Mvi-l5-eqC" detailTextLabel="WHZ-MJ-dku" style="IBUITableViewCellStyleValue1" id="cfe-eu-n71">
                                         <rect key="frame" x="140" y="278" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cfe-eu-n71" id="O5X-Bh-9ys">
@@ -294,7 +294,7 @@
         <!--View Controller-->
         <scene sceneID="6zW-hP-00M">
             <objects>
-                <viewController id="uFo-Yd-la8" sceneMemberID="viewController">
+                <viewController id="uFo-Yd-la8" customClass="CDViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zlT-qG-fm7"/>
                         <viewControllerLayoutGuide type="bottom" id="Ty0-pG-Hnn"/>
@@ -324,13 +324,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00 days 00 hours 00 min 00 sec" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9hz-fU-vJN">
+                                <rect key="frame" x="168" y="401" width="264" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="7Vy-VK-DrA"/>
+                                    <constraint firstAttribute="width" constant="264" id="yWH-78-cjI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIS-Qs-zDo">
-                                <rect key="frame" x="271.5" y="406" width="57" height="35"/>
+                                <rect key="frame" x="228" y="430" width="144" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" red="1" green="0.34387478725257481" blue="0.57398341305168032" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Start Countdown">
+                                    <color key="titleColor" red="1" green="0.59745848180000005" blue="0.61028701070000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="startCountdown:" destination="uFo-Yd-la8" eventType="touchUpInside" id="cb8-Oc-42d"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -340,14 +353,22 @@
                             <constraint firstAttribute="centerX" secondItem="dIS-Qs-zDo" secondAttribute="centerX" id="BpO-2v-hkd"/>
                             <constraint firstItem="Pif-Ka-01x" firstAttribute="top" secondItem="gpk-z1-dEN" secondAttribute="bottom" constant="35" id="F9l-e3-Xo0"/>
                             <constraint firstItem="gpk-z1-dEN" firstAttribute="top" secondItem="zlT-qG-fm7" secondAttribute="bottom" constant="10" id="I5W-FB-xBd"/>
+                            <constraint firstItem="9hz-fU-vJN" firstAttribute="top" secondItem="As4-rn-efZ" secondAttribute="bottom" constant="20" id="Slh-Oz-28R"/>
                             <constraint firstAttribute="centerX" secondItem="As4-rn-efZ" secondAttribute="centerX" id="UyI-o8-TLa"/>
                             <constraint firstAttribute="centerX" secondItem="Pif-Ka-01x" secondAttribute="centerX" id="YyK-KW-sxF"/>
                             <constraint firstAttribute="centerY" secondItem="As4-rn-efZ" secondAttribute="centerY" id="cSR-Q6-LgI"/>
-                            <constraint firstItem="dIS-Qs-zDo" firstAttribute="top" secondItem="As4-rn-efZ" secondAttribute="bottom" constant="25" id="tjI-bN-BXF"/>
+                            <constraint firstAttribute="centerX" secondItem="9hz-fU-vJN" secondAttribute="centerX" id="ihH-cZ-OEK"/>
+                            <constraint firstItem="dIS-Qs-zDo" firstAttribute="top" secondItem="As4-rn-efZ" secondAttribute="bottom" constant="49" id="tjI-bN-BXF"/>
                             <constraint firstAttribute="centerX" secondItem="gpk-z1-dEN" secondAttribute="centerX" id="z4v-Ga-icc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="yDL-6N-g90"/>
+                    <connections>
+                        <outlet property="countdownLabel" destination="9hz-fU-vJN" id="QMQ-aB-kUb"/>
+                        <outlet property="countdownTitle" destination="Pif-Ka-01x" id="TOu-YQ-HI6"/>
+                        <outlet property="datePicker" destination="As4-rn-efZ" id="QR1-Su-BeE"/>
+                        <outlet property="titleLabe" destination="gpk-z1-dEN" id="LHl-vf-uHt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9dl-o8-P3n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

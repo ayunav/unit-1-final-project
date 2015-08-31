@@ -15,6 +15,7 @@
 		8D0537781B86687C00588318 /* TimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0537771B86687C00588318 /* TimeTests.m */; };
 		F70BE1E71B8A0ADE0079ABE5 /* SWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F70BE1E61B8A0ADE0079ABE5 /* SWViewController.m */; };
 		F70BE1EA1B8A0AFA0079ABE5 /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F70BE1E91B8A0AFA0079ABE5 /* TimerViewController.m */; };
+		F77AC94A1B94EDFE007EECAC /* CDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F77AC9491B94EDFE007EECAC /* CDViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		F70BE1E61B8A0ADE0079ABE5 /* SWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWViewController.m; sourceTree = "<group>"; };
 		F70BE1E81B8A0AFA0079ABE5 /* TimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerViewController.h; sourceTree = "<group>"; };
 		F70BE1E91B8A0AFA0079ABE5 /* TimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerViewController.m; sourceTree = "<group>"; };
+		F77AC9481B94EDFE007EECAC /* CDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDViewController.h; sourceTree = "<group>"; };
+		F77AC9491B94EDFE007EECAC /* CDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +93,8 @@
 				F70BE1E61B8A0ADE0079ABE5 /* SWViewController.m */,
 				F70BE1E81B8A0AFA0079ABE5 /* TimerViewController.h */,
 				F70BE1E91B8A0AFA0079ABE5 /* TimerViewController.m */,
+				F77AC9481B94EDFE007EECAC /* CDViewController.h */,
+				F77AC9491B94EDFE007EECAC /* CDViewController.m */,
 				8D0537651B86687C00588318 /* Main.storyboard */,
 				8D0537681B86687C00588318 /* Images.xcassets */,
 				8D05376A1B86687C00588318 /* LaunchScreen.xib */,
@@ -224,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F77AC94A1B94EDFE007EECAC /* CDViewController.m in Sources */,
 				F70BE1EA1B8A0AFA0079ABE5 /* TimerViewController.m in Sources */,
 				F70BE1E71B8A0ADE0079ABE5 /* SWViewController.m in Sources */,
 				8D0537611B86687C00588318 /* AppDelegate.m in Sources */,
