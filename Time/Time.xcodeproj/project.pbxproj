@@ -10,7 +10,7 @@
 		29E64B811B90EEFD0054E049 /* CQTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E64B801B90EEFD0054E049 /* CQTimer.m */; };
 		29E64B8A1B9260640054E049 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29E64B891B9260640054E049 /* Main.storyboard */; };
 		29E64B951B950FF50054E049 /* Magical-explosion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 29E64B941B950FF50054E049 /* Magical-explosion.mp3 */; };
-		29E64B971B9515100054E049 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29E64B961B9515100054E049 /* AVFoundation.framework */; };
+		29E64B9A1B951B230054E049 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29E64B991B951B230054E049 /* AVFoundation.framework */; };
 		29FCC7BD1B8B76F90005B464 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29FCC7BC1B8B76F90005B464 /* Images.xcassets */; };
 		29FCC7C01B8BD2860005B464 /* CQNewTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FCC7BF1B8BD2860005B464 /* CQNewTimerViewController.m */; };
 		29FCC7C31B8BD2AE0005B464 /* CQPresetTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FCC7C21B8BD2AE0005B464 /* CQPresetTimerViewController.m */; };
@@ -38,7 +38,7 @@
 		29E64B801B90EEFD0054E049 /* CQTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQTimer.m; sourceTree = "<group>"; };
 		29E64B891B9260640054E049 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		29E64B941B950FF50054E049 /* Magical-explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Magical-explosion.mp3"; sourceTree = "<group>"; };
-		29E64B961B9515100054E049 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVFoundation.framework; sourceTree = "<group>"; };
+		29E64B991B951B230054E049 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		29FCC7BC1B8B76F90005B464 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		29FCC7BE1B8BD2860005B464 /* CQNewTimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQNewTimerViewController.h; sourceTree = "<group>"; };
 		29FCC7BF1B8BD2860005B464 /* CQNewTimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQNewTimerViewController.m; sourceTree = "<group>"; };
@@ -66,7 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29E64B971B9515100054E049 /* AVFoundation.framework in Frameworks */,
+				29E64B9A1B951B230054E049 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,7 +104,7 @@
 		8D05374F1B86687B00588318 = {
 			isa = PBXGroup;
 			children = (
-				29E64B961B9515100054E049 /* AVFoundation.framework */,
+				29E64B991B951B230054E049 /* AVFoundation.framework */,
 				8D05375A1B86687B00588318 /* Time */,
 				8D0537741B86687C00588318 /* TimeTests */,
 				8D0537591B86687B00588318 /* Products */,

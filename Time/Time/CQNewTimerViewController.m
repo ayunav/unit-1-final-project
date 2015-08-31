@@ -12,9 +12,9 @@
 #import <AVFoundation/AVFoundation.h>
 
 @interface CQNewTimerViewController ()
-{
-AVAudioPlayer *_audioPlayer;
-}
+
+@property (nonatomic) AVAudioPlayer *soundAlarmTimerIsUp;
+
 @property (nonatomic) NSTimer *timer;
 
 @property (nonatomic) int secondsCount;
@@ -46,14 +46,6 @@ AVAudioPlayer *_audioPlayer;
     [self.timerPickerView setCountDownDuration:seconds];
     
     self.timerLabel.hidden = YES;
-    
-    // Code below is added to work with audio files
-    // Construct URL to sound file
-    NSString *path = [NSString stringWithFormat:@"%@/drum01.mp3", [[NSBundle mainBundle] resourcePath]];
-    NSURL *soundUrl = [NSURL fileURLWithPath:path];
-    
-    // Create audio player object and initialize with URL to sound
-    _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -77,6 +69,15 @@ AVAudioPlayer *_audioPlayer;
         
         [self.timer invalidate];
         self.timer = nil;
+        
+        // Code below is added to work with audio files
+        // Construct URL to sound file
+        NSString *path = [NSString stringWithFormat:@"%@/Magical-explosion.mp3", [[NSBundle mainBundle] resourcePath]];
+        NSURL *soundUrl = [NSURL fileURLWithPath:path];
+        
+        // Create audio player object and initialize with URL to sound
+        self.soundAlarmTimerIsUp = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
+        [self.soundAlarmTimerIsUp play];
         
         [self.startCancelButtonTapped setTitle:@"Start" forState:UIControlStateNormal];
         self.pauseResumeButtonTapped.enabled = NO;
