@@ -8,8 +8,11 @@
 
 #import "CQPresetTimerViewController.h"
 #import "TimerViewController.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface CQPresetTimerViewController () 
+
+@property (nonatomic) AVAudioPlayer *soundAlarmTimerIsUp;
 
 @property (nonatomic) NSTimer *timer;
 
@@ -65,6 +68,15 @@
         
         [self.timer invalidate];
         self.timer = nil;
+        
+        // Code below is added to work with audio files
+        // Construct URL to sound file
+        NSString *path = [NSString stringWithFormat:@"%@/Magical-explosion.mp3", [[NSBundle mainBundle] resourcePath]];
+        NSURL *soundUrl = [NSURL fileURLWithPath:path];
+        
+        // Create audio player object and initialize with URL to sound
+        self.soundAlarmTimerIsUp = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
+        [self.soundAlarmTimerIsUp play];
         
         [self.startCancelButtonTapped setTitle:@"Start" forState:UIControlStateNormal];
         self.pauseResumeButtonTapped.enabled = NO;

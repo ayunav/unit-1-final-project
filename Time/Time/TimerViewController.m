@@ -10,8 +10,11 @@
 #import "CQTimer.h"
 #import "CQNewTimerViewController.h"
 #import "CQPresetTimerViewController.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface TimerViewController () <NewTimerDelegate>
+
+@property (nonatomic) AVAudioPlayer *soundAlarmTimerIsUp;
 
 @property (nonatomic) NSTimer *timer;
 @property (nonatomic) NSTimeInterval timerDuration;
@@ -86,6 +89,15 @@
         
         [self.timer invalidate];
         self.timer = nil;
+        
+        // Code below is added to work with audio files
+        // Construct URL to sound file
+        NSString *path = [NSString stringWithFormat:@"%@/Magical-explosion.mp3", [[NSBundle mainBundle] resourcePath]];
+        NSURL *soundUrl = [NSURL fileURLWithPath:path];
+        
+        // Create audio player object and initialize with URL to sound
+        self.soundAlarmTimerIsUp = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
+        [self.soundAlarmTimerIsUp play];
         
         [self.startButtonTapped setTitle:@"Start" forState:UIControlStateNormal];
         self.pauseButtonTapped.enabled = NO;
