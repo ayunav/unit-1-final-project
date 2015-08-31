@@ -17,7 +17,8 @@
 @property (nonatomic) NSTimeInterval totalTime;
 @property (nonatomic, assign, readwrite) NSTimeInterval currentLapTime;
 
-@property (nonatomic, strong) NSDate *currentLapStartTime;
+@property (strong,nonatomic)NSMutableArray *laps;
+
 
 @property (weak, nonatomic) IBOutlet UITableView *lapsTableView;
 
@@ -27,31 +28,13 @@
 
 @implementation SWViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    self.swLabel.text = @"00:00:00.000";
-    
-    
-   // self.lapView.dataSource = self;
-}
 
-
-- (IBAction)stopwatchButton:(id)sender {
-  
+-(NSTimer *) createTimer {
+    
     self.startDate = [[NSDate alloc]init];
     
     //create the stop watch timer that fires every 100 ms
-    self.stopWatchTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
- 
-}
-
-- (IBAction)stopwatchPause:(id)sender {
-    
-    self.totalTime = self.totalTime + self.totalSessionTime;
-    
-    [self.stopWatchTimer invalidate];
-
+  return  self.stopWatchTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
 }
 
 -(void)updateTimer {
@@ -77,26 +60,79 @@
     
 }
 
-#pragma mark - Lap Settup
-
-
-
-- (IBAction)lapButton:(id)sender {
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.swLabel.text = @"00:00:00.000";
+    
+    self.laps = [[NSMutableArray alloc] init];
     
 }
 
-#pragma mark - UITableViewDataSource
-/*
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+//set number of rows
+
+#pragma mark - Table view data source
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.laps count];
 }
 
-#pragma mark - UITableViewDelegate
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *SimpleIdentifier = @"SimpleIdentifier";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SimpleIdentifier];
+    if (cell ==nil)
+    {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:SimpleIdentifier];
+    }
+    cell.textLabel.text = self.laps[indexPath.row];
+    return cell;
 }
- */
+
+
+#pragma mark - Buttons!
+
+- (IBAction)startStopButtonAction:(id)sender {
+    
+    
+    if (! self.stopWatchTimer){
+        
+        //create timer object that fires off every 0.01th of a second
+       self.stopWatchTimer = [self createTimer];
+        
+        
+        
+        
+        
+        
+    } else {
+        
+        [self.stopWatchTimer invalidate];
+        
+        UIImage *startImageGreen = [UIImage imageNamed:@"fe_runningStart.png"];
+        [_startStopButton setImage:startImageGreen  forState:UIControlStateNormal];
+        
+        UIImage *stopImageRed  = [UIImage imageNamed:@"fe_runningStop.png"];
+        [_startStopButton setImage:stopImageRed forState:UIControlStateNormal];
+        
+        
+        UIImage *restartImageGreen = [UIImage imageNamed:@"fe_runningStart.png"];
+        [_startStopButton  setImage:restartImageGreen forState:UIControlStateNormal];
+        
+        
+        UIImage *resetImageBlue = [UIImage imageNamed:@"fe_runningReset.png"];
+        [_lapResetButton setImage:resetImageBlue forState:UIControlStateNormal];
+    }
+    
+    
+}
+
+
+
+
+
+
+
+
 
 
 @end
