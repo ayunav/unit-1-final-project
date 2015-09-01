@@ -16,7 +16,7 @@
 @property (nonatomic) NSTimeInterval totalSessionTime;
 @property (nonatomic) NSTimeInterval totalTime;
 @property (nonatomic, assign, readwrite) NSTimeInterval currentLapTime;
-@property (strong, nonatomic) NSTimer *stopWatchTimer;
+@property (weak, nonatomic) NSTimer *stopWatchTimer;
 
 @property (weak, nonatomic) IBOutlet UIButton *startStopButton;
 @property (weak, nonatomic) IBOutlet UIButton *lapResetButton;
@@ -33,7 +33,7 @@
     
     self.startDate = [[NSDate alloc]init];
     
-    return  self.stopWatchTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
+    return [NSTimer scheduledTimerWithTimeInterval:1.0/10.0 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
 }
 
 -(void)updateTimer {
@@ -48,7 +48,7 @@
     //create a date formatter
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     
-    [dateFormatter setDateFormat:@"HH:mm:ss.SSS"];
+    [dateFormatter setDateFormat:@"mm:ss.SS"];
     
     [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
     
@@ -74,7 +74,6 @@
     
     [self.lapResetButton setTitle:@"Lap" forState:UIControlStateNormal];
 
-    
     self.laps = [[NSMutableArray alloc] init];
     
 }
@@ -100,18 +99,38 @@
 #pragma mark - Buttons!
 
 - (IBAction)startStopButtonAction:(id)sender {
+   
+//if (tell me what you want to evaluate here in english)
+// do this if true:
+//a)
+//b)
+//c)
+// do this if false
+// a)
+// b)
+// c)
+
+    //if (button tapped)
+    // do this if true:
+    //a) Change this button's label to Stop
+    //b) Start the timer
+    //c)
+    // do this if false
+    // a) Keep title 
+    // b)
+    // c)
     
     
-    if (!self.stopWatchTimer){
-        
-       self.stopWatchTimer = [self createTimer];
+    
+    self.stopWatchTimer = [self createTimer];
+    
+    if (self.stopWatchTimer){
         
         [self.startStopButton setTitle:@"Stop" forState:UIControlStateNormal];
-        
-        [self.lapResetButton setTitle:@"Lap" forState:UIControlStateNormal];
 
         
-    }  else {
+
+    }  else  {
         
         [self.stopWatchTimer invalidate];
         
@@ -120,9 +139,9 @@
         [self.startStopButton setTitle:@"Stop" forState:UIControlStateNormal];
         
         [self.startStopButton setTitle:@"Start" forState:UIControlStateNormal];
-        
+
         [self.lapResetButton setTitle:@"Reset" forState:UIControlStateNormal];
-        
+    
 }
     
     

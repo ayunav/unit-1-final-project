@@ -300,11 +300,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="rxr-mh-kcD">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="pko-8g-Epd" detailTextLabel="BGD-m0-iXs" style="IBUITableViewCellStyleValue1" id="rxr-mh-kcD">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rxr-mh-kcD" id="VSg-dO-cqv">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pko-8g-Epd">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BGD-m0-iXs">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="LdW-mI-WV0" kind="show" id="wIs-WN-Vqd"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -322,7 +339,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Gh-1P-wDc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="658" y="1302"/>
+            <point key="canvasLocation" x="786" y="1301"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="6zW-hP-00M">
@@ -396,11 +413,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="yDL-6N-g90">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="TO5-FY-OKU">
-                            <connections>
-                                <segue destination="gZ0-HR-qrs" kind="show" id="fEU-9D-S0g"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="TO5-FY-OKU"/>
                     </navigationItem>
                     <connections>
                         <outlet property="countdownLabel" destination="9hz-fU-vJN" id="QMQ-aB-kUb"/>
@@ -411,7 +424,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9dl-o8-P3n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1531" y="1302"/>
+            <point key="canvasLocation" x="1611" y="1301"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="DSO-Sz-Llf">
@@ -429,7 +442,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Vf-Ri-Ij4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="658" y="2094"/>
+            <point key="canvasLocation" x="786" y="2103"/>
         </scene>
         <!--New Timer-->
         <scene sceneID="lBs-z1-Zxv">
@@ -702,7 +715,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hT0-nT-tDP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="973" y="630"/>
+            <point key="canvasLocation" x="1073" y="574"/>
         </scene>
     </scenes>
     <resources>
@@ -710,7 +723,4 @@
         <image name="stopwatch -1" width="11" height="11"/>
         <image name="timer-1" width="11" height="11"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="fEU-9D-S0g"/>
-    </inferredMetricsTieBreakers>
 </document>
