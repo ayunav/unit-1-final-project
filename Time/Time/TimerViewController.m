@@ -56,19 +56,19 @@
     }
     
     CQTimer *coffeeTimer = [[CQTimer alloc] init];
-    coffeeTimer.timerTitle = @"Coffee timer";
+    coffeeTimer.timerTitle = @"Coffee Timer";
     coffeeTimer.timerDuration = 180;
     [self.presetTimers addObject:coffeeTimer];
     
     CQTimer *popcornTimer = [[CQTimer alloc] init];
-    popcornTimer.timerTitle = @"Popcorn timer";
+    popcornTimer.timerTitle = @"Popcorn Timer";
     popcornTimer.timerDuration = 165; 
     [self.presetTimers addObject:popcornTimer];
     
     CQTimer *demoTimer = [[CQTimer alloc]init];
-    demoTimer.timerTitle = @"Demo timer";
+    demoTimer.timerTitle = @"Demo Timer";
     demoTimer.timerDuration = 5;
-    [self.presetTimers addObject:demoTimer]; 
+    [self.presetTimers addObject:demoTimer];
     
     // Control dragging from tableview in the storyboard to the timer itself and setting it to its datasource and delegates implements the code below
     //    self.timersTableView.dataSource = self;

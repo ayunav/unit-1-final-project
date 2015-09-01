@@ -46,6 +46,7 @@
     self.seconds = self.timerObject.timerDuration - (self.hours * 3600) - (self.minutes * 60);
     
     self.timerLabel.text = [NSString stringWithFormat:@"%02i:%02i:%02i", self.hours, self.minutes, self.seconds];
+    
 }
 
 - (void)didReceiveMemoryWarning {
