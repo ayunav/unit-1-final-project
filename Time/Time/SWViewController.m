@@ -115,7 +115,7 @@
     }  else  {
         // keep track of the total amount of time that this stopwatch has been running
         
-        self.totalTime = self.totalTime + self.totalSessionTime;
+      //  self.totalTime = self.totalTime + self.totalSessionTime;
 
         [self.stopWatchTimer invalidate];
         
@@ -155,9 +155,9 @@
         
         self.laps = [[NSMutableArray alloc] init];
         
-        [self.lapsTableView reloadData];
+       [self.lapsTableView reloadData];
         
-        self.swLabel.text=[NSString stringWithFormat :@"00"];
+       self.swLabel.text=[NSString stringWithFormat :@"00:00.0"];
     }
 }
 
