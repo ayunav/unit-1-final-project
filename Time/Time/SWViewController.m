@@ -148,7 +148,7 @@
         
         [self.lapsTableView reloadData];
         
-        return   NSLog(@"%@",self.displayTime);
+    
         
     }
     
@@ -165,14 +165,7 @@
         [self.lapsTableView reloadData];
         
         self.swLabel.text=[NSString stringWithFormat :@"00:00.0"];
-        
-    } else {
-        
-        self.startDate = [[NSDate alloc]init];
-        [NSTimer scheduledTimerWithTimeInterval:1.0/10.0 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
-        
     }
-   
     
     }
 
