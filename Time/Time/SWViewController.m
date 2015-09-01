@@ -31,27 +31,12 @@
 
 -(NSTimer *) createTimer {
     
-    
-    self.startDate = [[NSDate alloc]init];
-    
-    if(!self.stopWatchTimer) {
-        
-        [self.lapResetButton setTitle:@"Lap" forState:UIControlStateNormal];
-        
-        [self.stopWatchTimer invalidate];
-        
-        self.stopWatchTimer = nil;
-        
-        self.laps = [[NSMutableArray alloc] init];
-        
-        [self.lapsTableView reloadData];
-        
-        self.swLabel.text=[NSString stringWithFormat :@"00:00.0"];
-        
-    }
+   
 
+   self.startDate = [[NSDate alloc]init];
+   return [NSTimer scheduledTimerWithTimeInterval:1.0/10.0 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
     
-    return [NSTimer scheduledTimerWithTimeInterval:1.0/10.0 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
+  
 }
 
 -(void)updateTimer {
@@ -166,6 +151,27 @@
         
     }
     
+    if(!self.stopWatchTimer) {
+        
+        [self.lapResetButton setTitle:@"Lap" forState:UIControlStateNormal];
+        
+        [self.stopWatchTimer invalidate];
+        
+        self.stopWatchTimer = nil;
+        
+        self.laps = [[NSMutableArray alloc] init];
+        
+        [self.lapsTableView reloadData];
+        
+        self.swLabel.text=[NSString stringWithFormat :@"00:00.0"];
+        
+    } else {
+        
+        self.startDate = [[NSDate alloc]init];
+        [NSTimer scheduledTimerWithTimeInterval:1.0/10.0 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
+        
+    }
+   
     
     }
 
