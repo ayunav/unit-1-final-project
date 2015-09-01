@@ -112,6 +112,7 @@
         
         
         [self.startStopButton setTitle:@"Stop" forState:UIControlStateNormal];
+         [self.lapResetButton setTitle:@"Lap" forState:UIControlStateNormal];
 
         
 
