@@ -76,6 +76,7 @@
 
     self.laps = [[NSMutableArray alloc] init];
     
+    
 }
 
 #pragma mark - Table view data source
@@ -99,39 +100,23 @@
 #pragma mark - Buttons!
 
 - (IBAction)startStopButtonAction:(id)sender {
+    
+    
+  
    
-//if (tell me what you want to evaluate here in english)
-// do this if true:
-//a)
-//b)
-//c)
-// do this if false
-// a)
-// b)
-// c)
-
-    //if (button tapped)
-    // do this if true:
-    //a) Change this button's label to Stop
-    //b) Start the timer
-    //c)
-    // do this if false
-    // a) Keep title 
-    // b)
-    // c)
-    
-    
-    
-    self.stopWatchTimer = [self createTimer];
-    
-    if (self.stopWatchTimer){
+    if ( ! self.stopWatchTimer){
+        self.stopWatchTimer = [self createTimer];
+        
         
         [self.startStopButton setTitle:@"Stop" forState:UIControlStateNormal];
 
         
 
     }  else  {
+        // keep track of the total amount of time that this stopwatch has been running
         
+        self.totalTime = self.totalTime + self.totalSessionTime;
+
         [self.stopWatchTimer invalidate];
         
         [self.startStopButton setTitle:@"Start" forState:UIControlStateNormal];
@@ -149,14 +134,16 @@
 
 - (IBAction)lapResetButtonAction:(id)sender {
     
-        if(self.stopWatchTimer){
-            
+    if(self.stopWatchTimer){
+        
         [self.lapResetButton setTitle:@"Lap" forState:UIControlStateNormal];
-            
+        
+        self.displayTime = self.swLabel.text;
+        
         [self.laps addObject: self.displayTime];
-            
+        
         [self.lapsTableView reloadData];
-            
+        
         return   NSLog(@"%@",self.displayTime);
         
     }
