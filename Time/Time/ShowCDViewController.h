@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ShowCDViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *countDownLabel;
 
 @end

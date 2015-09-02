@@ -578,7 +578,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="yDL-6N-g90">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="TO5-FY-OKU"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="TO5-FY-OKU">
+                            <connections>
+                                <action selector="saveButton:" destination="uFo-Yd-la8" id="5gG-x5-9wc"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="countdownLabel" destination="9hz-fU-vJN" id="QMQ-aB-kUb"/>
@@ -643,6 +647,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5GL-Bd-2ti"/>
+                    <connections>
+                        <outlet property="countDownLabel" destination="Odz-30-efr" id="ach-24-I5p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Vf-Ri-Ij4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

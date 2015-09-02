@@ -30,7 +30,7 @@
     
     //Remove the time component from the datePicker.  We care only about the date
     NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
-    NSUInteger preservedComponents = (NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit);
+    NSUInteger preservedComponents = (NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay);
     self.datePicker.date = [calendar dateFromComponents:[calendar components:preservedComponents fromDate:self.datePicker.date]];
     
     //Set up a timer that calls the updateTime method every second to update the label
@@ -54,4 +54,32 @@
     //Update the label with the remaining time
     self.countdownLabel.text = [NSString stringWithFormat:@"%02li days %02li hrs %02li min %02li sec", (long)days, (long)hours, (long)minutes, (long)seconds];
 }
+
+- (IBAction)saveButton:(id)sender {
+     NSString * countDownTitle = self.countdownTitle.text;
+    NSLog(@"%@", countDownTitle);
+    
+    
+}
+
+
+
+
+
+
+/*
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    
+    NSString *devName = [self objectForIndexPath:indexPath];
+    
+    DevImageViewController *imageController = segue.destinationViewController;
+    imageController.devName = [devName capitalizedString];
+    
+}
+ */
+
+
 @end

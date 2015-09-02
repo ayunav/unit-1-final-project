@@ -23,6 +23,7 @@
 		8D0537781B86687C00588318 /* TimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0537771B86687C00588318 /* TimeTests.m */; };
 		F70BE1E71B8A0ADE0079ABE5 /* SWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F70BE1E61B8A0ADE0079ABE5 /* SWViewController.m */; };
 		F70BE1EA1B8A0AFA0079ABE5 /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F70BE1E91B8A0AFA0079ABE5 /* TimerViewController.m */; };
+		F7D7FAAA1B977B1D00D5051C /* CDEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D7FAA91B977B1D00D5051C /* CDEvents.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,8 @@
 		F70BE1E61B8A0ADE0079ABE5 /* SWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWViewController.m; sourceTree = "<group>"; };
 		F70BE1E81B8A0AFA0079ABE5 /* TimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerViewController.h; sourceTree = "<group>"; };
 		F70BE1E91B8A0AFA0079ABE5 /* TimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerViewController.m; sourceTree = "<group>"; };
+		F7D7FAA81B977B1D00D5051C /* CDEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEvents.h; sourceTree = "<group>"; };
+		F7D7FAA91B977B1D00D5051C /* CDEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDEvents.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,18 +132,20 @@
 			children = (
 				29E64B7F1B90EEFD0054E049 /* CQTimer.h */,
 				29E64B801B90EEFD0054E049 /* CQTimer.m */,
-				29FD997D1B96594A0079EBA4 /* AddCDViewController.h */,
-				29FD997E1B96594A0079EBA4 /* AddCDViewController.m */,
 				F70BE1E81B8A0AFA0079ABE5 /* TimerViewController.h */,
 				F70BE1E91B8A0AFA0079ABE5 /* TimerViewController.m */,
-				29FD997A1B96592B0079EBA4 /* CDViewController.h */,
-				29FD997B1B96592B0079EBA4 /* CDViewController.m */,
 				29FCC7BE1B8BD2860005B464 /* CQNewTimerViewController.h */,
 				29FCC7BF1B8BD2860005B464 /* CQNewTimerViewController.m */,
 				29FCC7C11B8BD2AE0005B464 /* CQPresetTimerViewController.h */,
 				29FCC7C21B8BD2AE0005B464 /* CQPresetTimerViewController.m */,
+				F7D7FAA81B977B1D00D5051C /* CDEvents.h */,
+				F7D7FAA91B977B1D00D5051C /* CDEvents.m */,
+				29FD997A1B96592B0079EBA4 /* CDViewController.h */,
+				29FD997B1B96592B0079EBA4 /* CDViewController.m */,
 				29FD99771B96591E0079EBA4 /* ShowCDViewController.h */,
 				29FD99781B96591E0079EBA4 /* ShowCDViewController.m */,
+				29FD997D1B96594A0079EBA4 /* AddCDViewController.h */,
+				29FD997E1B96594A0079EBA4 /* AddCDViewController.m */,
 				292AA5E11B965AE500D6DEE0 /* Images.xcassets */,
 				29E64B891B9260640054E049 /* Main.storyboard */,
 				8D05376A1B86687C00588318 /* LaunchScreen.xib */,
@@ -281,6 +286,7 @@
 				F70BE1EA1B8A0AFA0079ABE5 /* TimerViewController.m in Sources */,
 				29E64B811B90EEFD0054E049 /* CQTimer.m in Sources */,
 				F70BE1E71B8A0ADE0079ABE5 /* SWViewController.m in Sources */,
+				F7D7FAAA1B977B1D00D5051C /* CDEvents.m in Sources */,
 				29FD99791B96591E0079EBA4 /* ShowCDViewController.m in Sources */,
 				29FCC7C31B8BD2AE0005B464 /* CQPresetTimerViewController.m in Sources */,
 				29FCC7C01B8BD2860005B464 /* CQNewTimerViewController.m in Sources */,
