@@ -496,6 +496,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="eventView" destination="Lag-0A-0NG" id="UoR-Rx-0IH"/>
+                        <outlet property="eventsView" destination="Lag-0A-0NG" id="TeT-a7-s7M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uDJ-Mp-gXX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

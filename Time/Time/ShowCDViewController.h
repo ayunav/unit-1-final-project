@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ShowCDViewController : UIViewController
+
+
 @property (weak, nonatomic) IBOutlet UILabel *countDownLabel;
+@property (nonatomic) NSString * EventName;
 
 @end

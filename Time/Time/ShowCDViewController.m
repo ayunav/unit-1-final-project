@@ -17,12 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.countDownLabel.text = self.EventName;
    
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 

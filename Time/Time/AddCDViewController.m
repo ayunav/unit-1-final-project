@@ -16,6 +16,9 @@
 @interface AddCDViewController ()
 
 @property (nonatomic)CDEvents * model;
+@property (weak, nonatomic) IBOutlet UITableView *eventsView;
+
+
 
 @end
 
@@ -44,6 +47,48 @@
     
     
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.destinationViewController isKindOfClass:[ShowCDViewController class]]) {
+        NSIndexPath * indexPath = [self.eventsView indexPathForSelectedRow];
+        Events * countDownEvent = [self.model.events objectAtIndex:indexPath.row];
+        NSString * name = countDownEvent.Eventname;
+        
+        
+        ShowCDViewController *destination = segue.destinationViewController;
+        destination.EventName = name;
+       
+        
+        
+    }
+    
+    
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return [self.model.events count];
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"characterCellIdentifier" forIndexPath:indexPath];
+    Events *CDEvent = [self.model.events objectAtIndex:indexPath.row];
+    
+    NSString *name = [CDEvent Eventname];
+    
+    
+    cell.textLabel.text = name;
+    
+    
+    return cell;
+}
+
 
 
 
