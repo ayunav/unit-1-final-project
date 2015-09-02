@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CDEvents.h"
+#import "Events.h"
 
 @interface CDViewController : UIViewController
 
