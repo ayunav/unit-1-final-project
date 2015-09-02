@@ -10,4 +10,9 @@
 
 @implementation Events
 
+- (void) initializeEventName: (NSString *) eventTitle {
+    
+    self.Eventname = eventTitle;
+}
+
 @end

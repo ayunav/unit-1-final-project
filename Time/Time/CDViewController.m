@@ -71,9 +71,6 @@
     // add person to out character model data
     
     [self dismissViewControllerAnimated:YES completion:nil];
-    
-    
-    
 }
 
 
