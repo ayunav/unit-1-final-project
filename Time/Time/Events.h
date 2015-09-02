@@ -1,5 +1,5 @@
 //
-//  CDEvents.h
+//  Events.h
 //  Time
 //
 //  Created by Christella on 9/2/15.
@@ -8,13 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CDEvents : NSObject
-
-
-@property (nonatomic) NSMutableArray *events;
--(void) initializeEvents;
-
-+ (CDEvents *)sharedInstance;
-
+@interface Events : NSObject
 
 @end

@@ -24,6 +24,7 @@
 		F70BE1E71B8A0ADE0079ABE5 /* SWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F70BE1E61B8A0ADE0079ABE5 /* SWViewController.m */; };
 		F70BE1EA1B8A0AFA0079ABE5 /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F70BE1E91B8A0AFA0079ABE5 /* TimerViewController.m */; };
 		F7D7FAAA1B977B1D00D5051C /* CDEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D7FAA91B977B1D00D5051C /* CDEvents.m */; };
+		F7D7FAAD1B977C4500D5051C /* Events.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D7FAAC1B977C4500D5051C /* Events.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		F70BE1E91B8A0AFA0079ABE5 /* TimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerViewController.m; sourceTree = "<group>"; };
 		F7D7FAA81B977B1D00D5051C /* CDEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEvents.h; sourceTree = "<group>"; };
 		F7D7FAA91B977B1D00D5051C /* CDEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDEvents.m; sourceTree = "<group>"; };
+		F7D7FAAB1B977C4500D5051C /* Events.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Events.h; sourceTree = "<group>"; };
+		F7D7FAAC1B977C4500D5051C /* Events.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Events.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +141,8 @@
 				29FCC7BF1B8BD2860005B464 /* CQNewTimerViewController.m */,
 				29FCC7C11B8BD2AE0005B464 /* CQPresetTimerViewController.h */,
 				29FCC7C21B8BD2AE0005B464 /* CQPresetTimerViewController.m */,
+				F7D7FAAB1B977C4500D5051C /* Events.h */,
+				F7D7FAAC1B977C4500D5051C /* Events.m */,
 				F7D7FAA81B977B1D00D5051C /* CDEvents.h */,
 				F7D7FAA91B977B1D00D5051C /* CDEvents.m */,
 				29FD997A1B96592B0079EBA4 /* CDViewController.h */,
@@ -283,6 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7D7FAAD1B977C4500D5051C /* Events.m in Sources */,
 				F70BE1EA1B8A0AFA0079ABE5 /* TimerViewController.m in Sources */,
 				29E64B811B90EEFD0054E049 /* CQTimer.m in Sources */,
 				F70BE1E71B8A0ADE0079ABE5 /* SWViewController.m in Sources */,
