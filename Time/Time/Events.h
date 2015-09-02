@@ -10,4 +10,12 @@
 
 @interface Events : NSObject
 
+
+//user generated
+@property (nonatomic) NSString * Eventname;
+
+- (void) initializeEventName: (NSString *) eventTitle;
+
+
+
 @end

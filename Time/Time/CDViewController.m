@@ -7,6 +7,7 @@
 //
 
 #import "CDViewController.h"
+#import "Events.h"
 
 @interface CDViewController ()
 
@@ -56,8 +57,14 @@
 }
 
 - (IBAction)saveButton:(id)sender {
-     NSString * countDownTitle = self.countdownTitle.text;
+    
+    Events *event = [[Events alloc]init];
+    
+    NSString * countDownTitle = self.countdownTitle.text;
     NSLog(@"%@", countDownTitle);
+    
+    [event initializeEventName:countDownTitle];
+    
     
     
 }
