@@ -13,7 +13,7 @@
 #import "ShowCDViewController.h"
 
 
-@interface AddCDViewController ()
+@interface AddCDViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic)CDEvents * model;
 @property (weak, nonatomic) IBOutlet UITableView *eventsView;
@@ -66,9 +66,6 @@
     
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
@@ -77,10 +74,10 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"eventCellIdentifier" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"characterCellIdentifier" forIndexPath:indexPath];
     Events *CDEvent = [self.model.events objectAtIndex:indexPath.row];
     
-    NSString *name = self.countdownTitle.text;
+    NSString *name = [CDEvent Eventname];
     
     
     cell.textLabel.text = name;
