@@ -7,31 +7,45 @@
 //
 
 #import "AddCDViewController.h"
+#import "Events.h"
+#import "CDEvents.h"
+#import "CDViewController.h"
+#import "ShowCDViewController.h"
+
 
 @interface AddCDViewController ()
+
+@property (nonatomic)CDEvents * model;
 
 @end
 
 @implementation AddCDViewController
 
+//Delete Action
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        [self.model.events removeObjectAtIndex:indexPath.row];
+        // Delete the row from the data source
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.title = @"Your Countdowns";
+    
+    self.model = [CDEvents sharedInstance];
+    
+    //    self.model = [[characterModel alloc]init];
+    [self.model initializeEvents];
+    
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
