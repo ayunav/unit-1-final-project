@@ -77,10 +77,10 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"characterCellIdentifier" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"eventCellIdentifier" forIndexPath:indexPath];
     Events *CDEvent = [self.model.events objectAtIndex:indexPath.row];
     
-    NSString *name = [CDEvent Eventname];
+    NSString *name = self.countdownTitle.text;
     
     
     cell.textLabel.text = name;

@@ -450,7 +450,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="171" id="ddf-5z-iSn"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="KYK-qK-t2m" detailTextLabel="ibg-uM-eFh" style="IBUITableViewCellStyleValue1" id="d35-3S-t8b">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventCellIdentifier" textLabel="KYK-qK-t2m" detailTextLabel="ibg-uM-eFh" style="IBUITableViewCellStyleValue1" id="d35-3S-t8b">
                                         <rect key="frame" x="0.0" y="0.0" width="333" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d35-3S-t8b" id="2FM-hS-93g">
@@ -497,7 +497,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="eventView" destination="Lag-0A-0NG" id="UoR-Rx-0IH"/>
                         <outlet property="eventsView" destination="Lag-0A-0NG" id="TeT-a7-s7M"/>
                     </connections>
                 </viewController>
