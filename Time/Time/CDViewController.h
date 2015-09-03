@@ -13,10 +13,11 @@
 
 @protocol NewEventDelegate <NSObject>
 
--(void) addToTheArrayNewEvent:(CDEvents *)newTimer;
+-(void) addToTheArrayNewEvent:(CDEvents *)newEvent;
 
 
 @end
+
 @interface CDViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabe;;

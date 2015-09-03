@@ -68,7 +68,7 @@
 - (IBAction)newEvent:(UIBarButtonItem *)sender {
     
     
-    if([sender.title isEqualToString:@"New Countdown"]){
+    if([sender.title isEqualToString:@"New Event"]){
         
         CDViewController *newEventVC = [self.storyboard instantiateViewControllerWithIdentifier:@"NewEventViewController"];
         newEventVC.delegate = self;
@@ -80,7 +80,7 @@
 
 #pragma mark - Delegate methods
 
-- (void) addToTheArrayNewTimer:(CDEvents *)newEvent {
+- (void) addToTheArrayNewEvent:(CDEvents *)newEvent {
     [self.events addObject:newEvent];
     [self.eventsView reloadData];
 }

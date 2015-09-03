@@ -73,19 +73,5 @@
 
 
 
-/*
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    
-    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    
-    NSString *devName = [self objectForIndexPath:indexPath];
-    
-    DevImageViewController *imageController = segue.destinationViewController;
-    imageController.devName = [devName capitalizedString];
-    
-}
- */
-
 
 @end
