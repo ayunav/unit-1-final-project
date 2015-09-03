@@ -162,6 +162,8 @@
     
     [self.delegate addToTheArrayNewTimer:newTimer];
     
+   
+    
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 

@@ -472,7 +472,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpk-z1-dEN">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpk-z1-dEN">
                                 <rect key="frame" x="281" y="74" width="37" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="z1r-v0-fmS"/>
@@ -494,7 +494,7 @@
                                     <!--2015-08-30 21:20:31 +0000-->
                                 </date>
                             </datePicker>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pif-Ka-01x">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pif-Ka-01x">
                                 <rect key="frame" x="60" y="130" width="480" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -517,7 +517,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="startCountdown:" destination="uFo-Yd-la8" eventType="touchUpInside" id="cb8-Oc-42d"/>
+                                    <action selector="startCountdown:" destination="uFo-Yd-la8" eventType="touchUpInside" id="uJg-fJ-a5Z"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -528,7 +528,7 @@
                             <constraint firstAttribute="centerX" secondItem="As4-rn-efZ" secondAttribute="centerX" id="7yn-lf-zlL"/>
                             <constraint firstAttribute="centerX" secondItem="gpk-z1-dEN" secondAttribute="centerX" id="M97-2A-cU2"/>
                             <constraint firstItem="9hz-fU-vJN" firstAttribute="top" secondItem="As4-rn-efZ" secondAttribute="bottom" constant="20" id="VgR-WQ-BE9"/>
-                            <constraint firstItem="gpk-z1-dEN" firstAttribute="top" secondItem="zlT-qG-fm7" secondAttribute="bottom" constant="10" id="aJj-MP-B82"/>
+                            <constraint firstItem="gpk-z1-dEN" firstAttribute="top" secondItem="zlT-qG-fm7" secondAttribute="bottom" constant="54" id="aJj-MP-B82"/>
                             <constraint firstItem="Pif-Ka-01x" firstAttribute="leading" secondItem="HAX-oQ-GQL" secondAttribute="leadingMargin" constant="44" id="eCx-xa-HIk"/>
                             <constraint firstItem="Pif-Ka-01x" firstAttribute="top" secondItem="gpk-z1-dEN" secondAttribute="bottom" constant="35" id="g7t-eN-Cpr"/>
                             <constraint firstItem="dIS-Qs-zDo" firstAttribute="top" secondItem="9hz-fU-vJN" secondAttribute="bottom" constant="8" id="h2l-mz-AEE"/>
@@ -544,10 +544,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="countdownLabel" destination="9hz-fU-vJN" id="QMQ-aB-kUb"/>
-                        <outlet property="countdownTitle" destination="Pif-Ka-01x" id="TOu-YQ-HI6"/>
-                        <outlet property="datePicker" destination="As4-rn-efZ" id="QR1-Su-BeE"/>
-                        <outlet property="titleLabe" destination="gpk-z1-dEN" id="LHl-vf-uHt"/>
+                        <outlet property="countdownLabel" destination="9hz-fU-vJN" id="dLm-c2-eJZ"/>
+                        <outlet property="countdownTitle" destination="Pif-Ka-01x" id="9v9-QV-VC4"/>
+                        <outlet property="datePicker" destination="As4-rn-efZ" id="BLa-ya-zva"/>
+                        <outlet property="titleLabel" destination="gpk-z1-dEN" id="VvT-Bz-k1W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9dl-o8-P3n" userLabel="First Responder" sceneMemberID="firstResponder"/>

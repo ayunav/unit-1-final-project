@@ -16,6 +16,7 @@
 -(void) addToTheArrayNewEvent:(CDEvents *)newEvent;
 
 
+
 @end
 
 @interface CDViewController : UIViewController
@@ -23,12 +24,9 @@
 
 @property (nonatomic, weak) id <NewEventDelegate> delegate;
 
-@property (weak, nonatomic) IBOutlet UILabel *titleLabe;;
-@property (weak, nonatomic) IBOutlet UITextField *countdownTitle;
+@property (nonatomic) NSString *cdEventTitle;
 
 
-@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
-@property (weak, nonatomic) IBOutlet UILabel *countdownLabel;
 
 
 - (IBAction)startCountdown:(id)sender;

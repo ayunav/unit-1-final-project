@@ -10,8 +10,9 @@
 
 @interface CDEvents : NSObject
 
-@property (nonatomic) NSString *countDownTitle;
-@property (nonatomic) NSMutableArray *events;
+
+@property (nonatomic) NSMutableArray *userEvents;
+@property (nonatomic) NSString *userEventTitle;
 
 
 @end

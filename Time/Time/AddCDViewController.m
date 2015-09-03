@@ -16,7 +16,7 @@
 
 
 @property (weak, nonatomic) IBOutlet UITableView *eventsView;
-@property (nonatomic) NSMutableArray *events;
+@property (nonatomic) NSMutableArray *userEvents;
 
 
 
@@ -47,7 +47,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return self.events.count;
+    return self.userEvents.count;
 }
 
 
@@ -56,9 +56,9 @@
     UITableViewCell *cell = [self.eventsView dequeueReusableCellWithIdentifier:@"eventCellIdentifier" forIndexPath:indexPath];
     
     CDEvents *eventTemp;
-    eventTemp = [self.events objectAtIndex:indexPath.row];
+    eventTemp = [self.userEvents objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = eventTemp.countDownTitle;
+    cell.textLabel.text = eventTemp.userEventTitle;
     
     return cell;
 }
@@ -81,7 +81,7 @@
 #pragma mark - Delegate methods
 
 - (void) addToTheArrayNewEvent:(CDEvents *)newEvent {
-    [self.events addObject:newEvent];
+    [self.userEvents addObject:newEvent];
     [self.eventsView reloadData];
 }
 
@@ -92,7 +92,7 @@
     
     ShowCDViewController *cdEventsVC= [self.storyboard instantiateViewControllerWithIdentifier:@"CDEventsViewController"];
     
-    CDEvents *eventObject = self.events[indexPath.row];
+    CDEvents *eventObject = self.userEvents[indexPath.row];
     
     //pass the CQTimer timerObject to the next VC
     cdEventsVC.eventObject = eventObject;

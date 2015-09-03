@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CDEvents.h"
 
 @interface AddCDViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic) CDEvents *eventObject;
+
 
 @end

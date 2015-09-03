@@ -7,9 +7,23 @@
 //
 
 #import "CDViewController.h"
+#import "CDEvents.h"
+#import "AddCDViewController.h"
 
 
 @interface CDViewController ()
+
+
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UITextField *countdownTitle;
+
+
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+@property (weak, nonatomic) IBOutlet UILabel *countdownLabel;
+
+
+
+
 
 @end
 
@@ -58,10 +72,12 @@
 
 - (IBAction)saveButton:(id)sender {
     CDEvents *newEvent = [[CDEvents alloc] init];
-    newEvent.countDownTitle = self.countdownTitle.text;
+    newEvent.userEventTitle = self.countdownTitle.text;
     
     
     [self.delegate addToTheArrayNewEvent: newEvent];
+    
+     NSLog(@"%@", newEvent);
     
     [self.navigationController popToRootViewControllerAnimated:YES];
    
