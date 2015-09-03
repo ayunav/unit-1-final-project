@@ -79,6 +79,8 @@
 
     self.laps = [[NSMutableArray alloc] init];
     
+    self.lapResetButton.enabled = NO;
+   
     
 }
 
@@ -113,6 +115,7 @@
         
         [self.startStopButton setTitle:@"Stop" forState:UIControlStateNormal];
          [self.lapResetButton setTitle:@"Lap" forState:UIControlStateNormal];
+         self.lapResetButton.enabled = YES;
 
         
 
