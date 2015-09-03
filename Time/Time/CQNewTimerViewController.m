@@ -34,6 +34,7 @@
 @property (nonatomic) AVAudioPlayer *soundAlarmTimerIsUp;
 @property (nonatomic) NSString *soundName;
 @property (nonatomic) NSArray *sounds;
+@property (nonatomic) AVAudioPlayer *soundAtRowSelected;
 
 @end
 
@@ -181,6 +182,12 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
 
     self.soundName = [self.sounds objectAtIndex:row];
+    
+    NSString *path = [NSString stringWithFormat:@"%@/%@.mp3", [[NSBundle mainBundle] resourcePath], self.soundName];
+    NSURL *soundURL = [NSURL fileURLWithPath:path];
+    
+    self.soundAtRowSelected = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:nil];
+    [self.soundAtRowSelected play];
 }
 
 @end
