@@ -7,7 +7,6 @@
 //
 
 #import "AddCDViewController.h"
-#import "Events.h"
 #import "CDEvents.h"
 #import "CDViewController.h"
 #import "ShowCDViewController.h"
@@ -15,8 +14,9 @@
 
 @interface AddCDViewController () <UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic)CDEvents * model;
+
 @property (weak, nonatomic) IBOutlet UITableView *eventsView;
+@property (nonatomic) NSMutableArray *events;
 
 
 
@@ -25,63 +25,40 @@
 @implementation AddCDViewController
 
 //Delete Action
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete)
-    {
-        [self.model.events removeObjectAtIndex:indexPath.row];
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-    }
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.title = @"Your Countdowns";
     
-    self.model = [CDEvents sharedInstance];
     
-    //    self.model = [[characterModel alloc]init];
-    [self.model initializeEvents];
+   
     
     
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    if ([segue.destinationViewController isKindOfClass:[ShowCDViewController class]]) {
-        NSIndexPath * indexPath = [self.eventsView indexPathForSelectedRow];
-        Events * countDownEvent = [self.model.events objectAtIndex:indexPath.row];
-        NSString * name = countDownEvent.Eventname;
-        
-        
-        ShowCDViewController *destination = segue.destinationViewController;
-        destination.EventName = name;
-       
-        
-        
-    }
-    
-    
+
+#pragma mark Table View Methods 
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [self.model.events count];
+    return self.events.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"characterCellIdentifier" forIndexPath:indexPath];
-    Events *CDEvent = [self.model.events objectAtIndex:indexPath.row];
     
-    NSString *name = [CDEvent Eventname];
+    UITableViewCell *cell = [self.eventsView dequeueReusableCellWithIdentifier:@"TimerCellIdentifier" forIndexPath:indexPath];
     
+    CDEvents *eventTemp;
+    eventTemp = [self.events objectAtIndex:indexPath.row];
     
-    //cell.textLabel.text = name;
-    
+    cell.textLabel.text = eventTemp.countDownTitle;
     
     return cell;
 }

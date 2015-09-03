@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddCDViewController : UIViewController
+@interface AddCDViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end

@@ -10,11 +10,8 @@
 
 @interface CDEvents : NSObject
 
-
+@property (nonatomic) NSString *countDownTitle;
 @property (nonatomic) NSMutableArray *events;
--(void) initializeEvents;
-
-+ (CDEvents *)sharedInstance;
 
 
 @end
