@@ -13,6 +13,8 @@
 
 @protocol NewEventDelegate <NSObject>
 
+-(void) addToTheArrayNewEvent:(CDEvents *)newTimer;
+
 
 @end
 @interface CDViewController : UIViewController

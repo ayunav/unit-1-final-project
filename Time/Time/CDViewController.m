@@ -7,7 +7,7 @@
 //
 
 #import "CDViewController.h"
-#import "Events.h"
+
 
 @interface CDViewController ()
 
@@ -57,20 +57,15 @@
 }
 
 - (IBAction)saveButton:(id)sender {
+    CDEvents *newEvent = [[CDEvents alloc] init];
+    newEvent.countDownTitle = self.countdownTitle.text;
+   // newTimer.timerDuration = self.timerPickerView.countDownDuration;
     
-    Events *event = [[Events alloc]init];
     
-    NSString * countDownTitle = self.countdownTitle.text;
-    NSLog(@"%@", countDownTitle);
+    [self.delegate addToTheArrayNewEvent: newEvent];
     
-    [event initializeEventName:countDownTitle];
-    
-    CDEvents *shared = [CDEvents sharedInstance];
-    
-    [shared.events addObject:event];
-    // add person to out character model data
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+   
 }
 
 
