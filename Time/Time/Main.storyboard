@@ -524,7 +524,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpk-z1-dEN">
-                                <rect key="frame" x="281" y="74" width="37" height="21"/>
+                                <rect key="frame" x="281" y="74" width="37" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="z1r-v0-fmS"/>
                                     <constraint firstAttribute="width" constant="37" id="zkW-Kw-KLT"/>
@@ -546,7 +546,7 @@
                                 </date>
                             </datePicker>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pif-Ka-01x">
-                                <rect key="frame" x="60" y="130" width="480" height="30"/>
+                                <rect key="frame" x="60" y="129" width="480" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -560,12 +560,11 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIS-Qs-zDo">
-                                <rect key="frame" x="228" y="430" width="166" height="35"/>
-                                <color key="backgroundColor" red="0.99607843139999996" green="0.76078431369999999" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIS-Qs-zDo">
+                                <rect key="frame" x="228" y="430" width="144" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Start Countdown">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.9882352941176471" green="0.71372549019607845" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -609,7 +608,7 @@
         <!--ShowCD View Controller-->
         <scene sceneID="DSO-Sz-Llf">
             <objects>
-                <viewController id="LdW-mI-WV0" customClass="ShowCDViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CDEventsViewController" id="LdW-mI-WV0" customClass="ShowCDViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qNN-x6-hhl"/>
                         <viewControllerLayoutGuide type="bottom" id="NTB-Bc-j8j"/>
@@ -646,7 +645,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.99055188890000001" green="0.69355873970000004" blue="0.74237184460000005" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -846,10 +845,10 @@
                             <mask key="constraints">
                                 <exclude reference="PB0-hO-6sB"/>
                                 <exclude reference="zGE-kf-L2X"/>
+                                <exclude reference="WB7-me-h5Q"/>
                                 <exclude reference="TgP-uh-rVU"/>
                                 <exclude reference="gVP-Im-HzU"/>
                                 <exclude reference="z4P-mI-L7g"/>
-                                <exclude reference="WB7-me-h5Q"/>
                                 <exclude reference="vUt-V3-q0m"/>
                             </mask>
                         </variation>

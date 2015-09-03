@@ -24,6 +24,7 @@
 @property (strong,nonatomic)NSMutableArray *laps;
 @property NSString *displayTime;
 
+
 @end
 
 @implementation SWViewController
@@ -98,6 +99,9 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:SimpleIdentifier];
     }
     cell.textLabel.text = self.laps[indexPath.row];
+    cell.detailTextLabel.text = @"Laps";
+    
+    
     return cell;
 }
 

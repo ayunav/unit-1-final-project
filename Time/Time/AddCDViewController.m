@@ -12,7 +12,7 @@
 #import "ShowCDViewController.h"
 
 
-@interface AddCDViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface AddCDViewController ()<NewEventDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UITableView *eventsView;
@@ -30,12 +30,7 @@
     [super viewDidLoad];
     
     self.title = @"Your Countdowns";
-    
-    
-    
-    
-   
-    
+    self.userEvents = [[NSMutableArray alloc] init];
     
 }
 
@@ -77,7 +72,6 @@
         newEventVC.delegate = self;
         [self.navigationController pushViewController:newEventVC animated:YES];
     }
-    
     
 }
 
