@@ -226,40 +226,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oXH-QN-j1h">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="150"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yY8-vX-fpp">
-                                        <rect key="frame" x="238" y="44" width="124.5" height="62.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="jsL-9f-hee"/>
-                                            <constraint firstAttribute="width" constant="303" id="ogN-HA-yjh"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="52"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="jsL-9f-hee"/>
-                                                <exclude reference="ogN-HA-yjh"/>
-                                            </mask>
-                                        </variation>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="centerX" secondItem="yY8-vX-fpp" secondAttribute="centerX" id="3C1-U3-Zoy"/>
-                                    <constraint firstAttribute="centerX" secondItem="yY8-vX-fpp" secondAttribute="centerX" constant="60.5" id="Iw3-3G-B2N"/>
-                                    <constraint firstAttribute="centerY" secondItem="yY8-vX-fpp" secondAttribute="centerY" id="KaD-jm-wCr"/>
-                                    <constraint firstAttribute="centerY" secondItem="yY8-vX-fpp" secondAttribute="centerY" id="Sao-dt-aEV"/>
-                                    <constraint firstAttribute="height" constant="150" id="luO-87-KtI"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Iw3-3G-B2N"/>
-                                    </mask>
-                                </variation>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9u-4P-68r">
                                 <rect key="frame" x="0.0" y="150" width="600" height="136"/>
                                 <subviews>
@@ -358,6 +324,40 @@
                                     <outlet property="delegate" destination="2B4-K1-uof" id="llg-Y7-6Is"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oXH-QN-j1h">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="150"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yY8-vX-fpp">
+                                        <rect key="frame" x="238" y="44" width="125" height="63"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="jsL-9f-hee"/>
+                                            <constraint firstAttribute="width" constant="303" id="ogN-HA-yjh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="52"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="jsL-9f-hee"/>
+                                                <exclude reference="ogN-HA-yjh"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="yY8-vX-fpp" secondAttribute="centerX" id="3C1-U3-Zoy"/>
+                                    <constraint firstAttribute="centerX" secondItem="yY8-vX-fpp" secondAttribute="centerX" constant="60.5" id="Iw3-3G-B2N"/>
+                                    <constraint firstAttribute="centerY" secondItem="yY8-vX-fpp" secondAttribute="centerY" id="KaD-jm-wCr"/>
+                                    <constraint firstAttribute="centerY" secondItem="yY8-vX-fpp" secondAttribute="centerY" id="Sao-dt-aEV"/>
+                                    <constraint firstAttribute="height" constant="150" id="luO-87-KtI"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Iw3-3G-B2N"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -389,7 +389,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fgv-SL-wyL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-116" y="-226"/>
+            <point key="canvasLocation" x="-116" y="-126"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="EcZ-ki-fir">
@@ -426,7 +426,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Luu-yx-Uvc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-116" y="1895"/>
+            <point key="canvasLocation" x="-116" y="1539"/>
         </scene>
         <!--Countdown Table View Controller-->
         <scene sceneID="u0N-k4-1mB">
@@ -482,7 +482,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uDJ-Mp-gXX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-116" y="2619"/>
+            <point key="canvasLocation" x="-116" y="2275"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="6zW-hP-00M">
@@ -577,7 +577,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9dl-o8-P3n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="591" y="2452"/>
+            <point key="canvasLocation" x="578" y="1924"/>
         </scene>
         <!--ShowCD View Controller-->
         <scene sceneID="DSO-Sz-Llf">
@@ -637,7 +637,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Vf-Ri-Ij4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="591" y="3151"/>
+            <point key="canvasLocation" x="578" y="2643"/>
         </scene>
         <!--Preset Timer-->
         <scene sceneID="z7Z-tk-QPC">
