@@ -168,6 +168,8 @@
         [self.lapsTableView reloadData];
         
         self.swLabel.text=[NSString stringWithFormat :@"00:00.0"];
+        
+         self.lapResetButton.enabled = NO;
     }
     
     }
