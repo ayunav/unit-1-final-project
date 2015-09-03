@@ -86,6 +86,20 @@
 }
 
 
+#pragma mark - didSelectRowAtIndexPath
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    ShowCDViewController *cdEventsVC= [self.storyboard instantiateViewControllerWithIdentifier:@"CDEventsViewController"];
+    
+    CDEvents *eventObject = self.events[indexPath.row];
+    
+    //pass the CQTimer timerObject to the next VC
+    cdEventsVC.eventObject = eventObject;
+    
+    [self.navigationController pushViewController:cdEventsVC animated:YES];
+}
+
 
 
 
