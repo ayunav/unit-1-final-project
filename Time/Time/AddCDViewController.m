@@ -78,6 +78,14 @@
     
 }
 
+#pragma mark - Delegate methods
+
+- (void) addToTheArrayNewTimer:(CDEvents *)newEvent {
+    [self.events addObject:newEvent];
+    [self.eventsView reloadData];
+}
+
+
 
 
 
