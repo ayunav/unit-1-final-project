@@ -84,6 +84,7 @@
     newEvent.userEventTitle = self.countdownTitle.text;
     newEvent.date = self.datePicker.date;
     
+    
     [self.delegate addToTheArrayNewEvent: newEvent];
     
      NSLog(@"%@", newEvent);

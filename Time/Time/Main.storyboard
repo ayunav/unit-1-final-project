@@ -641,12 +641,6 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05L-cn-0id">
-                                        <rect key="frame" x="285" y="313" width="30" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days Until" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKD-gb-Fqs">
                                         <rect key="frame" x="261" y="96" width="78.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -657,11 +651,9 @@
                                 <color key="backgroundColor" red="0.99055188890000001" green="0.69355873970000004" blue="0.74237184460000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="centerX" secondItem="Odz-30-efr" secondAttribute="centerX" id="NnV-2p-JqK"/>
-                                    <constraint firstAttribute="centerX" secondItem="05L-cn-0id" secondAttribute="centerX" id="PuG-rw-Iaa"/>
                                     <constraint firstItem="OKD-gb-Fqs" firstAttribute="top" secondItem="tVz-kU-wdy" secondAttribute="top" constant="96" id="SDz-eo-F4A"/>
                                     <constraint firstAttribute="centerX" secondItem="OKD-gb-Fqs" secondAttribute="centerX" id="SIJ-uA-q7D"/>
                                     <constraint firstItem="DIw-tw-uIs" firstAttribute="top" secondItem="OKD-gb-Fqs" secondAttribute="bottom" constant="49.5" id="UPQ-kS-mhf"/>
-                                    <constraint firstItem="05L-cn-0id" firstAttribute="top" secondItem="Odz-30-efr" secondAttribute="bottom" constant="55" id="btz-nY-E76"/>
                                     <constraint firstAttribute="centerX" secondItem="DIw-tw-uIs" secondAttribute="centerX" id="ed6-Zo-epJ"/>
                                     <constraint firstItem="Odz-30-efr" firstAttribute="top" secondItem="DIw-tw-uIs" secondAttribute="bottom" constant="36.5" id="rIC-3K-VCG"/>
                                 </constraints>

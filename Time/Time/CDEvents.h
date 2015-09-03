@@ -16,6 +16,8 @@
 
 @property (nonatomic) NSString *userEventTitle;
 
+@property (nonatomic) NSString *userEventDay;
+
 @property (nonatomic) NSDate *date;
 
 

@@ -15,6 +15,10 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *showCountdown;
 
+@property (weak, nonatomic) IBOutlet UILabel *date;
+
+
+
 
 
 @end
@@ -30,6 +34,8 @@
     
     NSTimer *timer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(displayUpdatedTime) userInfo:nil repeats:YES];
     [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+    
+    
     
     //Get the time left until the specified date
 
