@@ -77,7 +77,8 @@
         [self.startCancelButtonTapped setTitle:@"Start" forState:UIControlStateNormal];
         self.pauseResumeButtonTapped.enabled = NO;
         
-        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate); 
+        // adds vibration when the timer is up
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
     }
 }
 
