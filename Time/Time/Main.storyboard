@@ -629,26 +629,26 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tVz-kU-wdy">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIw-tw-uIs">
-                                        <rect key="frame" x="276" y="138" width="48.5" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIw-tw-uIs">
+                                        <rect key="frame" x="280" y="166" width="40.5" height="26.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Countdown" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Odz-30-efr">
-                                        <rect key="frame" x="234" y="208" width="132.5" height="21.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Countdown" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Odz-30-efr">
+                                        <rect key="frame" x="239" y="229" width="122.5" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Day" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05L-cn-0id">
-                                        <rect key="frame" x="279" y="306" width="42" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05L-cn-0id">
+                                        <rect key="frame" x="285" y="313" width="30" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Days Until" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKD-gb-Fqs">
-                                        <rect key="frame" x="252" y="71" width="78.5" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days Until" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKD-gb-Fqs">
+                                        <rect key="frame" x="261" y="96" width="78.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -658,12 +658,12 @@
                                 <constraints>
                                     <constraint firstAttribute="centerX" secondItem="Odz-30-efr" secondAttribute="centerX" id="NnV-2p-JqK"/>
                                     <constraint firstAttribute="centerX" secondItem="05L-cn-0id" secondAttribute="centerX" id="PuG-rw-Iaa"/>
-                                    <constraint firstItem="OKD-gb-Fqs" firstAttribute="top" secondItem="tVz-kU-wdy" secondAttribute="top" constant="20" id="SDz-eo-F4A"/>
+                                    <constraint firstItem="OKD-gb-Fqs" firstAttribute="top" secondItem="tVz-kU-wdy" secondAttribute="top" constant="96" id="SDz-eo-F4A"/>
                                     <constraint firstAttribute="centerX" secondItem="OKD-gb-Fqs" secondAttribute="centerX" id="SIJ-uA-q7D"/>
-                                    <constraint firstItem="DIw-tw-uIs" firstAttribute="top" secondItem="OKD-gb-Fqs" secondAttribute="bottom" constant="20" id="UPQ-kS-mhf"/>
-                                    <constraint firstItem="05L-cn-0id" firstAttribute="top" secondItem="Odz-30-efr" secondAttribute="bottom" constant="20" id="btz-nY-E76"/>
+                                    <constraint firstItem="DIw-tw-uIs" firstAttribute="top" secondItem="OKD-gb-Fqs" secondAttribute="bottom" constant="49.5" id="UPQ-kS-mhf"/>
+                                    <constraint firstItem="05L-cn-0id" firstAttribute="top" secondItem="Odz-30-efr" secondAttribute="bottom" constant="55" id="btz-nY-E76"/>
                                     <constraint firstAttribute="centerX" secondItem="DIw-tw-uIs" secondAttribute="centerX" id="ed6-Zo-epJ"/>
-                                    <constraint firstItem="Odz-30-efr" firstAttribute="top" secondItem="DIw-tw-uIs" secondAttribute="bottom" constant="20" id="rIC-3K-VCG"/>
+                                    <constraint firstItem="Odz-30-efr" firstAttribute="top" secondItem="DIw-tw-uIs" secondAttribute="bottom" constant="36.5" id="rIC-3K-VCG"/>
                                 </constraints>
                             </view>
                         </subviews>
