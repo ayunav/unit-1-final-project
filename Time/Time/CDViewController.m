@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UILabel *countdownLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *eventDisplayed;
 
 
 
@@ -68,12 +69,20 @@
     
     //Update the label with the remaining time
     self.countdownLabel.text = [NSString stringWithFormat:@"%02li days %02li hrs %02li min %02li sec", (long)days, (long)hours, (long)minutes, (long)seconds];
+    
+    NSDate *myDate = self.datePicker.date;
+    
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"cccc, MMM d, hh:mm aa"];
+    NSString *theEventDate = [dateFormat stringFromDate:myDate];
+    
+    self.eventDisplayed.text = theEventDate;
 }
 
 - (IBAction)saveButton:(id)sender {
     CDEvents *newEvent = [[CDEvents alloc] init];
     newEvent.userEventTitle = self.countdownTitle.text;
-    
+    newEvent.date = self.datePicker.date;
     
     [self.delegate addToTheArrayNewEvent: newEvent];
     

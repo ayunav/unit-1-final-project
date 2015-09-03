@@ -11,8 +11,12 @@
 @interface CDEvents : NSObject
 
 @property (nonatomic) CDEvents *eventObject;
+
 @property (nonatomic) NSMutableArray *userEvents;
+
 @property (nonatomic) NSString *userEventTitle;
+
+@property (nonatomic) NSDate *date;
 
 
 @end
