@@ -228,7 +228,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="150"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yY8-vX-fpp">
-                                        <rect key="frame" x="238" y="44" width="125" height="63"/>
+                                        <rect key="frame" x="238" y="44" width="124.5" height="62.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="jsL-9f-hee"/>
                                             <constraint firstAttribute="width" constant="303" id="ogN-HA-yjh"/>
@@ -261,17 +261,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9u-4P-68r">
                                 <rect key="frame" x="0.0" y="150" width="600" height="136"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z5C-x8-mpn">
-                                        <rect key="frame" x="277" y="35" width="46" height="30"/>
-                                        <state key="normal" title="Button">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="startStopButtonAction:" destination="2B4-K1-uof" eventType="touchUpInside" id="zoh-Gq-rJG"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qai-00-xVZ">
-                                        <rect key="frame" x="277" y="75" width="46" height="30"/>
+                                        <rect key="frame" x="470" y="28" width="80" height="80"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="HWA-1T-Ujb"/>
+                                            <constraint firstAttribute="width" constant="80" id="mrs-r7-BQx"/>
+                                        </constraints>
                                         <state key="normal" title="Button">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -279,15 +275,43 @@
                                             <action selector="lapResetButtonAction:" destination="2B4-K1-uof" eventType="touchUpInside" id="i78-to-wX5"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z5C-x8-mpn">
+                                        <rect key="frame" x="50" y="28" width="80" height="80"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="2r6-eL-mbG"/>
+                                            <constraint firstAttribute="width" constant="80" id="on0-w0-wSt"/>
+                                        </constraints>
+                                        <state key="normal" title="Button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startStopButtonAction:" destination="2B4-K1-uof" eventType="touchUpInside" id="zoh-Gq-rJG"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="Qai-00-xVZ" firstAttribute="top" secondItem="Z5C-x8-mpn" secondAttribute="bottom" constant="10" id="4Vi-Fk-Dxc"/>
                                     <constraint firstAttribute="height" constant="136" id="HVw-b4-oyP"/>
+                                    <constraint firstAttribute="centerY" secondItem="Z5C-x8-mpn" secondAttribute="centerY" id="JAk-ha-bov"/>
+                                    <constraint firstItem="Qai-00-xVZ" firstAttribute="top" secondItem="g9u-4P-68r" secondAttribute="top" constant="35" id="M5F-Im-upI"/>
                                     <constraint firstAttribute="centerX" secondItem="Z5C-x8-mpn" secondAttribute="centerX" id="NP7-i3-uAx"/>
                                     <constraint firstItem="Z5C-x8-mpn" firstAttribute="top" secondItem="g9u-4P-68r" secondAttribute="top" constant="35" id="RPi-Vc-MXA"/>
+                                    <constraint firstAttribute="centerY" secondItem="Qai-00-xVZ" secondAttribute="centerY" id="Tq5-JM-BK0"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qai-00-xVZ" secondAttribute="trailing" constant="50" id="f5H-3r-yL7"/>
                                     <constraint firstAttribute="centerX" secondItem="Qai-00-xVZ" secondAttribute="centerX" id="hn6-1Y-vcY"/>
+                                    <constraint firstItem="Z5C-x8-mpn" firstAttribute="leading" secondItem="g9u-4P-68r" secondAttribute="leading" constant="50" id="kBD-Fm-4FD"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="NP7-i3-uAx"/>
+                                        <exclude reference="RPi-Vc-MXA"/>
+                                        <exclude reference="4Vi-Fk-Dxc"/>
+                                        <exclude reference="M5F-Im-upI"/>
+                                        <exclude reference="hn6-1Y-vcY"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="FC8-ZY-y5F" userLabel="Laps Table View">
                                 <rect key="frame" x="16" y="286" width="568" height="265"/>
@@ -410,25 +434,11 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="171" id="ddf-5z-iSn"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventCellIdentifier" textLabel="KYK-qK-t2m" detailTextLabel="ibg-uM-eFh" rowHeight="38" style="IBUITableViewCellStyleValue1" id="d35-3S-t8b">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventCellIdentifier" rowHeight="38" id="d35-3S-t8b">
                                         <rect key="frame" x="0.0" y="0.0" width="333" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d35-3S-t8b" id="2FM-hS-93g">
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KYK-qK-t2m">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ibg-uM-eFh">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
