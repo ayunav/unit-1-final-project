@@ -9,6 +9,7 @@
 #import "CQPresetTimerViewController.h"
 #import "TimerViewController.h"
 #import <AVFoundation/AVFoundation.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface CQPresetTimerViewController () 
 
@@ -75,6 +76,8 @@
         
         [self.startCancelButtonTapped setTitle:@"Start" forState:UIControlStateNormal];
         self.pauseResumeButtonTapped.enabled = NO;
+        
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate); 
     }
 }
 

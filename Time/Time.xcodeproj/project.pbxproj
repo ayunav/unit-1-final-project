@@ -18,6 +18,7 @@
 		2970533E1B97ABF5005C4C50 /* Sonar.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 297053341B97ABF5005C4C50 /* Sonar.mp3 */; };
 		2970533F1B97ABF5005C4C50 /* Tornado Siren.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 297053351B97ABF5005C4C50 /* Tornado Siren.mp3 */; };
 		297053401B97ABF5005C4C50 /* Zombies.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 297053361B97ABF5005C4C50 /* Zombies.mp3 */; };
+		297053421B97D9F1005C4C50 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 297053411B97D9F1005C4C50 /* AudioToolbox.framework */; };
 		29E64B811B90EEFD0054E049 /* CQTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E64B801B90EEFD0054E049 /* CQTimer.m */; };
 		29E64B8A1B9260640054E049 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29E64B891B9260640054E049 /* Main.storyboard */; };
 		29E64B951B950FF50054E049 /* Magical Explosion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 29E64B941B950FF50054E049 /* Magical Explosion.mp3 */; };
@@ -59,6 +60,7 @@
 		297053341B97ABF5005C4C50 /* Sonar.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sonar.mp3; sourceTree = "<group>"; };
 		297053351B97ABF5005C4C50 /* Tornado Siren.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Tornado Siren.mp3"; sourceTree = "<group>"; };
 		297053361B97ABF5005C4C50 /* Zombies.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Zombies.mp3; sourceTree = "<group>"; };
+		297053411B97D9F1005C4C50 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		29E64B7F1B90EEFD0054E049 /* CQTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQTimer.h; sourceTree = "<group>"; };
 		29E64B801B90EEFD0054E049 /* CQTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQTimer.m; sourceTree = "<group>"; };
 		29E64B891B9260640054E049 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				297053421B97D9F1005C4C50 /* AudioToolbox.framework in Frameworks */,
 				29E64B9A1B951B230054E049 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,6 +136,16 @@
 			name = "Countdown & Stopwatch files";
 			sourceTree = "<group>";
 		};
+		297053431B97DA10005C4C50 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				297053411B97D9F1005C4C50 /* AudioToolbox.framework */,
+				29E64B991B951B230054E049 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		29E64B981B9517950054E049 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,7 +167,6 @@
 		8D05374F1B86687B00588318 = {
 			isa = PBXGroup;
 			children = (
-				29E64B991B951B230054E049 /* AVFoundation.framework */,
 				8D05375A1B86687B00588318 /* Time */,
 				8D0537741B86687C00588318 /* TimeTests */,
 				8D0537591B86687B00588318 /* Products */,
@@ -185,6 +197,7 @@
 				8D05376A1B86687C00588318 /* LaunchScreen.xib */,
 				292AA5E11B965AE500D6DEE0 /* Images.xcassets */,
 				29E64B981B9517950054E049 /* Sounds */,
+				297053431B97DA10005C4C50 /* Frameworks */,
 				2970532C1B97AA8C005C4C50 /* Countdown & Stopwatch files */,
 				8D05375B1B86687B00588318 /* Supporting Files */,
 			);
@@ -266,6 +279,7 @@
 				TargetAttributes = {
 					8D0537571B86687B00588318 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = N48NM3R37Q;
 					};
 					8D0537701B86687C00588318 = {
 						CreatedOnToolsVersion = 6.4;
@@ -459,14 +473,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Time/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -474,14 +490,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Time/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
