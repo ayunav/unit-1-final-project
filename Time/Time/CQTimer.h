@@ -24,4 +24,8 @@
 @property (nonatomic) int minutes;
 @property (nonatomic) int seconds;
 
+@property (nonatomic) NSURL *soundURL; 
+@property (nonatomic) NSString *soundName;
+
+
 @end

@@ -80,7 +80,7 @@
     NSString *name = [CDEvent Eventname];
     
     
-    cell.textLabel.text = name;
+    //cell.textLabel.text = name;
     
     
     return cell;

@@ -13,8 +13,6 @@
 
 @interface CQNewTimerViewController ()
 
-@property (nonatomic) AVAudioPlayer *soundAlarmTimerIsUp;
-
 @property (nonatomic) NSTimer *timer;
 
 @property (nonatomic) int secondsCount;
@@ -30,7 +28,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *startCancelButtonTapped;
 @property (weak, nonatomic) IBOutlet UIButton *pauseResumeButtonTapped;
 @property (weak, nonatomic) IBOutlet UITextField *timerTitleTextField;
+
+// Sounds
 @property (weak, nonatomic) IBOutlet UIPickerView *soundPickerView;
+@property (nonatomic) AVAudioPlayer *soundAlarmTimerIsUp;
+@property (nonatomic) NSString *soundName;
+@property (nonatomic) NSArray *sounds;
 
 @end
 
@@ -44,6 +47,9 @@
     NSInteger seconds = 60;
     [self.timerPickerView setDatePickerMode:UIDatePickerModeCountDownTimer];
     [self.timerPickerView setCountDownDuration:seconds];
+    
+    self.sounds = [[NSMutableArray alloc]initWithObjects:@"Radar", @"Sonar", @"Zombies", @"Tornado Siren", @"Rocket Launch", @"Most Annoying Sound", @"Magical Explosion", @"Dramatic", @"Kitchen Timer", @"Futuristic Alarm", @"Just Alarm", nil];
+    self.soundName = [self.sounds objectAtIndex:0];
     
     self.timerLabel.hidden = YES;
 }
@@ -72,11 +78,11 @@
         
         // Code below is added to work with audio files
         // Construct URL to sound file
-        NSString *path = [NSString stringWithFormat:@"%@/Magical-explosion.mp3", [[NSBundle mainBundle] resourcePath]];
-        NSURL *soundUrl = [NSURL fileURLWithPath:path];
+        NSString *path = [NSString stringWithFormat:@"%@/%@.mp3", [[NSBundle mainBundle] resourcePath], self.soundName];
+        NSURL *soundURL = [NSURL fileURLWithPath:path];
         
         // Create audio player object and initialize with URL to sound
-        self.soundAlarmTimerIsUp = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
+        self.soundAlarmTimerIsUp = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:nil];
         [self.soundAlarmTimerIsUp play];
         
         [self.startCancelButtonTapped setTitle:@"Start" forState:UIControlStateNormal];
@@ -146,20 +152,35 @@
     CQTimer *newTimer = [[CQTimer alloc] init];
     newTimer.timerTitle = self.timerTitleTextField.text;
     newTimer.timerDuration = self.timerPickerView.countDownDuration;
-    [self.delegate addToTheArrayNewTimer:newTimer]; 
+    newTimer.soundName = self.soundName;
+    NSString *path = [NSString stringWithFormat:@"%@/%@.mp3", [[NSBundle mainBundle] resourcePath], self.soundName];
+    newTimer.soundURL = [NSURL fileURLWithPath:path];
+    
+    [self.delegate addToTheArrayNewTimer:newTimer];
     
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 #pragma mark - soundPickerView methods
 
-//// Number of columns in the soundPickerView (one).
-//- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-//    return 1;
-//}
+// Number of columns in the soundPickerView (one).
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
 // Number of rows (choices) in the soundPickerView (as many as there are sound alarm choices).
-//- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-//    //return [self.pickerData[component] count];
-//}
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return self.sounds.count;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component;
+{
+    return [self.sounds objectAtIndex:row];
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+
+    self.soundName = [self.sounds objectAtIndex:row];
+}
 
 @end

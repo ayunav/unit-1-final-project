@@ -34,6 +34,7 @@
 @property (nonatomic) int minutes;
 @property (nonatomic) int seconds;
 
+
 @end
 
 @implementation TimerViewController
@@ -58,17 +59,32 @@
     CQTimer *coffeeTimer = [[CQTimer alloc] init];
     coffeeTimer.timerTitle = @"Coffee Timer";
     coffeeTimer.timerDuration = 180;
+    coffeeTimer.soundName = @"Kitchen Timer";
+    NSString *path = [NSString stringWithFormat:@"%@/%@.mp3", [[NSBundle mainBundle] resourcePath], coffeeTimer.soundName];
+    coffeeTimer.soundURL = [NSURL fileURLWithPath:path];
     [self.presetTimers addObject:coffeeTimer];
     
-    CQTimer *popcornTimer = [[CQTimer alloc] init];
-    popcornTimer.timerTitle = @"Popcorn Timer";
-    popcornTimer.timerDuration = 165; 
-    [self.presetTimers addObject:popcornTimer];
-    
-    CQTimer *demoTimer = [[CQTimer alloc]init];
-    demoTimer.timerTitle = @"Demo Timer";
-    demoTimer.timerDuration = 5;
-    [self.presetTimers addObject:demoTimer];
+    //scope method (curly braces) so that NSString *path is not redefined every time but is defined only within the scope
+    {
+        CQTimer *popcornTimer = [[CQTimer alloc] init];
+        popcornTimer.timerTitle = @"Popcorn Timer";
+        popcornTimer.timerDuration = 165;
+        popcornTimer.soundName = @"Dramatic";
+        NSString *path = [NSString stringWithFormat:@"%@/%@.mp3", [[NSBundle mainBundle] resourcePath], popcornTimer.soundName];
+        popcornTimer.soundURL = [NSURL fileURLWithPath:path];
+        [self.presetTimers addObject:popcornTimer];
+    }
+
+    //scope method (curly braces) so that NSString *path is not redefined every time but is defined only within the scope
+    {
+        CQTimer *demoTimer = [[CQTimer alloc]init];
+        demoTimer.timerTitle = @"Demo Timer";
+        demoTimer.timerDuration = 3;
+        demoTimer.soundName = @"Zombies";
+        NSString *path = [NSString stringWithFormat:@"%@/%@.mp3", [[NSBundle mainBundle] resourcePath], demoTimer.soundName];
+        demoTimer.soundURL = [NSURL fileURLWithPath:path];
+        [self.presetTimers addObject:demoTimer];
+    }
     
     // Control dragging from tableview in the storyboard to the timer itself and setting it to its datasource and delegates implements the code below
     //    self.timersTableView.dataSource = self;
@@ -95,13 +111,8 @@
         [self.timer invalidate];
         self.timer = nil;
         
-        // Code below is added to work with audio files
-        // Construct URL to sound file
-        NSString *path = [NSString stringWithFormat:@"%@/Magical-explosion.mp3", [[NSBundle mainBundle] resourcePath]];
-        NSURL *soundUrl = [NSURL fileURLWithPath:path];
-        
         // Create audio player object and initialize with URL to sound
-        self.soundAlarmTimerIsUp = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
+        self.soundAlarmTimerIsUp = [[AVAudioPlayer alloc] initWithContentsOfURL:self.timerObject.soundURL error:nil];
         [self.soundAlarmTimerIsUp play];
         
         [self.startButtonTapped setTitle:@"Start" forState:UIControlStateNormal];
