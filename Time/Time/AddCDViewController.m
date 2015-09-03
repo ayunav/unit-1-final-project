@@ -64,6 +64,21 @@
 }
 
 
+#pragma mark New Event Button
+- (IBAction)newEvent:(UIBarButtonItem *)sender {
+    
+    
+    if([sender.title isEqualToString:@"New Countdown"]){
+        
+        CDViewController *newEventVC = [self.storyboard instantiateViewControllerWithIdentifier:@"NewEventViewController"];
+        newEventVC.delegate = self;
+        [self.navigationController pushViewController:newEventVC animated:YES];
+    }
+    
+    
+}
+
+
 
 
 

@@ -487,7 +487,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="y9N-hR-MRc">
-                        <barButtonItem key="rightBarButtonItem" title="New Event" id="T25-b6-KtG"/>
+                        <barButtonItem key="rightBarButtonItem" title="New Event" id="T25-b6-KtG">
+                            <connections>
+                                <action selector="newEvent:" destination="68h-pt-hBo" id="u9L-jE-Dfp"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="eventsView" destination="Lag-0A-0NG" id="TeT-a7-s7M"/>
@@ -500,7 +504,7 @@
         <!--View Controller-->
         <scene sceneID="6zW-hP-00M">
             <objects>
-                <viewController id="uFo-Yd-la8" customClass="CDViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewEventViewController" id="uFo-Yd-la8" customClass="CDViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zlT-qG-fm7"/>
                         <viewControllerLayoutGuide type="bottom" id="Ty0-pG-Hnn"/>

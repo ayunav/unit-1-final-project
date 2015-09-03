@@ -8,15 +8,20 @@
 
 #import <UIKit/UIKit.h>
 #import "CDEvents.h"
-#import "Events.h"
 
+
+
+@protocol NewEventDelegate <NSObject>
+
+
+@end
 @interface CDViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabe;;
 @property (weak, nonatomic) IBOutlet UITextField *countdownTitle;
 
 
-
+@property (nonatomic, weak) id <NewEventDelegate> delegate;
 
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UILabel *countdownLabel;
