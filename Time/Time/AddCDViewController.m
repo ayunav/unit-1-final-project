@@ -53,7 +53,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [self.eventsView dequeueReusableCellWithIdentifier:@"TimerCellIdentifier" forIndexPath:indexPath];
+    UITableViewCell *cell = [self.eventsView dequeueReusableCellWithIdentifier:@"eventCellIdentifier" forIndexPath:indexPath];
     
     CDEvents *eventTemp;
     eventTemp = [self.events objectAtIndex:indexPath.row];

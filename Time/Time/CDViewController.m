@@ -59,7 +59,6 @@
 - (IBAction)saveButton:(id)sender {
     CDEvents *newEvent = [[CDEvents alloc] init];
     newEvent.countDownTitle = self.countdownTitle.text;
-   // newTimer.timerDuration = self.timerPickerView.countDownDuration;
     
     
     [self.delegate addToTheArrayNewEvent: newEvent];
