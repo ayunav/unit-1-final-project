@@ -351,7 +351,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fgv-SL-wyL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-116" y="-318"/>
+            <point key="canvasLocation" x="-116" y="-226"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="EcZ-ki-fir">
@@ -388,7 +388,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Luu-yx-Uvc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-628" y="2683"/>
+            <point key="canvasLocation" x="-116" y="1895"/>
         </scene>
         <!--Countdown Table View Controller-->
         <scene sceneID="u0N-k4-1mB">
@@ -502,7 +502,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uDJ-Mp-gXX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="239" y="2667"/>
+            <point key="canvasLocation" x="-116" y="2619"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="6zW-hP-00M">
@@ -596,7 +596,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9dl-o8-P3n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1329" y="1847"/>
+            <point key="canvasLocation" x="1409" y="2296"/>
         </scene>
         <!--ShowCD View Controller-->
         <scene sceneID="DSO-Sz-Llf">
@@ -656,7 +656,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Vf-Ri-Ij4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1075" y="2667"/>
+            <point key="canvasLocation" x="687" y="3059"/>
         </scene>
         <!--Preset Timer-->
         <scene sceneID="z7Z-tk-QPC">
@@ -874,7 +874,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="unA-wE-J2g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="538" y="1784"/>
+            <point key="canvasLocation" x="687" y="2296"/>
         </scene>
         <!--New Timer-->
         <scene sceneID="oB9-xT-DBr">
