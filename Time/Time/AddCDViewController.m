@@ -94,6 +94,7 @@
     //pass the CQTimer timerObject to the next VC
     cdEventsVC.eventObject = eventObject;
     
+    
     [self.navigationController pushViewController:cdEventsVC animated:YES];
 }
 

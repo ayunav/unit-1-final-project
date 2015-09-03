@@ -11,8 +11,9 @@
 
 @interface ShowCDViewController : UIViewController
 
+
 @property (nonatomic) CDEvents *eventObject;
-@property (weak, nonatomic) IBOutlet UILabel *countDownLabel;
+@property (nonatomic) NSString *theEventTitleName;
 
 
 @end

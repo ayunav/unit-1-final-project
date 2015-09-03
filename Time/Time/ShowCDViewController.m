@@ -11,12 +11,20 @@
 
 @interface ShowCDViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *theTitle;
+
+
+
+
 @end
 
 @implementation ShowCDViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.theTitle.text = self.eventObject.userEventTitle;
+     
        
 }
 
