@@ -80,10 +80,10 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"eventCellIdentifier" forIndexPath:indexPath];
     Events *CDEvent = [self.model.events objectAtIndex:indexPath.row];
     
-    NSString *name = self.countdownTitle.text;
+    //NSString *name = self.countdownTitle.text;
     
     
-    cell.textLabel.text = name;
+    //cell.textLabel.text = name;
     
     
     return cell;

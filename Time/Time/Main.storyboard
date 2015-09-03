@@ -1017,6 +1017,10 @@
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gjM-UT-3j7" userLabel="Sound Picker View">
                                         <rect key="frame" x="124" y="88" width="320" height="162"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="lEq-RJ-9he" id="Dpb-oM-KDH"/>
+                                            <outlet property="delegate" destination="lEq-RJ-9he" id="4sZ-QM-Vqd"/>
+                                        </connections>
                                     </pickerView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IF7-nr-nez" userLabel="Title Text Field">
                                         <rect key="frame" x="236" y="50" width="97" height="30"/>

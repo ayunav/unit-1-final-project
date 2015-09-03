@@ -70,13 +70,7 @@
         [self.timer invalidate];
         self.timer = nil;
         
-        // Code below is added to work with audio files
-        // Construct URL to sound file
-        NSString *path = [NSString stringWithFormat:@"%@/Magical-explosion.mp3", [[NSBundle mainBundle] resourcePath]];
-        NSURL *soundUrl = [NSURL fileURLWithPath:path];
-        
-        // Create audio player object and initialize with URL to sound
-        self.soundAlarmTimerIsUp = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
+        self.soundAlarmTimerIsUp = [[AVAudioPlayer alloc] initWithContentsOfURL:self.timerObject.soundURL error:nil];
         [self.soundAlarmTimerIsUp play];
         
         [self.startCancelButtonTapped setTitle:@"Start" forState:UIControlStateNormal];
